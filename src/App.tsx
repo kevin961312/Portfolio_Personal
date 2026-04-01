@@ -10,7 +10,7 @@ import styles from './App.module.css';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Portfolio_personal">
+    <BrowserRouter basename="/Portfolio_Personal">
       <div className={styles.layout}>
         <Navbar />
         <main className={styles.main}>
