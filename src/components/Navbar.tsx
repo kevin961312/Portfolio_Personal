@@ -8,6 +8,7 @@ const navItems = [
   { path: '/articulos-impresos', label: 'Artículos impresos' },
   { path: '/articulos-digitales', label: 'Artículos digitales' },
   { path: '/posts-instagram', label: 'Posts de Instagram' },
+  { path: '/reportaje', label: 'Reportaje' },
 ];
 
 export default function Navbar() {

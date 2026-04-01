@@ -106,6 +106,12 @@
   align-items: start;
 }
 
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .aside {
   display: flex;
   flex-direction: column;
@@ -185,6 +191,19 @@
   color: var(--color-text-muted);
   line-height: 1.55;
   margin: 0.2rem 0 0;
+}
+
+.timelineList {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0.3rem 0 0 1rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.timelineList li {
+  margin-bottom: 0.25rem;
 }
 
 /* Skills */
