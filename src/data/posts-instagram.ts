@@ -1,0 +1,88 @@
+import type { PostInstagram } from "../types";
+
+export const postsInstagram: PostInstagram[] = [
+  {
+    id: "1",
+    titulo: "",
+    url: "https://www.instagram.com/p/DU27bb3jPGu/",
+    tipo: "carrusel",
+    fecha: "2026-02-17",
+  },
+  {
+    id: "2",
+    titulo: "",
+    url: "https://www.instagram.com/p/DU-pwonDdsB/",
+    tipo: "carrusel",
+    fecha: "2026-02-20",
+  },
+  {
+    id: "3",
+    titulo: "",
+    url: "https://www.instagram.com/p/DWELtRgjnl5/",
+    tipo: "carrusel",
+    fecha: "2026-03-19",
+  },
+  {
+    id: "4",
+    titulo: "",
+    url: "https://www.instagram.com/p/DTsQbeMjZ52/",
+    tipo: "carrusel",
+    fecha: "2026-01-19",
+  },
+  {
+    id: "5",
+    titulo: "",
+    url: "https://www.instagram.com/p/DQT9lOlDZXH/",
+    tipo: "carrusel",
+    fecha: "2026-01-19",
+  },
+  {
+    id: "6",
+    titulo: "",
+    url: "https://www.instagram.com/p/DWU6cUWjWxW/",
+    tipo: "carrusel",
+    fecha: "2026-03-25",
+  },
+  {
+    id: "7",
+    titulo: "",
+    url: "https://www.instagram.com/p/DUstWFXj1iY/",
+    tipo: "video",
+    fecha: "2026-02-13",
+  },
+  {
+    id: "8",
+    titulo: "",
+    url: "https://www.instagram.com/p/DVLhtr-Edua/",
+    tipo: "video",
+    fecha: "2026-02-13",
+  },  
+  {
+    id: "9",
+    titulo: "",
+    url: "https://www.instagram.com/reel/DTSuEQTj7GF/",
+    tipo: "video",
+    fecha: "2026-01-09",
+  },
+  {
+    id: "10",
+    titulo: "",
+    url: "https://www.instagram.com/reel/DR-1WmBDy61/",
+    tipo: "video",
+    fecha: "2025-12-07",
+  },
+  {
+    id: "11",
+    titulo: "",
+    url: "https://www.instagram.com/reel/DQtt1CVDYg-/",
+    tipo: "video",
+    fecha: "2025-11-06",
+  },
+  {
+    id: "12",
+    titulo: "",
+    url: "https://www.instagram.com/reel/DQSofnijXKX/",
+    tipo: "video",
+    fecha: "2025-10-26",
+  },
+];

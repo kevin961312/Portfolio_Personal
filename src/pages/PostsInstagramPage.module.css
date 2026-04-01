@@ -1,0 +1,150 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-lilac-border);
+}
+
+.headerIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--color-lilac-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-purple-deep);
+  margin: 0 0 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-lilac-border);
+  padding-bottom: 0;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: var(--color-purple-mid);
+}
+
+.tabActive {
+  color: var(--color-purple-mid);
+  border-bottom-color: var(--color-purple-mid);
+}
+
+.tabCount {
+  background: var(--color-lilac-light);
+  color: var(--color-purple-mid);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.05rem 0.45rem;
+  border-radius: 20px;
+  line-height: 1.6;
+}
+
+.tabActive .tabCount {
+  background: var(--color-purple-mid);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  gap: 0.75rem;
+}
+
+.empty h2 {
+  font-size: 1.2rem;
+  color: var(--color-purple-deep);
+  margin: 0;
+}
+
+.empty p {
+  max-width: 460px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.empty code {
+  background: var(--color-lilac-light);
+  color: var(--color-purple-mid);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.83rem;
+}
+
+.addHint {
+  background: #fff;
+  border: 1px solid var(--color-lilac-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.addHint p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-purple-mid);
+  margin-bottom: 0.5rem;
+}
+
+.addHint pre {
+  font-size: 0.8rem;
+  color: var(--color-purple-deep);
+  margin: 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}

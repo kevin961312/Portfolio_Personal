@@ -1,0 +1,96 @@
+/* ── Paleta de colores Laura Hernández ── */
+:root {
+  /* Purple scale */
+  --color-purple-deep: #2D1B69;     /* Índigo profundo */
+  --color-purple-mid: #6B21A8;      /* Púrpura medio */
+  --color-purple-light: #A855F7;    /* Púrpura vivo */
+  --color-purple-soft: #9333EA;     /* Púrpura suave */
+
+  /* Lilac scale */
+  --color-lilac-mid: #C084FC;       /* Lila medio */
+  --color-lilac-light: #EDE9FE;     /* Lila muy claro */
+  --color-lilac-border: #DDD6FE;    /* Bordes lila */
+
+  /* Backgrounds */
+  --color-bg: #F5F0FF;              /* Fondo con tinte morado */
+  --color-surface: #FFFFFF;
+
+  /* Text */
+  --color-text: #1E1033;
+  --color-text-muted: #6B7280;
+
+  /* Fonts */
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-purple-mid);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-purple-deep);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.85em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-lilac-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-lilac-mid);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-purple-light);
+}

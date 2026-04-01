@@ -1,0 +1,273 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--color-purple-deep) 0%, var(--color-purple-mid) 100%);
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem;
+}
+
+.avatarWrap {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.avatarPlaceholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarPlaceholder svg {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.heroText {
+  color: #fff;
+}
+
+.heroRole {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+  margin: 0 0 0.3rem;
+}
+
+.heroName {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.heroDesc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.88;
+  margin: 0 0 1.2rem;
+  max-width: 520px;
+}
+
+.contactList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contactItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.contactItem:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+/* Layout grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Section */
+.section {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--color-lilac-border);
+  padding: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--color-purple-mid);
+  margin: 0 0 1.25rem;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-lilac-light);
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -1.45rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-purple-mid);
+  border: 2px solid var(--color-bg);
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.periodo {
+  font-size: 0.77rem;
+  color: var(--color-purple-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.empresa {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-purple-deep);
+  margin: 0;
+}
+
+.cargo {
+  font-size: 0.85rem;
+  color: var(--color-purple-soft);
+  margin: 0;
+}
+
+.timelineDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0.2rem 0 0;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.skill {}
+
+.skillLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  color: var(--color-purple-deep);
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.skillPct {
+  color: var(--color-purple-soft);
+  font-size: 0.8rem;
+}
+
+.skillBar {
+  height: 6px;
+  background: var(--color-lilac-light);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.skillFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-purple-mid), var(--color-purple-light));
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+/* Referencia */
+.refCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.refName {
+  font-weight: 700;
+  color: var(--color-purple-deep);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.refRole {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Contact items in ref card */
+.refCard .contactItem {
+  color: var(--color-purple-mid);
+  text-decoration: none;
+  font-size: 0.84rem;
+}
+
+.refCard .contactItem:hover {
+  color: var(--color-purple-deep);
+  opacity: 1;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroInner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .contactList {
+    justify-content: center;
+  }
+}
