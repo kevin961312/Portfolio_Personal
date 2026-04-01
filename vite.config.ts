@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 // Si usas un dominio personalizado o github.com/laura-hernandez/laura-hernandez.github.io → base: '/'
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio_personal/',
+  base: '/Portfolio_Personal/',
   build: {
     outDir: 'docs',
   },
