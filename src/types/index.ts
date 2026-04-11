@@ -22,4 +22,5 @@ export interface PostInstagram {
   tipo: 'carrusel' | 'video' | 'imagen';
   fecha: string;
   descripcion?: string;
+  likes?: number;
 }

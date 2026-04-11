@@ -7,6 +7,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DU27bb3jPGu/",
     tipo: "carrusel",
     fecha: "2026-02-17",
+    likes: 69000,
   },
   {
     id: "2",
@@ -14,6 +15,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DU-pwonDdsB/",
     tipo: "carrusel",
     fecha: "2026-02-20",
+    likes: 13000,
   },
   {
     id: "3",
@@ -21,6 +23,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DWELtRgjnl5/",
     tipo: "carrusel",
     fecha: "2026-03-19",
+    likes: 10000,
   },
   {
     id: "4",
@@ -28,6 +31,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DTsQbeMjZ52/",
     tipo: "carrusel",
     fecha: "2026-01-19",
+    likes: 19000,
   },
   {
     id: "5",
@@ -35,6 +39,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DQT9lOlDZXH/",
     tipo: "carrusel",
     fecha: "2026-01-19",
+    likes: 8000,
   },
   {
     id: "6",
@@ -42,6 +47,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DWU6cUWjWxW/",
     tipo: "carrusel",
     fecha: "2026-03-25",
+    likes: 5900,
   },
   {
     id: "7",
@@ -49,6 +55,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DUstWFXj1iY/",
     tipo: "video",
     fecha: "2026-02-13",
+    likes: 12800,
   },
   {
     id: "8",
@@ -56,6 +63,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/p/DVLhtr-Edua/",
     tipo: "video",
     fecha: "2026-02-13",
+    likes: 10500,
   },  
   {
     id: "9",
@@ -63,6 +71,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/reel/DTSuEQTj7GF/",
     tipo: "video",
     fecha: "2026-01-09",
+    likes: 1589,
   },
   {
     id: "10",
@@ -70,6 +79,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/reel/DR-1WmBDy61/",
     tipo: "video",
     fecha: "2025-12-07",
+    likes: 1690,
   },
   {
     id: "11",
@@ -77,6 +87,7 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/reel/DQtt1CVDYg-/",
     tipo: "video",
     fecha: "2025-11-06",
+    likes: 2409,
   },
   {
     id: "12",
@@ -84,5 +95,62 @@ export const postsInstagram: PostInstagram[] = [
     url: "https://www.instagram.com/reel/DQSofnijXKX/",
     tipo: "video",
     fecha: "2025-10-26",
+    likes: 4563,
+  },
+  {
+    id:"13",
+    titulo:"",
+    url:"https://www.instagram.com/reel/DUnenX_jclW/",
+    tipo:"video",
+    fecha:"2026-02-11",
+    likes: 4320,
+  },
+  {
+    id:"14",
+    titulo:"",
+    url:"https://www.instagram.com/reel/DRCT3dyjaBj/",
+    tipo:"video",
+    fecha:"2025-11-14",
+    likes: 3262,
+  },
+  {
+    id:"15",
+    titulo:"",
+    url:"https://www.instagram.com/reel/DTkh_eDjRGp/",
+    tipo:"video",
+    fecha:"2026-01-16",
+    likes: 3929,
+  },
+  {
+    id:"16",
+    titulo:"",
+    url:"https://www.instagram.com/p/DT2yedtja8F/",
+    tipo:"carrusel",
+    fecha:"2026-01-23",
+    likes: 7900,
+  },
+  {
+    id:"17",
+    titulo:"",
+    url:"https://www.instagram.com/p/DVdjW3dDVOj/",
+    tipo:"carrusel",
+    fecha:"2026-03-04",
+    likes: 2500,
+  },
+  {
+    id:"18",
+    titulo:"",
+    url:"https://www.instagram.com/p/DVtAB4BjTJS/",
+    tipo:"carrusel",
+    fecha:"2026-03-10",
+    likes: 2500,
+  },
+  {
+    id:"19",
+    titulo:"",
+    url:"https://www.instagram.com/p/DW81I56iPXl/",
+    tipo:"carrusel",
+    fecha:"2026-04-10",
+    likes: 3100,
   },
 ];

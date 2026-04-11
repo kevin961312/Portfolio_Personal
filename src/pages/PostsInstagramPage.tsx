@@ -9,8 +9,11 @@ type Tab = 'reels' | 'carrusel';
 export default function PostsInstagramPage() {
   const [activeTab, setActiveTab] = useState<Tab>('carrusel');
 
-  const reels = postsInstagram.filter((p) => p.tipo === 'video');
-  const carruseles = postsInstagram.filter((p) => p.tipo === 'carrusel');
+  const byLikes = (a: { likes?: number }, b: { likes?: number }) =>
+    (b.likes ?? -1) - (a.likes ?? -1);
+
+  const reels = postsInstagram.filter((p) => p.tipo === 'video').sort(byLikes);
+  const carruseles = postsInstagram.filter((p) => p.tipo === 'carrusel').sort(byLikes);
   const posts = activeTab === 'reels' ? reels : carruseles;
 
   return (
