@@ -188,17 +188,17 @@ export const postsInstagram: PostInstagram[] = [
   {
     id:"24",
     titulo:"",
+    url:"https://www.instagram.com/p/DaJpdnWCRNV/",
+    tipo:"carrusel",
+    fecha:"2026-06-28",
+    likes: 2815,
+  },
+  {
+    id:"25",
+    titulo:"",
     url:"https://www.instagram.com/p/DZa_og7kZKR/",
     tipo:"video",
     fecha:"2026-06-10",
     likes: 313,
   },
-  {
-    id:"25",
-    titulo:"",
-    url:"https://www.instagram.com/p/DaJpdnWCRNV/",
-    tipo:"carrusel",
-    fecha:"2026-06-28",
-    likes: 2815,
-  }
 ];
