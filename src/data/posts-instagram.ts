@@ -152,13 +152,5 @@ export const postsInstagram: PostInstagram[] = [
     tipo:"carrusel",
     fecha:"2026-04-10",
     likes: 3100,
-  },
-  {
-    id:"20",
-    titulo:"",
-    url:"https://www.instagram.com/p/DZ6FHXxiSeC/",
-    tipo:"video",
-    fecha:"2026-06-22",
-    likes: 421,
-  },
+  }
 ];
