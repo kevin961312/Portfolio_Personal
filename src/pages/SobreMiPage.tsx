@@ -3,8 +3,8 @@ import styles from './SobreMiPage.module.css';
 import fotoLaura from '../assets/sobre-mi/foto-laura.jpeg';
 
 const habilidades = [
-  { nombre: 'Redacción y ortografía', nivel: 90 },
-  { nombre: 'Edición de videos', nivel: 80 },
+  { nombre: 'Redacción y ortografía', nivel: 96 },
+  { nombre: 'Edición de videos', nivel: 96 },
   { nombre: 'Investigación', nivel: 85 },
   { nombre: 'Oratoria', nivel: 80 },
   { nombre: 'Copys', nivel: 80 },
