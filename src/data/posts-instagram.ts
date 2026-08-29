@@ -68,7 +68,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id: "9",
     titulo: "",
-    url: "https://www.instagram.com/reel/DTSuEQTj7GF/",
+    url: "https://www.instagram.com/p/DTSuEQTj7GF/",
     tipo: "video",
     fecha: "2026-01-09",
     likes: 1589,
@@ -76,7 +76,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id: "10",
     titulo: "",
-    url: "https://www.instagram.com/reel/DR-1WmBDy61/",
+    url: "https://www.instagram.com/p/DR-1WmBDy61/",
     tipo: "video",
     fecha: "2025-12-07",
     likes: 1690,
@@ -84,7 +84,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id: "11",
     titulo: "",
-    url: "https://www.instagram.com/reel/DQtt1CVDYg-/",
+    url: "https://www.instagram.com/p/DQtt1CVDYg-/",
     tipo: "video",
     fecha: "2025-11-06",
     likes: 2409,
@@ -92,7 +92,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id: "12",
     titulo: "",
-    url: "https://www.instagram.com/reel/DQSofnijXKX/",
+    url: "https://www.instagram.com/p/DQSofnijXKX/",
     tipo: "video",
     fecha: "2025-10-26",
     likes: 4563,
@@ -100,7 +100,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id:"13",
     titulo:"",
-    url:"https://www.instagram.com/reel/DUnenX_jclW/",
+    url:"https://www.instagram.com/p/DUnenX_jclW/",
     tipo:"video",
     fecha:"2026-02-11",
     likes: 4320,
@@ -108,7 +108,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id:"14",
     titulo:"",
-    url:"https://www.instagram.com/reel/DRCT3dyjaBj/",
+    url:"https://www.instagram.com/p/DRCT3dyjaBj/",
     tipo:"video",
     fecha:"2025-11-14",
     likes: 3262,
@@ -116,7 +116,7 @@ export const postsInstagram: PostInstagram[] = [
   {
     id:"15",
     titulo:"",
-    url:"https://www.instagram.com/reel/DTkh_eDjRGp/",
+    url:"https://www.instagram.com/p/DTkh_eDjRGp/",
     tipo:"video",
     fecha:"2026-01-16",
     likes: 3929,
@@ -152,5 +152,124 @@ export const postsInstagram: PostInstagram[] = [
     tipo:"carrusel",
     fecha:"2026-04-10",
     likes: 3100,
+  },
+
+
+
+  {
+    id:"20",
+    titulo:"",
+    url:"https://www.instagram.com/p/DZs_aWJD6nl/",
+    tipo:"video",
+    fecha:"2026-06-17",
+    likes: 6200,
+  },
+  {
+    id:"21",
+    titulo:"",
+    url:"https://www.instagram.com/p/DZ2s7LiOuiC/",
+    tipo:"video",
+    fecha:"2026-06-21",
+    likes: 12100,
+  },
+  {
+    id:"22",
+    titulo:"",
+    url:"https://www.instagram.com/p/Da3JX_nlSWp/",
+    tipo:"video",
+    fecha:"2026-07-16",
+    likes: 1500,
+  },
+  {
+    id:"23",
+    titulo:"",
+    url:"https://www.instagram.com/p/Da726tfndb2/",
+    tipo:"video",
+    fecha:"2026-07-18",
+    likes: 2200,
+  },
+  {
+    id:"24",
+    titulo:"",
+    url:"https://www.instagram.com/p/DbLiN-CCe_B/",
+    tipo:"video",
+    fecha:"2026-07-24",
+    likes: 7400,
+  },
+  {
+    id:"25",
+    titulo:"",
+    url:"https://www.instagram.com/p/DbWWXN9pAJJ/",
+    tipo:"video",
+    fecha:"2026-07-28",
+    likes: 2500,
+  },
+  {
+    id:"26",
+    titulo:"",
+    url:"https://www.instagram.com/p/Dbl4LYAE1nl/",
+    tipo:"video",
+    fecha:"2026-08-03",
+    likes: 510,
+  },
+  {
+    id:"27",
+    titulo:"",
+    url:"https://www.instagram.com/p/Dbosbw6iidk/",
+    tipo:"video",
+    fecha:"2026-08-04",
+    likes: 779,
+  },
+    {
+    id:"28",
+    titulo:"",
+    url:"https://www.instagram.com/p/Dbw0p5pjhKl/",
+    tipo:"video",
+    fecha:"2026-08-07",
+    likes: 516,
+  },
+  {
+    id:"29",
+    titulo:"",
+    url:"https://www.instagram.com/p/Db8UDB4jtdK/",
+    tipo:"video",
+    fecha:"2026-08-12",
+    likes: 4300,
+  },
+  {
+    id:"30",
+    titulo:"",
+    url:"https://www.instagram.com/p/Db-sG7qih9s/",
+    tipo:"video",
+    fecha:"2026-08-13",
+    likes: 2200,
+  },
+ 
+
+
+  {
+    id:"31",
+    titulo:"",
+    url:"https://www.instagram.com/p/DcJDSwhApFr/",
+    tipo:"video",
+    fecha:"2026-08-17",
+    likes: 6068,
+  },
+
+  {
+    id:"32",
+    titulo:"",
+    url:"https://www.instagram.com/p/DcO5fpBjV6y/",
+    tipo:"video",
+    fecha:"2026-08-19",
+    likes: 4400,
+  },
+  {
+    id:"33",
+    titulo:"",
+    url:"https://www.instagram.com/p/DcPZDRpCti2/",
+    tipo:"video",
+    fecha:"2026-08-13",
+    likes: 50700,
   }
 ];
