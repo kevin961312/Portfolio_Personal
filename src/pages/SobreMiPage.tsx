@@ -14,8 +14,18 @@ const habilidades = [
 
 const experiencias = [
   {
+    periodo: '2026 – Actualmente',
+    empresa: 'Cuestión Pública',
+    cargo: '',
+    items: [
+      'Análisis y selección de temas para creación de parrillas de contenido.',
+      'Pre producción, producción, edición y publicación de carruseles, reels e historias para Instagram.',
+      'Seguimiento de resultados y creación de estrategia.',
+    ],
+  },
+  {
     periodo: '2025 – 2026',
-    empresa: 'No Es Hora de Callar · El Tiempo',
+    empresa: 'No Es Hora de Callar · Casa Editorial El Tiempo',
     cargo: '',
     items: [
       'Investigación y redacción de notas periodísticas para el periódico digital e impreso.',
@@ -59,7 +69,7 @@ const educacion = [
   {
     periodo: '2025 – 2026',
     institucion: 'El Tiempo',
-    titulo: 'Escuela de Periodismo Multimedia El Tiempo',
+    titulo: 'Programa de la Escuela de Periodismo Multimedia EL TIEMPO',
   },
   {
     periodo: '2024',
@@ -67,7 +77,7 @@ const educacion = [
     titulo: 'Diplomado en Reportería y presentación de noticias con énfasis en periodismo judicial y político',
   },
   {
-    periodo: '2021 – Actualmente',
+    periodo: '2021 – 2026',
     institucion: 'Universidad Cooperativa de Colombia',
     titulo: 'Comunicación Social',
   },
@@ -86,8 +96,8 @@ export default function SobreMiPage() {
             <p className={styles.heroRole}>Comunicadora Social y Periodista</p>
             <h1 className={styles.heroName}>Laura Viviana Hernández Martin</h1>
             <p className={styles.heroDesc}>
-              Periodista y content manager con experiencia en temas de género. Apasionada por la reportería desde enfoques que aporten a la equidad y la visibilización de problemáticas sociales.<br/> <br/>
-              Cuento con habilidades en creación de contenido digital y audiovisual, así como en formatos transmedia.<br/> <br/>
+              Periodista y content creator con experiencia en medios de comunicación.<br/> <br/>
+              Cuento con habilidades en creación de contenido digital y audiovisual, así como en formatos transmedia. Análisis y selección de temas para creación de parrillas de contenido y seguimiento de resultados.<br/> <br/>
               Destaco por mi creatividad, curiosidad, aprendizaje continuo y habilidades de liderazgo.
             </p>
             <div className={styles.contactList}>
@@ -201,7 +211,7 @@ export default function SobreMiPage() {
             <div className={styles.refCard}>
               <p className={styles.refName}>Carlos Solano</p>
               <p className={styles.refRole}>Director de Escuela de Periodismo Multimedia EL TIEMPO y Editor de Podcasts</p>
-              <a href="tel:3133189136" className={styles.contactItem} style={{ marginTop: '0.5rem' }}>
+              <a href="tel:3208651735" className={styles.contactItem} style={{ marginTop: '0.5rem' }}>
                 <IconPhone size={14} /> 320 8651735
               </a>
               <a href="mailto:carsol@eltiempo.com" className={styles.contactItem}>
