@@ -99,3 +99,23 @@ export const IconCarousel = ({ size = 24, color = 'currentColor', className }: I
     <path d="M7 5V3M17 5V3M3 10h18" />
   </svg>
 );
+
+export const IconEye = ({ size = 24, color = 'currentColor', className }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" />
+    <circle cx="12" cy="12" r="2.75" />
+  </svg>
+);
+
+export const IconHeart = ({ size = 24, color = 'currentColor', className }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 20s-7.5-4.6-7.5-9.5A4.5 4.5 0 0112 8.2a4.5 4.5 0 017.5 2.3C19.5 15.4 12 20 12 20z" />
+  </svg>
+);
+
+export const IconSparkle = ({ size = 24, color = 'currentColor', className }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+    <path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" />
+  </svg>
+);

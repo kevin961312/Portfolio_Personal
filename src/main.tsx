@@ -2,11 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { inicializarPerfil } from './lib/perfilStore'
 
-const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-if (navEntry?.type === 'reload') {
-  window.history.replaceState(null, '', '/Portfolio_Personal/');
-}
+// Fija `?perfil=` en la URL inicial (con replaceState, sin ensuciar el
+// historial) y engancha los botones Atrás/Adelante del navegador.
+// El perfil se resuelve como: query param → sessionStorage → comunicadora.
+inicializarPerfil();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

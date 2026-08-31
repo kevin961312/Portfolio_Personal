@@ -8,7 +8,7 @@
 .hero {
   background: linear-gradient(135deg, var(--color-purple-deep) 0%, var(--color-purple-mid) 100%);
   border-radius: 16px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   overflow: hidden;
 }
 
@@ -69,12 +69,24 @@
   letter-spacing: -0.02em;
 }
 
+.heroTitular {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0 0 0.9rem;
+  max-width: 560px;
+}
+
 .heroDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
   font-size: 0.92rem;
   line-height: 1.6;
   opacity: 0.88;
   margin: 0 0 1.2rem;
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .contactList {
@@ -243,7 +255,19 @@
   transition: width 0.6s ease;
 }
 
-/* Referencia */
+/* Referencias */
+.refList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Separador entre tarjetas de referencia. */
+.refList .refCard + .refCard {
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--color-lilac-light);
+}
+
 .refCard {
   display: flex;
   flex-direction: column;
@@ -288,5 +312,69 @@
 
   .contactList {
     justify-content: center;
+  }
+}
+
+/* ── Bloque de métricas ─────────────────────────────────────── */
+.metricas {
+  margin-bottom: 2.5rem;
+}
+
+/* ── Trabajo destacado ──────────────────────────────────────── */
+.destacados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.destacados li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.destacados li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--color-purple-light);
+}
+
+/* ── Transición al cambiar de perfil ────────────────────────── */
+/* React re-monta estos bloques con `key={perfilId}`, así que la
+   animación se dispara sola en cada cambio de hoja de vida. */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.heroText,
+.destacados {
+  animation: aparecer 0.35s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroText,
+  .destacados {
+    animation: none;
+  }
+
+  .skillFill {
+    transition: none;
   }
 }
