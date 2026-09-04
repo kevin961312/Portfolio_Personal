@@ -10,7 +10,19 @@ import { articulosDigitales } from './articulos-digitales';
 
 const TOTAL_PIEZAS_IG = postsInstagram.length;
 const TOTAL_INTERACCIONES = postsInstagram.reduce((suma, p) => suma + (p.likes ?? 0), 0);
-const PROMEDIO_INTERACCIONES = Math.round(TOTAL_INTERACCIONES / TOTAL_PIEZAS_IG);
+const listaLikes: number[] = postsInstagram.map(p => p.likes ?? 0);
+
+// 2. Ordenar la lista de menor a mayor
+const ordenados = [...listaLikes].sort((a, b) => a - b);
+const mitad = Math.floor(ordenados.length / 2);
+
+// 3. Calcular la mediana según si el total de piezas es par o impar
+const PROMEDIO_INTERACCIONES = ordenados.length === 0
+  ? 0
+  : ordenados.length % 2 !== 0
+    ? ordenados[mitad]
+    : Math.round((ordenados[mitad - 1] + ordenados[mitad]) / 2);
+
 const PICO_INTERACCIONES = Math.max(...postsInstagram.map((p) => p.likes ?? 0));
 const TOTAL_REELS = postsInstagram.filter((p) => p.tipo === 'video').length;
 const TOTAL_CARRUSELES = postsInstagram.filter((p) => p.tipo === 'carrusel').length;
@@ -98,7 +110,7 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       'Adaptación de investigación periodística densa (leyes, casos judiciales, datos de género) a formatos nativos de Instagram sin perder rigor informativo.',
     ],
     // Solo la evidencia de redes: las secciones de periodismo quedan ocultas.
-    secciones: [RUTA_SOBRE_MI, ...RUTAS_REDES],
+    secciones: [RUTA_SOBRE_MI, ...RUTAS_PERIODISMO, ...RUTAS_REDES],
     cargos: {
       'Cuestión Pública': 'Community Manager · Creadora de contenido digital',
       'No Es Hora de Callar · Casa Editorial El Tiempo':
@@ -119,9 +131,9 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
     titular:
       'Reportería judicial, política y con enfoque de género para prensa digital, impresa y televisión.',
     sobreMi: [
-      'Periodista multimedia e investigadora, formada en Comunicación Social y en la Escuela de Periodismo Multimedia de EL TIEMPO, con diplomado en reportería y presentación de noticias con énfasis en periodismo judicial y político.',
-      'Mi trabajo está publicado en eltiempo.com y en la edición impresa de EL TIEMPO, además de un reportaje audiovisual emitido en Canal CityTV. Reporteo casos de justicia, desaparición forzada, trámite legislativo y violencia de género, con manejo de fuentes oficiales, víctimas y organizaciones de derechos humanos.',
-      'Cubro además cultura y ciudad, y produzco para prensa escrita, digital y televisión.',
+      'Periodista multimedia e investigadora, formada en Comunicación Social y en la Escuela de Periodismo Multimedia de EL TIEMPO, con diplomado en reportería y presentación de noticias, con énfasis en periodismo judicial y político.',
+      'Mi trabajo ha sido publicado en eltiempo.com y en la edición impresa de EL TIEMPO, además de contar con un reportaje audiovisual emitido por Canal CityTV. Tengo experiencia en reportería, investigación periodística y cobertura de temas de interés público, con manejo de fuentes oficiales, testimoniales, institucionales y expertas.',
+      'También cubro temas de cultura y ciudad, y desarrollo contenidos para prensa escrita, plataformas digitales y televisión, adaptando la información a distintos formatos y audiencias.',
     ],
     metricas: [
       {
@@ -163,13 +175,13 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       { nombre: 'Producción para televisión', nivel: 84 },
     ],
     destacados: [
-      'Investigación judicial: «Los misterios de la muerte de Baby Demoni», publicado en la sección de Investigación de EL TIEMPO y replicado en la edición impresa.',
-      'Desaparición forzada: entrevista a Margarita Restrepo sobre 23 años de un caso sin respuesta institucional.',
-      'Cubrimiento legislativo: aprobación en segundo debate de la Ley Jineth Bedoya Lima y de la ley contra la violencia digital.',
-      'Ciudad y cultura: perros deambulantes en el Politécnico Grancolombiano, regreso de Limp Bizkit al festival Loserville e inauguración de la Bienal de Arte BOG25.',
+      'Los misterios de la muerte de Baby Demoni, publicado en la sección de Investigación de EL TIEMPO y replicado en la edición impresa.',
+      'Entrevista a Margarita Restrepo sobre 23 años de un caso sin respuesta institucional.',
+      'Aprobación en segundo debate de la Ley Jineth Bedoya Lima y de la ley contra la violencia digital.',
+      'Perros deambulantes en el Politécnico Grancolombiano, regreso de Limp Bizkit al festival Loserville e inauguración de la Bienal de Arte BOG25.',
     ],
     // Solo la evidencia periodística: la parrilla de Instagram queda oculta.
-    secciones: [RUTA_SOBRE_MI, ...RUTAS_PERIODISMO],
+    secciones: [RUTA_SOBRE_MI, ...RUTAS_PERIODISMO, ...RUTAS_REDES],
     cargos: {
       'Cuestión Pública': 'Periodista · Contenido investigativo para audiencias digitales',
       'No Es Hora de Callar · Casa Editorial El Tiempo': 'Periodista con enfoque de género',
@@ -188,7 +200,7 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
     titular:
       'Narrativas transmedia, producción audiovisual, oratoria y comunicación estratégica con enfoque de derechos.',
     sobreMi: [
-      'Comunicadora Social con una visión integral del ecosistema de medios: concibo el mensaje una sola vez y lo despliego en todas las plataformas donde vive la audiencia.',
+      'Comunicadora Social con una visión integral del ecosistema de medios: desarrollo una idea central y la adapto estratégicamente a cada plataforma, formato y audiencia.',
       'He trabajado el mismo tema como nota de prensa impresa, artículo digital, pieza para redes sociales y contenido para televisión en Cuestión Pública y la Casa Editorial EL TIEMPO. Mi portafolio acredita un ejercicio transmedia real, con piezas verificables en cada formato.',
       'Aporto pensamiento estratégico, oratoria y paso en cámara, y una comunicación con enfoque de derechos orientada a construir relación y confianza con las audiencias.',
     ],

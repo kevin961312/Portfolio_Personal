@@ -84,8 +84,8 @@ const referencias = [
   },
   {
     nombre: 'Abrahán Gutiérrez Navarro',
-    cargo: 'Periodista',
-    telefono: '350 480 0639',
+    cargo: 'Periodista y Publicista',
+    telefono: '316 981 2674',
   },
 ];
 
