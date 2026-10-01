@@ -9,11 +9,14 @@ type Tab = 'reels' | 'carrusel';
 export default function PostsInstagramPage() {
   const [activeTab, setActiveTab] = useState<Tab>('carrusel');
 
-  const byLikes = (a: { likes?: number }, b: { likes?: number }) =>
-    (b.likes ?? -1) - (a.likes ?? -1);
+  /* Orden cronológico inverso: lo más reciente primero, como la parrilla
+     real de Instagram. `fecha` es ISO (AAAA-MM-DD), así que compararla como
+     texto ya ordena bien. */
+  const porFecha = (a: { fecha: string }, b: { fecha: string }) =>
+    b.fecha.localeCompare(a.fecha);
 
-  const reels = postsInstagram.filter((p) => p.tipo === 'video').sort(byLikes);
-  const carruseles = postsInstagram.filter((p) => p.tipo === 'carrusel').sort(byLikes);
+  const reels = postsInstagram.filter((p) => p.tipo === 'video').sort(porFecha);
+  const carruseles = postsInstagram.filter((p) => p.tipo === 'carrusel').sort(porFecha);
   const posts = activeTab === 'reels' ? reels : carruseles;
 
   return (

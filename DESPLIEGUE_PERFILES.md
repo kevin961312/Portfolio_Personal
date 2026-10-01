@@ -193,33 +193,42 @@ GitHub Pages republica en 1–2 minutos. Confirmar la configuración en
 ## 5. Las tres HV en PDF
 
 Los PDF se generan desde este repositorio, con el mismo motor que produjo los
-originales (Chrome headless imprimiendo un HTML):
+originales (Chrome headless imprimiendo un HTML). Un solo comando:
 
 ```bash
-node hv/generar.mjs
+./hv/generar.sh
 ```
 
-Sobrescribe los tres `CV_Laura_Hernandez_*.pdf` de la raíz. No necesita
-dependencias: usa el Chrome instalado en el sistema (o el que indique la
-variable de entorno `CHROME_BIN`).
+Sobrescribe los tres `CV_Laura_Hernandez_*.pdf` de la raíz. **No hay nada que
+instalar**: solo Python 3 y el Chrome del sistema (o el que indique la variable
+`CHROME_BIN`, por si está en otra ruta):
+
+```bash
+CHROME_BIN='/ruta/a/Chrome' ./hv/generar.sh
+```
 
 ```
 hv/
-├── datos.mjs       ← contenido de las tres HV (editar aquí)
-├── metricas.mjs    lee las cifras desde `src/data/*.ts` (no tocar a mano)
-├── plantilla.mjs   HTML + CSS de impresión (A4, dos columnas)
-├── generar.mjs     imprime cada HTML a PDF con Chrome headless
+├── generar.sh      ← esto es lo que se ejecuta
+├── datos.py        ← TEXTOS de las tres HV (es el archivo a editar)
+├── plantilla.py    el diseño: HTML + CSS de impresión (A4, dos columnas)
+├── metricas.py     lee las cifras desde `src/data/*.ts` (no tocar a mano)
+├── generar.py      imprime cada HTML a PDF con Chrome headless
 └── assets/
     └── foto-laura-circulo.jpg   foto con su anillo punteado
 ```
 
-El HTML original con el que se hicieron los PDF ya no existía, así que
-`hv/` lo reconstruye. A partir de ahora los cambios de la HV se hacen en
-`hv/datos.mjs` y se regeneran, en vez de editarse a mano.
+Para cambiar un texto se edita `hv/datos.py` y se vuelve a ejecutar el guion;
+la HV ya no se edita a mano en un programa de diseño. `hv/metricas.py` se
+puede ejecutar suelto para ver las cifras del momento:
+
+```bash
+python3 hv/metricas.py
+```
 
 ### El diseño reproduce la HV original de Canva
 
-`hv/plantilla.mjs` replica la maqueta de la HV que Laura hizo en Canva
+`hv/plantilla.py` replica la maqueta de la HV que Laura hizo en Canva
 (`CV (2).pdf`): barra lateral lila de 232 pt con la foto circular de borde
 punteado, títulos morados subrayados y barras de habilidades; a la derecha,
 el nombre alineado a la derecha y cada sección abierta por una «píldora».
@@ -258,15 +267,20 @@ rectángulo fijo se repinta idéntica en las dos hojas.
 
 ### El recuadro de cifras es opcional
 
-Una hoja sin `metricas` en `hv/datos.mjs` no imprime el bloque de métricas ni
-la nota «Cifras verificables en el portafolio». Hoy lo llevan la de
-Comunicadora Social y la de Periodista; la de **Community Manager va sin él**
-—sus cifras quedan dentro de «Trabajo destacado»—. Para devolvérselo basta
-con añadirle de nuevo `metricasTitulo` y `metricas`.
+Cada hoja de `hv/datos.py` enciende o apaga dos bloques según los traiga o no:
+
+| clave en la hoja | bloque | quién lo lleva hoy |
+|---|---|---|
+| `metricas` + `metricas_titulo` | el recuadro de cifras y su nota | Comunicadora Social y Periodista |
+| `destacados` | «Trabajo destacado» | **ninguna** |
+
+«Trabajo destacado» se quitó de los tres PDF; **en la web sigue estando**, en
+los tres perfiles (`destacados` de `src/data/perfiles.ts`). Para devolverlo al
+papel basta con añadir la lista `destacados` a la hoja que corresponda.
 
 ### Las cifras salen de los mismos datos que la web
 
-`hv/metricas.mjs` lee `src/data/posts-instagram.ts` y
+`hv/metricas.py` lee `src/data/posts-instagram.ts` y
 `src/data/articulos-digitales.ts` y calcula los mismos totales que
 `src/data/perfiles.ts` (incluida la mediana que la web etiqueta como
 «promedio por pieza»). Además del alcance y los conteos por formato, de ahí
@@ -275,12 +289,12 @@ salen la media por Reel, el pico del mejor carrusel, cuántas piezas pasan de
 que aparece en «Trabajo destacado».
 
 Al añadir un post o un artículo, el PDF y el sitio cambian juntos: **no hay
-ninguna cifra escrita a mano**, ni en `hv/datos.mjs` ni en
+ninguna cifra escrita a mano**, ni en `hv/datos.py` ni en
 `src/data/perfiles.ts`. Tras tocar los datos hay que correr las dos cosas:
 
 ```bash
-node hv/generar.mjs   # los tres PDF
-npm run build         # el sitio en docs/
+./hv/generar.sh   # los tres PDF
+npm run build     # el sitio en docs/
 ```
 
 ### Cada HV apunta a su propia versión del portafolio
@@ -300,7 +314,7 @@ no ve las secciones de periodismo.
 ### Referencias
 
 Las dos referencias son comunes a las tres HV y están en `COMUN.referencias`
-(`hv/datos.mjs`). En la web viven en el array `referencias` de
+(`hv/datos.py`). En la web viven en el array `referencias` de
 `src/pages/SobreMiPage.tsx` — **son dos listas separadas: al cambiar una hay que
 cambiar la otra.**
 
