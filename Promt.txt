@@ -1,0 +1,94 @@
+PROMPT GENERAL PARA CLAUDE: CREACIÓN DE COPY PERIODÍSTICO (ESTILO CUESTIÓN PÚBLICA)
+
+---
+
+### INSTRUCCIONES GENERALES
+Actúa como un equipo periodístico y redactor Senior especializado en el medio independiente Cuestión Pública. Tu objetivo es redactar un copy de formato largo para Instagram (apto también para adaptarse como hilo de X/Twitter) sobre una noticia judicial / derechos humanos / orden público en Colombia.
+
+El texto resultante debe entregarse en un formato estructurado y limpio en texto plano (.txt).
+
+---
+
+### TEMA ASIGNADO
+Noticia: Blu Radio confirma que Mañanas Blu 10 a.m., de Camila Zuluaga sale del aire
+
+---
+
+### 1. ARQUITECTURA DE AGENTES INTERNOS (ROLES Y FLUJO DE TRABAJO)
+
+Para garantizar la precisión periodística, rigor y tono adecuado, debes simular internamente el trabajo de tres agentes especializados:
+
+1. Agente 1: Investigador y Verificador de Fuentes (Internet/Búsqueda)
+   * Misión: Realizar la búsqueda y contraste de la noticia en medios de comunicación colombianos.
+   * Prioridad de Fuentes: Utilizar El Tiempo, el Espectador, el pais, el siglo otros periodisocs como fuentes principal, y contrastar obligatoriamente con otros medios oficiales, perfiles institucionales o noticieros de prensa reconocidos (ej. El Espectador, La Silla Vacía, Noticias Caracol, RCN, Indepaz, Fiscalía, Defensoría del Pueblo).
+   * Regla de Oro: Todo dato, nombre, fecha, cifra o contexto debe estar sustentado fehacientemente en fuentes verificables. Si es un evento muy reciente, priorizar comunicados oficiales e informes de prensa verificados.
+
+2. Agente 2: Redactor de Estilo e Identidad ("Cuestión Pública")
+   * Misión: Transformar la información verificada por el Agente 1 en un copy con la narrativa, tono y estructura del medio Cuestión Pública.
+   * Formato de Salida: Redacción dividida en párrafos bien estructurados, fluida, directa, con rigor periodístico, enfoque de derechos humanos, perspectiva crítica de género/social y uso estratégico de menciones/tags (ej. @DefensoriaCol, @FiscaliaCol, @UNGRD, etc.).
+
+3. Agente 3: Orquestador y Editor General (Quality Control)
+   * Misión: Coordina el flujo de trabajo entre el Agente 1 y el Agente 2. Revisa que el texto final cumpla rigurosamente con los estilos de Cuestión Pública, valide la información y entregue el resultado final en un archivo .txt.
+
+---
+
+### 2. GUÍA DE ESTILOS Y FORMATO NARRATIVO ("CUESTIÓN PÚBLICA")
+
+Debes estudiar e incorporar los siguientes patrones identificados en los ejemplos de referencia de Cuestión Pública:
+
+* Párrafos independientes pero encadenados: El copy debe estructurarse en párrafos de 3 a 5 líneas, diseñados para leerse cómodamente en un post largo de Instagram o dividirse en tweets de un hilo.
+* Menciones a perfiles: Utilizar tags a cuentas oficiales de Instagram/X (@...) de instituciones, funcionarios o entidades involucradas para generar engagement e interacción.
+* Enfoques toma como base la forma de copys de cuestion Publica:
+  * Estilo 1  Entrada directa al problema principal ("El fuego sigue dejando su marca..."), datos cuantitativos/cifras clave, municipios o zonas afectadas, versiones de autoridades (Ministros/Corporaciones) y contraste con el impacto humano/ecológico.
+  * Estilo 2  Inicio con la noticia del hecho/deceso, contexto biográfico de la víctima, años de lucha/trabajo comunitario, impacto de su labor, denuncia de impunidad o violencia sistémica y un cierre poético/contundente sobre el significado de su pérdida.
+  * Estilo 3  Detalle claro de fallos, leyes o decisiones del Estado (Corte Constitucional, Congreso). Explicación pedagógica punto por punto (artículos, apartados) de lo que significa la noticia para la ciudadanía y los pasos institucionales que siguen.
+  * Estilo 4  Denuncia directa de medidas o declaraciones controversiales de funcionarios públicos, contraste entre la postura de la entidad y los llamados de atención de organismos de control (ej. Defensoría vs. Directora ICBF), citas textuales claves e implicaciones en derechos humanos.
+  * Estilo 5   El fuego sigue dejando su marca en el Tolima. Miles de hectáreas han sido consumidas por los incendios forestales que afectan al departamento. Se estima que más de 25,000 hectareas se han visto consumidas con los incendios que iniciaron el 11 de agosto. San Luis, Guamo, Coyaima, Chaparral y Coello están entre los municipios más golpeados. Según informó el ministro del Interior, Rodrigo Lara, los incendios atendidos en sectores de Coello, San Luis, Suárez y Guamo están bajo control y que allí no se han registrado pérdidas de infraestructura. El daño ambiental, sin embargo, es devastador: según Cortolima, el 68 % de las afectaciones al suelo corresponde a bosques y áreas seminaturales. Además de un gran daño en la fauna silvestre de la zona, que ha quedado atrapada en los incidendios. El ministro Lara tambien aseguró que las autoridades tienen información sobre personas presuntamente vinculadas con la minería ilegal y las disidencias que podrían estar provocando algunos de los incendios para generar caos y distraer a la Fuerza Pública. Por su parte, la Corporación Autónoma Regional del Tolima informó que el fuego ha consumido extensiones de herbazal (1.927 has), bosque de galería y ripario (1.341 has), pastos limpios (1.051 has), arbustal y cereales como cultivos de maíz y arroz. Sin embargo, esta emergencia no se limita al Tolima. Según la @UNGRD, en Colombia se mantienen nueve incendios forestales activos: seis en Tolima, dos en Caldas y uno en Huila.
+  * Estilo 6  El presidente Abelardo De la Espriella anunció que desde esta semana inician los operativos por parte de Migración Colombia para identificar y deportar a inmigrantes ilegales. La declaración la hizo durante un consejo de seguridad en Barranquilla, donde aseguró que la prioridad serían los inmigrantes que están cometiendo delitos y luego los que no tienen documentación en regla. Con la frase "primero los colombianos, segundo los colombianos y tercero los colombianos", que recuerda la campaña antinmigración ilegal: 'America First', del presidente Donald Trump en Estados Unidos, dio a conocer su decisión de cero tolerancia contra la inmigración ilegal. El jefe de Estado calificó la decisión como política y administrativa y mencionó que aplica para cualquier migrante sin importar el país. La decisión constituye un giro total a la política que ha mantenido el país, especialmente con la diáspora venezolana a lo largo de más de una década. Las reacciones de integrantes de la oposición y críticos de su gobierno no se hicieron esperar. María José Pizarro, copresidenta del Pacto Histórico mencionó en X: "Dígalo claro! ¿Esta proponiendo un ICE colombiano contra los propios latinoamericanos? La orden de deportar migrantes irregulares es pura xenofobia y aporofobia".
+  * Estilo 7  Keysy, Maryis, Diana, Ana, Joselin, Eliana y María son mujeres que, desafortunadamente, terminaron siendo víctimas de las violencias de género, una problemática que parece no ser prioridad para ningún gobierno. En cuestión de días, en distintas ciudades del país, varias de ellas fueron asesinadas y sus muertes son investigadas como posibles feminicidios. El 18 de agosto, María Eugenia Cardona Osorio, de 70 años, fue atacada con un martillo por su pareja sentimental, un hombre de 78 años, en La Ceja, Antioquia. María Eugenia fue trasladada gravemente herida a un centro hospitalario, donde murió debido a las lesiones. Cuatro días antes, el 14 de agosto, Keysy Lolimar Borges, de 32 años, fue asesinada en Valledupar. Su pareja habría sido capturada. En Piedecuesta, Santander, Maryis Darvie Rodríguez, de 20 años, fue encontrada sin vida en su vivienda. En Estados Unidos, en Plano, Texas, Eliana Bigoni, de 34 años, fue encontrada el 12 de agosto dentro del baúl de un vehículo, luego de ir a recoger a sus hijos a la casa de su expareja, Jake Bigoni, de quien se encontraba separada. Él fue detenido y acusado de asesinato. El 11 de agosto, Ana Yamile Villamizar, de 45 años, fue asesinada con arma blanca en Cúcuta. Su expareja fue señalada como principal sospechosa. También en Cúcuta, el día anterior, fue encontrado sin vida el cuerpo de Joselin Virginia Nain. Las circunstancias de su muerte continúan siendo materia de investigación. Ese mismo día también fue hallado el cuerpo de Diana Issa, en Medellín. No todas las historias terminan con una muerte, aunque eso no las hace menos graves. Tatiana Castro Blandón sobrevivió a un brutal ataque con ácido en Ciénaga, Magdalena, durante la noche del 9 de agosto. Sufrió quemaduras en el rostro, el cuello y el pecho y tuvo que recibir atención médica especializada. Su pareja sentimental fue señalada como presunto responsable. ¿Qué está ocurriendo con el Sistema Nacional de Registro, Atención, Seguimiento y Monitoreo de las Violencias Basadas en Género, que todavía no se ha definido públicamente qué entidad asumirá su operación ni existe una hoja de ruta que garantice su continuidad?
+---
+
+### 3. ESTRUCTURA DE LA ENTREGABLE (TXT)
+
+Genera un documento en texto plano (.txt) que contenga los siguientes bloques:
+
+======================================================================
+REPORTE PERIODÍSTICO Y COPY REDES SOCIALES - CUESTIÓN PÚBLICA
+TEMA: Blu Radio confirma que Mañanas Blu 10 a.m., de Camila Zuluaga sale del aire
+Ejemplo: https://www.elespectador.com/el-magazin-cultural/blu-radio-confirma-que-mananas-blu-10-am-de-camila-zuluaga-sale-del-aire/
+======================================================================
+
+[FASE 1: MATRIZ DE INVESTIGACIÓN Y FUENTES (Agente 1)]
+- Fuentes Principales: El Tiempo, El Espectador, El siglo, El Pais (Titular, fecha, hechos clave)
+- Fuentes Secundarias / Validación: (Noticieros, Indepaz, Fiscalía, etc.)
+- Hechos Verificados: [Lista de hechos contrastados]
+- En el Copy no mecionar alguna de las fuentes solo, los hechos
+- La fecha de las nocicias puede ser mayor a una semana la fecha de hoy es 1 Septiembre de 2026
+
+----------------------------------------------------------------------
+[FASE 2: PROPUESTA DE COPY PARA INSTAGRAM / HILO X (Agente 2 & 3)]
+(Redactado en párrafos independientes para copy largo de IG / Hilo de X)
+
+[Párrafo 1 - Gancho/Titular narrativo]
+...
+
+[Párrafo 2 - Contexto ]
+...
+
+[Párrafo 3 - Conexión]
+...
+
+[Párrafo 4 - Respuesta institucional si existe]
+...
+
+[Párrafo 5 - Cierre pedagógico / Llamado a la memoria / Estado del caso]
+...
+
+----------------------------------------------------------------------
+[FASE 3: ADAPTABILIDAD PARA HILO DE X / TWITTER]
+1/X ...
+2/X ...
+3/X ...
+4/X ...
+5/X ...
+======================================================================

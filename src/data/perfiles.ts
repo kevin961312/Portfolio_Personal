@@ -1,6 +1,7 @@
 import type { PerfilContenido, PerfilId } from '../types';
 import { postsInstagram } from './posts-instagram';
 import { articulosDigitales } from './articulos-digitales';
+import { formatearMetrica } from '../lib/formato';
 
 /* ──────────────────────────────────────────────────────────────
    Métricas derivadas del contenido real del portafolio.
@@ -23,9 +24,31 @@ const PROMEDIO_INTERACCIONES = ordenados.length === 0
     ? ordenados[mitad]
     : Math.round((ordenados[mitad - 1] + ordenados[mitad]) / 2);
 
-const PICO_INTERACCIONES = Math.max(...postsInstagram.map((p) => p.likes ?? 0));
-const TOTAL_REELS = postsInstagram.filter((p) => p.tipo === 'video').length;
-const TOTAL_CARRUSELES = postsInstagram.filter((p) => p.tipo === 'carrusel').length;
+const PICO_INTERACCIONES = Math.max(...listaLikes);
+
+const likesReels = postsInstagram.filter((p) => p.tipo === 'video').map((p) => p.likes ?? 0);
+const likesCarruseles = postsInstagram.filter((p) => p.tipo === 'carrusel').map((p) => p.likes ?? 0);
+const media = (lista: number[]) =>
+  lista.length === 0 ? 0 : Math.round(lista.reduce((suma, n) => suma + n, 0) / lista.length);
+
+const TOTAL_REELS = likesReels.length;
+const TOTAL_CARRUSELES = likesCarruseles.length;
+const MEDIA_REELS = media(likesReels);
+const PICO_CARRUSEL = Math.max(...likesCarruseles);
+const PIEZAS_SOBRE_10K = listaLikes.filter((n) => n >= 10000).length;
+const PIEZAS_SOBRE_5K = listaLikes.filter((n) => n >= 5000).length;
+
+/* Meses cumplidos entre la primera y la última publicación. */
+const fechasPosts = postsInstagram.map((p) => p.fecha).filter(Boolean).sort();
+const MESES_PUBLICANDO =
+  fechasPosts.length < 2
+    ? 0
+    : Math.round(
+        (new Date(fechasPosts[fechasPosts.length - 1]).getTime() -
+          new Date(fechasPosts[0]).getTime()) /
+          (1000 * 60 * 60 * 24 * 30.44),
+      );
+
 const TOTAL_DIGITALES = articulosDigitales.length;
 
 /* `src/data/articulos-impresos.ts` todavía está vacío, así que estos dos
@@ -71,13 +94,6 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
         compacto: true,
       },
       {
-        id: 'cm-piezas',
-        valor: TOTAL_PIEZAS_IG,
-        categoria: 'publicaciones',
-        etiqueta: 'Piezas publicadas',
-        detalle: `${TOTAL_REELS} Reels · ${TOTAL_CARRUSELES} carruseles`,
-      },
-      {
         id: 'cm-interacciones',
         valor: PROMEDIO_INTERACCIONES,
         categoria: 'interacciones',
@@ -104,9 +120,9 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       { nombre: 'Community management', nivel: 82 },
     ],
     destacados: [
-      `${TOTAL_REELS} Reels producidos y editados en CapCut, con un máximo de 50.700 interacciones en una sola pieza.`,
-      `${TOTAL_CARRUSELES} carruseles diseñados en Canva: el formato de mayor rendimiento de la parrilla, con un pico de 69.000 interacciones.`,
-      '8 piezas superaron las 10.000 interacciones y 14 superaron las 5.000, sobre 10 meses de publicación sostenida.',
+      `${TOTAL_REELS} Reels producidos y editados en CapCut, con una media de ${formatearMetrica(MEDIA_REELS)} interacciones por pieza.`,
+      `${TOTAL_CARRUSELES} carruseles diseñados en Canva: el formato de mayor rendimiento de la parrilla, con un pico de ${formatearMetrica(PICO_CARRUSEL)} interacciones.`,
+      `${PIEZAS_SOBRE_10K} piezas superaron las 10.000 interacciones y ${PIEZAS_SOBRE_5K} superaron las 5.000, sobre ${MESES_PUBLICANDO} meses de publicación sostenida.`,
       'Adaptación de investigación periodística densa (leyes, casos judiciales, datos de género) a formatos nativos de Instagram sin perder rigor informativo.',
     ],
     // Solo la evidencia de redes: las secciones de periodismo quedan ocultas.
@@ -250,7 +266,7 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       'Prensa impresa: piezas publicadas en la edición física de EL TIEMPO, el mismo material investigativo llevado del papel a la web.',
       `Digital: ${TOTAL_DIGITALES} artículos en eltiempo.com en Justicia, Política, Bogotá y Cultura, con enlaces verificables en el portafolio.`,
       'Televisión: producción, pietaje y pasos en cámara para programa televisivo, y un reportaje audiovisual publicado en Canal CityTV.',
-      `Redes sociales: ${TOTAL_REELS} Reels y ${TOTAL_CARRUSELES} carruseles sostenidos durante 10 meses de publicación continua.`,
+      `Redes sociales: ${TOTAL_REELS} Reels y ${TOTAL_CARRUSELES} carruseles sostenidos durante ${MESES_PUBLICANDO} meses de publicación continua.`,
     ],
     // Perfil transmedia: es el único que muestra el portafolio completo.
     secciones: [RUTA_SOBRE_MI, ...RUTAS_PERIODISMO, ...RUTAS_REDES],

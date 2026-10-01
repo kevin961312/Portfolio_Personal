@@ -34,8 +34,9 @@
   margin: 0;
 }
 
-/* Grid fluido: 4 columnas en escritorio, 2 en tablet, 1 en móvil,
-   sin necesidad de media queries para el caso general. */
+/* Grid fluido: reparte en una fila las métricas que traiga el perfil
+   —hoy 3 o 4— y baja a 2 columnas en tablet y 1 en móvil, sin necesidad
+   de media queries para el caso general. */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));

@@ -206,14 +206,71 @@ variable de entorno `CHROME_BIN`).
 ```
 hv/
 ├── datos.mjs       ← contenido de las tres HV (editar aquí)
+├── metricas.mjs    lee las cifras desde `src/data/*.ts` (no tocar a mano)
 ├── plantilla.mjs   HTML + CSS de impresión (A4, dos columnas)
-└── generar.mjs     imprime cada HTML a PDF con Chrome headless
+├── generar.mjs     imprime cada HTML a PDF con Chrome headless
+└── assets/
+    └── foto-laura-circulo.jpg   foto con su anillo punteado
 ```
 
 El HTML original con el que se hicieron los PDF ya no existía, así que
-`hv/` lo reconstruye a partir del contenido extraído de los propios PDF.
-A partir de ahora los cambios de la HV se hacen en `hv/datos.mjs` y se
-regeneran, en vez de editarse a mano.
+`hv/` lo reconstruye. A partir de ahora los cambios de la HV se hacen en
+`hv/datos.mjs` y se regeneran, en vez de editarse a mano.
+
+### El diseño reproduce la HV original de Canva
+
+`hv/plantilla.mjs` replica la maqueta de la HV que Laura hizo en Canva
+(`CV (2).pdf`): barra lateral lila de 232 pt con la foto circular de borde
+punteado, títulos morados subrayados y barras de habilidades; a la derecha,
+el nombre alineado a la derecha y cada sección abierta por una «píldora».
+
+La paleta y las medidas se tomaron del PDF original:
+
+| | |
+|---|---|
+| lila de fondo | `#DDCDEF` |
+| fondo de la columna derecha | `#F6F6F6` |
+| morado de textos y títulos | `#4C1E80` |
+| morado de las reglas | `#853DD6` |
+| anillo punteado de la foto | `#8C52FF` |
+| riel de las barras | `#A9AAAE` |
+
+La foto de `hv/assets/` se recortó del propio `CV (2).pdf` a 600 ppp —con su
+anillo incluido— y se recortó en círculo, así que el borde punteado del PDF
+original se conserva tal cual.
+
+Cada HV ocupa dos páginas y el corte lo decide el propio texto: no hay
+saltos forzados, para que la lectura sea continua. Lo único que se mantiene
+unido es la cabecera de cada trabajo —periodo, empresa y cargo— con su
+primera viñeta (`.exp-cabecera`); el resto de la lista puede seguir en la
+página siguiente en vez de dejar un hueco al pie.
+
+Con `@page { margin: 0 }` —necesario para que el fondo llegue a sangre—
+Chrome no deja pedir margen superior en las páginas siguientes, así que la
+columna derecha va dentro de una tabla con `thead` y `tfoot` vacíos de 24 pt:
+al imprimir se repiten en cada página y hacen de margen.
+
+La banda lila **no** es un degradado del fondo sino un rectángulo de color
+liso en posición fija (`.banda`), sangrado 6 pt por arriba y por abajo. Como
+degradado, Chrome la convertía en un patrón de imagen distinto por página y
+en la segunda el corte de la derecha salía medio punto difuminado; como
+rectángulo fijo se repinta idéntica en las dos hojas.
+
+### El recuadro de cifras es opcional
+
+Una hoja sin `metricas` en `hv/datos.mjs` no imprime el bloque de métricas ni
+la nota «Cifras verificables en el portafolio». Hoy lo llevan la de
+Comunicadora Social y la de Periodista; la de **Community Manager va sin él**
+—sus cifras quedan dentro de «Trabajo destacado»—. Para devolvérselo basta
+con añadirle de nuevo `metricasTitulo` y `metricas`.
+
+### Las cifras salen de los mismos datos que la web
+
+`hv/metricas.mjs` lee `src/data/posts-instagram.ts` y
+`src/data/articulos-digitales.ts` y calcula los mismos totales que
+`src/data/perfiles.ts` (incluida la mediana que la web etiqueta como
+«promedio por pieza»). Al añadir un post o un artículo, el PDF y el sitio
+cambian juntos: **no hay ninguna cifra escrita a mano en `hv/datos.mjs`.**
 
 ### Cada HV apunta a su propia versión del portafolio
 
@@ -239,7 +296,7 @@ cambiar la otra.**
 | Nombre | Cargo | Contacto |
 |---|---|---|
 | Carlos Solano | Director de la Escuela de Periodismo Multimedia EL TIEMPO y Editor de Podcasts | 320 865 1735 · carsol@eltiempo.com |
-| Abrahán Gutiérrez Navarro | Periodista | 350 480 0639 |
+| Abrahán Gutiérrez Navarro | Periodista y Publicista | 316 981 2674 |
 
 ---
 
