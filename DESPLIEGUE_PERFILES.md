@@ -269,8 +269,19 @@ con añadirle de nuevo `metricasTitulo` y `metricas`.
 `hv/metricas.mjs` lee `src/data/posts-instagram.ts` y
 `src/data/articulos-digitales.ts` y calcula los mismos totales que
 `src/data/perfiles.ts` (incluida la mediana que la web etiqueta como
-«promedio por pieza»). Al añadir un post o un artículo, el PDF y el sitio
-cambian juntos: **no hay ninguna cifra escrita a mano en `hv/datos.mjs`.**
+«promedio por pieza»). Además del alcance y los conteos por formato, de ahí
+salen la media por Reel, el pico del mejor carrusel, cuántas piezas pasan de
+10.000 y de 5.000 interacciones y los meses que lleva publicando: todo lo
+que aparece en «Trabajo destacado».
+
+Al añadir un post o un artículo, el PDF y el sitio cambian juntos: **no hay
+ninguna cifra escrita a mano**, ni en `hv/datos.mjs` ni en
+`src/data/perfiles.ts`. Tras tocar los datos hay que correr las dos cosas:
+
+```bash
+node hv/generar.mjs   # los tres PDF
+npm run build         # el sitio en docs/
+```
 
 ### Cada HV apunta a su propia versión del portafolio
 
