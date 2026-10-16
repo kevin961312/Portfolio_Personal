@@ -343,5 +343,13 @@ export const postsInstagram: PostInstagram[] = [
     tipo:"video",
     fecha:"2026-09-09",
     likes: 3594,
-  }
+  },
+  {
+    id:"42",
+    titulo:"",
+    url:"https://www.instagram.com/p/Def6vsMRBIa/",
+    tipo:"video",
+    fecha:"2026-10-14",
+    likes: 40100,
+  },
 ];
