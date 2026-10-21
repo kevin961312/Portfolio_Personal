@@ -348,7 +348,9 @@ CSS = """
   .h-regla { border-top: 1.4pt solid var(--morado); margin: 7pt 0 10pt; }
 
   .perfil p { text-align: justify; margin-bottom: 7pt; }
-  .perfil p:last-child { margin-bottom: 0; }
+  /* El cierre es corto: justificado, su primera línea se estiraba con
+     huecos enormes entre palabras. */
+  .perfil p:last-child { margin-bottom: 0; text-align: left; }
 
   /* ── Píldoras de sección ──────────────────────────────────── */
   .m-seccion { margin-top: 16pt; }
@@ -463,9 +465,9 @@ def construir_html(hoja):
         + _fila_contacto(
             ICONOS["portafolio"],
             '<a href="%s">'
-            '<span class="portafolio-nombre">Portafolio</span>'
-            '<span class="portafolio-url">kevin961312.github.io<br>'
-            "/Portfolio_Personal/<br>?perfil=%s</span></a>" % (url_perfil(perfil), perfil),
+            '<span class="portafolio-nombre">Ver portafolio en línea</span>'
+            '<span class="portafolio-url">kevin961312.github.io/Portfolio_Personal</span></a>'
+            % url_perfil(perfil),
         )
     )
 

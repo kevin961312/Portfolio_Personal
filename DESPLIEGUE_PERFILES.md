@@ -271,12 +271,12 @@ Cada hoja de `hv/datos.py` enciende o apaga dos bloques según los traiga o no:
 
 | clave en la hoja | bloque | quién lo lleva hoy |
 |---|---|---|
-| `metricas` + `metricas_titulo` | el recuadro de cifras y su nota | Comunicadora Social y Periodista |
+| `metricas` + `metricas_titulo` | el recuadro de cifras y su nota | **ninguna** |
 | `destacados` | «Trabajo destacado» | **ninguna** |
 
-«Trabajo destacado» se quitó de los tres PDF; **en la web sigue estando**, en
-los tres perfiles (`destacados` de `src/data/perfiles.ts`). Para devolverlo al
-papel basta con añadir la lista `destacados` a la hoja que corresponda.
+El recuadro de cifras y «Trabajo destacado» se quitaron de los tres PDF; **en la web siguen estando**, en
+los tres perfiles (`metricas` y `destacados` de `src/data/perfiles.ts`). Para devolverlos al
+papel basta con añadir `metricas` o `destacados` a la hoja que corresponda.
 
 ### Las cifras salen de los mismos datos que la web
 
