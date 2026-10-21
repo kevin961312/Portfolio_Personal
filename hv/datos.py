@@ -67,7 +67,7 @@ COMUN = {
     # cambia es el cargo, que cada hoja resuelve en su diccionario `cargos`.
     "experiencia": [
         {
-            "periodo": "2026 – Actualmente",
+            "periodo": "2026 – 2026",
             "empresa": "Cuestión Pública",
             "items": [
                 "Análisis y selección de temas para creación de parrillas de contenido.",
