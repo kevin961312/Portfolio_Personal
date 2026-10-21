@@ -83,9 +83,9 @@ const referencias = [
     correo: 'carsol@eltiempo.com',
   },
   {
-    nombre: 'Abrahán Gutiérrez Navarro',
-    cargo: 'Periodista y Publicista',
-    telefono: '316 981 2674',
+    nombre: 'Rafael Quintero',
+    cargo: 'Periodista y Jefe editorial de Cuestión Pública',
+    telefono: '320 839 5534',
   },
 ];
 
