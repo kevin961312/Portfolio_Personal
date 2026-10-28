@@ -4,5 +4,6 @@
   padding: 1.5rem;
   text-align: center;
   font-size: 0.82rem;
-  color: var(--color-purple-soft);
+  color: var(--color-text-muted);
+  background: rgba(18, 8, 31, 0.6);
 }

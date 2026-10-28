@@ -1,25 +1,32 @@
-/* ── Paleta de colores Laura Hernández ── */
+/* ── Paleta Laura Hernández: morados y lilas sobre fondo oscuro ── */
 :root {
-  /* Purple scale */
-  --color-purple-deep: #2D1B69;     /* Índigo profundo */
-  --color-purple-mid: #6B21A8;      /* Púrpura medio */
-  --color-purple-light: #A855F7;    /* Púrpura vivo */
-  --color-purple-soft: #9333EA;     /* Púrpura suave */
+  color-scheme: dark;
 
-  /* Lilac scale */
-  --color-lilac-mid: #C084FC;       /* Lila medio */
-  --color-lilac-light: #EDE9FE;     /* Lila muy claro */
-  --color-lilac-border: #DDD6FE;    /* Bordes lila */
+  /* Escala morada (acentos, degradados, botones) */
+  --color-purple-deep: #2d1b69;
+  --color-purple-mid: #6b21a8;
+  --color-purple-soft: #9333ea;
+  --color-purple-light: #a855f7;
 
-  /* Backgrounds */
-  --color-bg: #F5F0FF;              /* Fondo con tinte morado */
-  --color-surface: #FFFFFF;
+  /* Escala lila (brillos, texto de acento, bordes) */
+  --color-lilac-mid: #c084fc;
+  --color-lilac-light: #ede9fe;
+  --color-lilac-border: rgba(216, 180, 254, 0.18);
 
-  /* Text */
-  --color-text: #1E1033;
-  --color-text-muted: #6B7280;
+  /* Fondos */
+  --color-bg: #12081f;
+  --color-bg-elevado: #1b0d2f;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-surface-hover: rgba(255, 255, 255, 0.09);
 
-  /* Fonts */
+  /* Texto */
+  --color-text: #f5f0ff;
+  --color-text-muted: rgba(237, 233, 254, 0.7);
+  --color-acento-texto: #d8b4fe;
+
+  --sombra-tarjeta: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
+  --radio: 18px;
+
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -31,6 +38,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Colores registrados para que los fondos cambien de tono con transición. */
+@property --c1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #6b21a8;
+}
+
+@property --c2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #c084fc;
+}
+
+/* Paleta por cuenta de Instagram, siempre en morados y lilas: --c1 es el
+   tono oscuro (lleva texto blanco encima) y --c2 el lila de los brillos. */
+[data-cuenta='eltiempo'] {
+  --c1: #7e22ce;
+  --c2: #c084fc;
+}
+
+[data-cuenta='cuestionp'] {
+  --c1: #5b21b6;
+  --c2: #a78bfa;
+}
+
+[data-cuenta='lamartineris'] {
+  --c1: #3b0764;
+  --c2: #d8b4fe;
+}
+
 /* ── Reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -39,6 +76,20 @@
 body {
   margin: 0;
   min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* Brillos de fondo fijos: dan profundidad a todas las páginas. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vmax 60vmax at 0% 0%, rgba(126, 34, 206, 0.28), transparent 60%),
+    radial-gradient(50vmax 50vmax at 100% 100%, rgba(192, 132, 252, 0.16), transparent 60%),
+    var(--color-bg);
 }
 
 #root {
@@ -49,7 +100,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 p {
@@ -57,12 +108,12 @@ p {
 }
 
 a {
-  color: var(--color-purple-mid);
+  color: var(--color-acento-texto);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-purple-deep);
+  color: #fff;
 }
 
 img {
@@ -74,9 +125,18 @@ button {
   font-family: inherit;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-lilac-mid);
+  outline-offset: 3px;
+}
+
 code {
   font-family: ui-monospace, Consolas, monospace;
   font-size: 0.85em;
+}
+
+::selection {
+  background: rgba(192, 132, 252, 0.4);
 }
 
 /* Scrollbar */
@@ -85,17 +145,42 @@ code {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-lilac-light);
+  background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-lilac-mid);
+  background: rgba(192, 132, 252, 0.35);
   border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-purple-light);
+  background: var(--color-lilac-mid);
 }
 
 /* Con un visor (dialog) abierto, la página de fondo no se desplaza. */
 html:has(dialog[open]) {
   overflow: hidden;
+}
+
+/* ── Aparecer al hacer scroll ── */
+/* Clase global: cualquier bloque con `revelar` sube y aparece al entrar
+   en pantalla. Sin JavaScript; donde el navegador no lo soporta, se ve
+   directo y sin animación. */
+@supports (animation-timeline: view()) {
+  .revelar {
+    animation: revelar linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+}
+
+@keyframes revelar {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revelar {
+    animation: none;
+  }
 }

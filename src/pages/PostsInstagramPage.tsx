@@ -1,72 +1,134 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { postsInstagram } from '../data/posts-instagram';
-import InstagramEmbed from '../components/InstagramEmbed';
-import { IconInstagram, IconPlay, IconCarousel } from '../components/icons';
+import EncabezadoPagina from '../components/EncabezadoPagina';
+import TarjetaPost from '../components/post/TarjetaPost';
+import { IconExternalLink, IconHeart } from '../components/icons';
+import { formatearMetrica } from '../lib/formato';
+import { porFecha, porLikes, tituloPost } from '../lib/posts';
+import { useReinicios } from '../hooks/useReinicios';
+import { usePerfil } from '../hooks/usePerfil';
 import styles from './PostsInstagramPage.module.css';
 
-type Tab = 'reels' | 'carrusel';
+type Tipo = 'todos' | 'video' | 'carrusel';
+type Orden = 'likes' | 'recientes';
+
+const TIPOS: { id: Tipo; etiqueta: string }[] = [
+  { id: 'todos', etiqueta: 'Todo' },
+  { id: 'video', etiqueta: 'Reels' },
+  { id: 'carrusel', etiqueta: 'Carruseles' },
+];
+
+const CUENTAS = [...new Set(postsInstagram.map((p) => p.cuenta).filter((c): c is string => Boolean(c)))];
 
 export default function PostsInstagramPage() {
-  const [activeTab, setActiveTab] = useState<Tab>('carrusel');
+  const { perfil } = usePerfil();
+  const [tipo, setTipo] = useState<Tipo>('todos');
+  const [cuenta, setCuenta] = useState<string>('todas');
+  const [orden, setOrden] = useState<Orden>('likes');
+  const { marcar, soltar, clave } = useReinicios();
 
-  /* Orden cronológico inverso: lo más reciente primero, como la parrilla
-     real de Instagram. `fecha` es ISO (AAAA-MM-DD), así que compararla como
-     texto ya ordena bien. */
-  const porFecha = (a: { fecha: string }, b: { fecha: string }) =>
-    b.fecha.localeCompare(a.fecha);
+  useEffect(() => {
+    document.title = `Posts de Instagram · ${perfil.tituloDocumento}`;
+  }, [perfil.tituloDocumento]);
 
-  const reels = postsInstagram.filter((p) => p.tipo === 'video').sort(porFecha);
-  const carruseles = postsInstagram.filter((p) => p.tipo === 'carrusel').sort(porFecha);
-  const posts = activeTab === 'reels' ? reels : carruseles;
+  const lista = useMemo(
+    () =>
+      postsInstagram
+        .filter((p) => tipo === 'todos' || p.tipo === tipo)
+        .filter((p) => cuenta === 'todas' || p.cuenta === cuenta)
+        .sort(orden === 'likes' ? porLikes : porFecha),
+    [tipo, cuenta, orden],
+  );
 
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div className={styles.headerIcon}>
-          <IconInstagram size={28} color="var(--color-purple-mid)" />
-        </div>
-        <div>
-          <h1 className={styles.title}>Posts de Instagram</h1>
-          <p className={styles.subtitle}>
-            Carruseles y reels publicados en Instagram
-          </p>
-        </div>
-      </header>
+      <EncabezadoPagina
+        eyebrow="Redes sociales"
+        titulo="Posts de"
+        resaltado="Instagram"
+        lead="Reels y carruseles producidos para EL TIEMPO y Cuestión Pública. Toca cualquiera para reproducirlo aquí mismo."
+      />
 
-      <div className={styles.tabs}>
-        <button
-          className={`${styles.tab} ${activeTab === 'carrusel' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('carrusel')}
-        >
-          <IconCarousel size={15} />
-          Carruseles
-          <span className={styles.tabCount}>{carruseles.length}</span>
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'reels' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('reels')}
-        >
-          <IconPlay size={15} />
-          Reels
-          <span className={styles.tabCount}>{reels.length}</span>
-        </button>
-      </div>
-
-      {posts.length === 0 ? (
-        <div className={styles.empty}>
-          <IconInstagram size={48} color="var(--color-lilac-mid)" />
-          <h2>Sin publicaciones</h2>
-          <p>
-            No hay {activeTab === 'reels' ? 'reels' : 'carruseles'} aún. Agrega entradas en{' '}
-            <code>src/data/posts-instagram.ts</code>
-          </p>
-        </div>
-      ) : (
-        <div className={styles.grid}>
-          {posts.map((post) => (
-            <InstagramEmbed key={post.id} post={post} />
+      <div className={styles.barra}>
+        <div className={styles.grupo} role="group" aria-label="Formato">
+          {TIPOS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              className={styles.chip}
+              aria-pressed={tipo === t.id}
+              onClick={() => setTipo(t.id)}
+            >
+              {t.etiqueta}
+            </button>
           ))}
         </div>
+        <div className={styles.grupo} role="group" aria-label="Cuenta">
+          <button type="button" className={styles.chip} aria-pressed={cuenta === 'todas'} onClick={() => setCuenta('todas')}>
+            Todas
+          </button>
+          {CUENTAS.map((c) => (
+            <button
+              key={c}
+              type="button"
+              className={styles.chip}
+              aria-pressed={cuenta === c}
+              onClick={() => setCuenta(c)}
+            >
+              @{c}
+            </button>
+          ))}
+        </div>
+        <div className={styles.orden} role="group" aria-label="Ordenar">
+          <button type="button" aria-pressed={orden === 'likes'} onClick={() => setOrden('likes')}>
+            Más vistos
+          </button>
+          <button type="button" aria-pressed={orden === 'recientes'} onClick={() => setOrden('recientes')}>
+            Recientes
+          </button>
+        </div>
+      </div>
+
+      <p className={styles.conteo} aria-live="polite">
+        {lista.length} {lista.length === 1 ? 'publicación' : 'publicaciones'}
+      </p>
+
+      {lista.length === 0 ? (
+        <p className={styles.vacio}>No hay publicaciones con estos filtros.</p>
+      ) : (
+        <ul className={styles.muro}>
+          {lista.map((p) => (
+            <li key={p.url} className={`${styles.item} revelar`}>
+              <TarjetaPost
+                post={p}
+                claveVivo={clave(p.url)}
+                // Solo suena uno a la vez: tocar este corta los demás.
+                onTocado={() => {
+                  marcar(p.url);
+                  soltar(p.url);
+                }}
+              />
+              <div className={styles.pie}>
+                <p className={styles.titulo}>{tituloPost(p)}</p>
+                <div className={styles.meta}>
+                  <span className={styles.likes}>
+                    <IconHeart size={13} /> {formatearMetrica(p.likes ?? 0, true)}
+                  </span>
+                  <span className={styles.cuenta}>{p.tipo === 'video' ? 'Reel' : 'Carrusel'} · @{p.cuenta ?? 'instagram'}</span>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.externo}
+                    aria-label={`Abrir en Instagram: ${tituloPost(p)}`}
+                  >
+                    <IconExternalLink size={14} />
+                  </a>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

@@ -2,13 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(245, 240, 255, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(18, 8, 31, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid var(--color-lilac-border);
 }
 
 .inner {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0 1.5rem;
   height: 64px;
@@ -21,17 +21,21 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--color-purple-deep);
+  gap: 0.55rem;
+  color: #fff;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
+.brand:hover {
+  color: #fff;
+}
+
 .brand svg {
-  color: var(--color-purple-mid);
+  color: var(--color-lilac-mid);
 }
 
 .navList {
@@ -39,29 +43,30 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .navLink {
   display: block;
   padding: 0.45rem 0.85rem;
-  border-radius: 8px;
-  color: var(--color-purple-mid);
+  border-radius: 999px;
+  color: var(--color-text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.88rem;
+  font-weight: 600;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
 
 .navLink:hover {
-  background: var(--color-lilac-light);
-  color: var(--color-purple-deep);
+  background: var(--color-surface-hover);
+  color: #fff;
 }
 
 .navLink.active {
-  background: var(--color-purple-mid);
+  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
   color: #fff;
+  box-shadow: 0 8px 22px -10px #a855f7;
 }
 
 .menuBtn {
@@ -69,7 +74,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-purple-deep);
+  color: #fff;
   padding: 0.25rem;
 }
 
@@ -86,13 +91,19 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--color-bg);
+    background: rgba(18, 8, 31, 0.96);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--color-lilac-border);
-    padding: 0.75rem 1.5rem 1rem;
+    padding: 0.75rem 1rem 1rem;
     gap: 0.25rem;
   }
 
   .navList.open {
     display: flex;
+  }
+
+  .navLink {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
   }
 }

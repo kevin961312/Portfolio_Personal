@@ -1,0 +1,37 @@
+/* El iframe sube lo que mide su cabecera, así la tarjeta (4:5, igual que
+   el post) muestra solo la imagen. Con --escala < 1 se encoge desde la
+   esquina superior izquierda, y todo el recorte se escala con él. */
+.vivo {
+  --cabecera-embed: 55px;
+  --escala: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.vivo[data-listo] {
+  opacity: 1;
+}
+
+.embed {
+  position: relative;
+  width: calc((100% + 2px) / var(--escala));
+  margin: calc(-1 * var(--cabecera-embed) * var(--escala)) 0 0 calc(-1px * var(--escala));
+  transform: scale(var(--escala));
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.vivo[data-interactivo] .embed {
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivo {
+    transition: none;
+  }
+}

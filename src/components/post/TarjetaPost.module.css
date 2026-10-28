@@ -1,0 +1,41 @@
+.tarjeta {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-lilac-border), var(--sombra-tarjeta);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(216, 180, 254, 0.4), 0 28px 60px -28px var(--c1);
+}
+
+.sello {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7e22ce, #a855f7);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta,
+  .tarjeta:hover {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,191 @@
+/* La portada se mide en cqw de su propio marco, así el texto escala igual
+   en una tarjeta grande, en una lateral o en una miniatura. El marco llena
+   a su contenedor, que define el tamaño (4:5, como los posts). */
+.marco {
+  container-type: inline-size;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.portada {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 6cqw;
+  overflow: hidden;
+  border-radius: inherit;
+  color: #fff;
+  text-align: left;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.28), transparent 42%),
+    linear-gradient(155deg, var(--c1), color-mix(in srgb, var(--c1) 45%, var(--c2)));
+}
+
+.portada:not([data-imagen])::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0 2px, transparent 2px 16px);
+}
+
+.portada[data-imagen]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 26%, transparent 66%, rgba(0, 0, 0, 0.6));
+}
+
+.portadaImagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portadaNumero {
+  position: absolute;
+  right: -3cqw;
+  bottom: -14cqw;
+  font-size: 66cqw;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  color: transparent;
+  -webkit-text-stroke: 0.5cqw rgba(255, 255, 255, 0.38);
+  pointer-events: none;
+}
+
+.portada[data-imagen] .portadaNumero {
+  display: none;
+}
+
+.portadaCabecera,
+.portadaTitulo,
+.portadaPie,
+.portadaPlay {
+  position: relative;
+  z-index: 1;
+}
+
+.portadaCabecera {
+  display: flex;
+  align-items: center;
+  gap: 2.6cqw;
+  font-size: 4.4cqw;
+  font-weight: 700;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 10cqw;
+  height: 10cqw;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--c1);
+  font-size: 3.6cqw;
+  font-weight: 800;
+  box-shadow: 0 0 0 0.7cqw rgba(255, 255, 255, 0.4);
+}
+
+.portadaCuenta {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portadaTipo {
+  display: flex;
+  margin-left: auto;
+}
+
+.portadaTipo svg {
+  width: 6cqw;
+  height: 6cqw;
+}
+
+.portadaPlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 20cqw;
+  height: 20cqw;
+  border-radius: 50%;
+  background: rgba(22, 10, 41, 0.35);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 0 0.8cqw rgba(255, 255, 255, 0.35);
+}
+
+.portadaPlay svg {
+  width: 9cqw;
+  height: 9cqw;
+  margin-left: 1cqw;
+}
+
+/* Titular resaltado, como las portadas de carruseles de noticias. */
+.portadaTitulo {
+  margin-top: auto;
+  margin-bottom: 4cqw;
+  font-size: 7cqw;
+  font-weight: 800;
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+}
+
+.portadaTitulo span {
+  padding: 0.06em 0.3em;
+  border-radius: 0.12em;
+  background: #fff;
+  color: #1e1033;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.portada[data-imagen] .portadaPie {
+  margin-top: auto;
+}
+
+.portadaPie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 4.4cqw;
+  font-weight: 800;
+}
+
+.portadaLikes {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4cqw;
+}
+
+.portadaLikes svg {
+  width: 5cqw;
+  height: 5cqw;
+  fill: currentColor;
+}
+
+.puntos {
+  display: flex;
+  gap: 1.3cqw;
+}
+
+.puntos i {
+  width: 1.8cqw;
+  height: 1.8cqw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.puntos i:first-child {
+  background: #fff;
+}
