@@ -1,18 +1,11 @@
 import { useEffect } from 'react';
 import type { PostInstagram } from '../types';
 import { IconInstagram, IconPlay, IconCarousel, IconImage, IconExternalLink } from './icons';
+import { limpiarUrlInstagram, procesarEmbedsInstagram } from '../lib/instagram';
 import styles from './InstagramEmbed.module.css';
 
 interface Props {
   post: PostInstagram;
-}
-
-declare global {
-  interface Window {
-    instgrm?: {
-      Embeds: { process(): void };
-    };
-  }
 }
 
 const tipoIcono = (tipo: PostInstagram['tipo']) => {
@@ -32,20 +25,10 @@ const tipoLabel = (tipo: PostInstagram['tipo']) => {
 };
 
 export default function InstagramEmbed({ post }: Props) {
-  // Remove query params and normalize trailing slash
-  const cleanUrl = post.url.split('?')[0].replace(/\/$/, '') + '/';
+  const cleanUrl = limpiarUrlInstagram(post.url);
 
   useEffect(() => {
-    const scriptId = 'instagram-embed-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://www.instagram.com/embed.js';
-      script.async = true;
-      document.body.appendChild(script);
-    } else if (window.instgrm) {
-      window.instgrm.Embeds.process();
-    }
+    procesarEmbedsInstagram();
   }, []);
 
   return (

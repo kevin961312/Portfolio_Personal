@@ -8,6 +8,7 @@ import ArticulosImpresosPage from './pages/ArticulosImpresosPage';
 import ArticulosDigitalesPage from './pages/ArticulosDigitalesPage';
 import PostsInstagramPage from './pages/PostsInstagramPage';
 import ReportajePage from './pages/ReportajePage';
+import TopPage from './pages/TopPage';
 import { usePerfil } from './hooks/usePerfil';
 import { sincronizarDesdeUrl } from './lib/perfilStore';
 import styles from './App.module.css';
@@ -54,6 +55,7 @@ export default function App() {
           <GuardiaSecciones>
             <Routes>
               <Route path="/" element={<SobreMiPage />} />
+              <Route path="/top-20" element={<TopPage />} />
               <Route path="/articulos-impresos" element={<ArticulosImpresosPage />} />
               <Route path="/articulos-digitales" element={<ArticulosDigitalesPage />} />
               <Route path="/posts-instagram" element={<PostsInstagramPage />} />

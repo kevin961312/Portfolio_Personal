@@ -27,6 +27,7 @@
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .brand svg {
@@ -49,6 +50,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
+  white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
 
@@ -71,7 +73,7 @@
   padding: 0.25rem;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 900px) {
   .menuBtn {
     display: flex;
     align-items: center;

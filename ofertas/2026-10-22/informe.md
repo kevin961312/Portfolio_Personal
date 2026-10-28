@@ -1,0 +1,180 @@
+# Ofertas para Laura Hernández — 2026-10-22
+
+Ventana de búsqueda: desde 2026-09-22. Solo búsqueda: no se postuló ni se envió nada.
+
+## Resumen
+
+Carga inicial del historial con la búsqueda manual del 22-oct-2026 (ver Ofertas_Laura_2026-10-22.md en la raíz del proyecto).
+
+## Prioridades
+
+
+## Nuevas hoy (115)
+
+| Fecha pub. | Cargo | Empresa | Ciudad / modalidad | Enlace | HV | Afinidad | Cómo aplicar | Cierre |
+|---|---|---|---|---|---|---|---|---|
+| 2026-10-21 | Periodista | NTN24 | Bogotá, presencial | https://www.linkedin.com/jobs/view/4482124152/ | Periodista Multimedia | 5 | Botón "Solicitar" en LinkedIn (se gestiona fuera) | — |
+| 2026-10-16 | Oficial de Comunicaciones | Save the Children Colombia | Bogotá, presencial | https://www.linkedin.com/jobs/view/4480318617/ | Comunicadora Social | 5 | Botón "Solicitar" | — |
+| ≈2026-10-16 | Periodista Judicial en Bogotá | Diario del Sur S.A.S. (Periódico EXTRA) | Bogotá, presencial | https://co.jooble.org/jdp/-7129650998704280588 | Periodista Multimedia | 5 |  |  |
+| ≈2026-10-15 | Community Manager Junior | Juan Velásquez Entretenimiento | Bogotá, presencial | (post de la empresa en LinkedIn) | Community Manager | 5 | HV a rafael.f@jventretenimiento.com, asunto "CM JUNIOR" | — |
+| 2026-10-01 | Redactor | SUMMAR Productividad S.A.S. | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/redactor-1886775076 | Periodista Multimedia | 5 |  |  |
+| 2026-10-22 | Analista de comunicaciones proyectos sociales | Profamilia | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/analista-de-comunicaciones-proyectos-sociales-bogota-1886784007 | Comunicadora Social | 4 |  |  |
+| 2026-10-19 | Productor Audiovisual — videos cortos para Reels, TikTok y Shorts | fullConnect | Bogotá, híbrido | https://www.linkedin.com/jobs/view/4480925324/ | Community Manager | 4 | Botón "Solicitar" | — |
+| ≈2026-10-15 | Comunicador(a) Social Junior (monitoreo de medios, informes de noticias) | Babel Group | Bogotá | (post en LinkedIn) | Comunicadora Social | 4 | HV a mariaprieto@mailbabel.com, asunto "Comunicador(a) Social Junior" | — |
+| 2026-10-15 | Content Manager | Casa Manglar | Bogotá | https://www.instagram.com/p/DefsTyVFzrJ/ | Community Manager | 4 | Formulario en el link del perfil de @casa.manglar | Ingreso oct-2026 |
+| 2026-10-15 | Community Manager | Staffing de Colombia | Bogotá (Fontibón) | https://www.magneto365.com/co/empleos/community-manager-1100861 | Community Manager | 4 |  |  |
+| ≈2026-10-15 | Social Media & Community Manager | Adaptive Teams | Remoto LATAM, por horas | https://co.talent.com/view?id=641708225922731916 | Community Manager | 4 |  |  |
+| 2026-10-14 | Analista I comunicaciones | Agencia de Empleo Colsubsidio (sector financiero) | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/analista-i-comunicaciones-1886780127 | Comunicadora Social | 4 |  |  |
+| 2026-10-14 | Analista de Comunicaciones Internas | Confidencial | Bogotá o Pereira | https://www.magneto365.com/co/empleos/analista-de-comunicaciones-internas-1098565 | Comunicadora Social | 4 |  |  |
+| ≈2026-10-14 | Copy Creadora de Contenido | Canales Desarrolladores S.A.S. | Bogotá | https://co.jooble.org/jdp/-4550300330464016983 | Community Manager | 4 |  |  |
+| ≈2026-10-14 | Creador de contenido y marketing digital | Redes Humanas S.A. | Bogotá, presencial | https://co.jooble.org/jdp/2375640463385979303 | Community Manager | 4 |  |  |
+| ≈2026-10-13 | Periodista en Bogotá | Diario del Sur S.A.S. | Bogotá, oficina central | https://co.jooble.org/jdp/-6934245278468650288 | Periodista Multimedia | 4 |  |  |
+| 2026-10-13 | CM & content creator multimarca – Distrito de la Moda | Agencia de Empleo Compensar | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/community-manager-content-creator-multimarca-bogota-distritoalamoda-36051137-1886779694 | Community Manager | 4 |  |  |
+| 2026-10-09 | Community manager | Uniandinos (Asoc. de Egresados de los Andes) | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/community-manager-1886750309 | Community Manager | 4 |  |  |
+| ≈2026-10-08 | Community Manager — Freelance | WITHIN | Bogotá, presencial | https://www.linkedin.com/jobs/view/4474488253/ | Community Manager | 4 | Botón "Solicitar" | — |
+| 2026-10-08 | Anfitrión de contenido | Confidencial (sector educativo) | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/anfitrion-de-contenido-1886778347 | Periodista Multimedia | 4 |  |  |
+| 2026-10-07 | Community manager | Confidencial (universidad, menciona IBERO) | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/community-manager-1886777753 | Community Manager | 4 |  |  |
+| 2026-10-06 | Editor(a) Web e Informativos Digitales | Claro Colombia (unidad de noticias, posiblemente Red+ Noticias) | Bogotá | https://www.magneto365.com/co/empleos/editor-a-web-e-informativos-digitales-1091983 | Periodista Multimedia | 4 | Botón "Aplicar" en Magneto (1 cupo) |  |
+| 2026-10-02 | Presentador/a de contenidos audiovisuales | CUN | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/presentador-a-de-contenidos-audivisuales-1886775694 | Periodista Multimedia | 4 |  |  |
+| ≈2026-09-30 | Community manager | OMC Publicidad S.A.S. | Bogotá (Bosa) | https://co.jooble.org/jdp/-2967543284062297592 | Community Manager | 4 |  |  |
+| 2026-09-29 | Creadora de contenido (híbrido) | Esmedica Ciruplástica | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/creadora-de-contenido-tiempo-completo-hibrido-1886773980 | Community Manager | 4 |  |  |
+| 2026-09-28 | Especialista en Contenidos y Redes (CM) | Confidencial | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/community-manager-1886772870 | Community Manager | 4 |  |  |
+| ≈2026-09-28 | Community manager | INNVECTOR | Bogotá (Usaquén), presencial | https://co.jooble.org/jdp/-1138933318729401089 | Community Manager | 4 |  |  |
+| ≈2026-09-27 | Community manager (The North Face) | Pernine LTDA | Bogotá (Toberín), presencial | https://co.jooble.org/jdp/-5478898175023411972 | Community Manager | 4 |  |  |
+| 2026-09-24 | Profesional de redes sociales | Confidencial (turismo) | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/profesional-de-redes-sociales-1886771800 | Community Manager | 4 |  |  |
+| 2026-09-23 | Profesional soporte community manager – Dir. de Comunicaciones | Universidad Santo Tomás | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/profesional-soporte-community-manager-direccion-de-comunicaciones-bogota-1886771343 | Community Manager | 4 |  |  |
+| ≈2026-09-23 | Community manager | Confidencial (fundación sector alimentos) | Bogotá | https://co.jooble.org/jdp/7418048393928334113 | Community Manager | 4 |  |  |
+| ≈2026-09-22 | Community Manager (marca de belleza) | VML Colombia | Bogotá, híbrido | https://www.linkedin.com/jobs/view/4471102642/ | Community Manager | 4 | Botón "Solicitar" | — |
+| 2026-09-22 | Community manager | Confidencial (tecnología) | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/community-manager-1886770377 | Community Manager | 4 |  |  |
+| 2026-09-22 | Community manager / agencias de publicidad | Confidencial | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/community-manager-agencias-de-publicidad-1886770538 | Community Manager | 4 |  |  |
+|  | Periodista Senior Judicial | Grupo Semana (repost de Ofertasynegocios) | Bogotá | https://co.talent.com/view?id=571861718156054434 | Periodista Multimedia | 4 |  |  |
+|  | Analista Comunicador Social (recién egresado) | No indicada | Bogotá | https://co.talent.com/view?id=571861729525436322 | Comunicadora Social | 4 |  |  |
+|  | Comunicadora/Comunicador social | Fenalce (según el resumen de búsqueda) | Bogotá | https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-comunicadora-comunicador-social-en-bogota-dc-97274DA1B87E7B6261373E686DCF3405 | Comunicadora Social | 4 |  |  |
+| 2026-10-22 | Redactor | Keralty | Bogotá, presencial | https://www.linkedin.com/jobs/view/4482715715/ | Periodista Multimedia | 3 | Botón "Solicitar" | — |
+| 2026-10-22 | Copy Creativo | Confidencial | Bogotá | https://www.magneto365.com/co/empleos/copy-creativo-1109814 | Community Manager | 3 |  |  |
+| 2026-10-20 | Periodista Traductor | NTN24 | Bogotá, presencial | https://www.linkedin.com/jobs/view/4481749382/ | Periodista Multimedia | 3 | Botón "Solicitar" | — |
+| 2026-10-20 | AI-First Copy & Community Manager | Storm Ideas | Colombia, remoto | https://www.linkedin.com/jobs/view/4478683387/ | Community Manager | 3 | Botón "Solicitar" | — |
+| ≈2026-10-20 | Comunicador Social Corporativo | Confidencial | Bogotá, presencial | https://co.jooble.org/jdp/-4615938422477344434 | Comunicadora Social | 3 |  |  |
+| ≈2026-10-20 | Community manager | Laborando S.A.S. (Vipers Seguridad) | Bogotá (La Castellana) | https://co.jooble.org/jdp/-8625406341414096585 | Community Manager | 3 |  |  |
+| ≈2026-10-19 | Especialista contenido | Colsubsidio | Bogotá (Calle 26) | https://co.jooble.org/jdp/827748860691764585 | Comunicadora Social | 3 |  |  |
+| ≈2026-10-19 | Copy creativo | Confidencial | Bogotá, híbrido | https://co.jooble.org/jdp/-1796366030859651234 | Community Manager | 3 |  |  |
+| ≈2026-10-19 | Creador de Contenido – Creatividad Global | Publicis One | Bogotá, híbrido | https://co.jooble.org/jdp/6048592477490241094 | Community Manager | 3 |  |  |
+| ≈2026-10-19 | Social Media Specialist | ONErpm | Bogotá (Chapinero) | https://co.jooble.org/jdp/-2390049756295857702 | Community Manager | 3 |  |  |
+| ≈2026-10-19 | Junior Video Editor for AI-Driven Marketing | Dapta | Bogotá | https://co.jooble.org/jdp/5783999493748642463 | Community Manager | 3 |  |  |
+| 2026-10-19 | Profesional soporte de emisora | Universidad Santo Tomás | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/profesional-soporte-de-emisora-direccion-de-comunicaciones-bogota-1886782417 | Comunicadora Social | 3 |  |  |
+| 2026-10-18 | Auxiliar en Comunicaciones (técnico/tecnólogo, prestación de servicios) | Fenalper (Fed. Nal. de Personerías) | Bogotá | Términos: https://bit.ly/4Bgyvbo | Comunicadora Social | 3 | HV a coordinacion.vinculacion@fenalpercolombia.org | 25-oct-2026 11:59 p. m. |
+| ≈2026-10-18 | Analista Comunicaciones II | Colsubsidio | Bogotá | https://co.jooble.org/jdp/-5198298436715292448 | Comunicadora Social | 3 |  |  |
+| 2026-10-17 | Líder de Marketing y Contenido | Laska | Bogotá | https://www.instagram.com/p/DembujFxG0Q/ | Community Manager | 3 | Link en la bio de @laskabrand | — |
+| ≈2026-10-17 | Community Manager | Publicis One (Digitas) | Bogotá, híbrido | https://co.jooble.org/jdp/8161647935056223411 | Community Manager | 3 |  |  |
+| ≈2026-10-17 | Social Media Specialist | Havas Media Group | Bogotá, híbrido | https://co.jooble.org/jdp/6152415867290579551 | Community Manager | 3 |  |  |
+| ≈2026-10-17 | Creador/a Audiovisual de Contenido Estratégico (Jr.) | Bia Energy | Bogotá | https://co.jooble.org/jdp/-243481647439128441 | Community Manager | 3 |  |  |
+| 2026-10-16 | Social media manager | AER Caribe | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/social-media-manager-1886781637 | Community Manager | 3 |  |  |
+| 2026-10-16 | Creador de contenido multimedia | Confidencial (salud) | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/creador-de-contenido-multimedia-1886781531 | Community Manager | 3 |  |  |
+| 2026-10-16 | Editor multimedia audiovisual | Confidencial | Bogotá alrededores | https://www.elempleo.com/co/ofertas-trabajo/editor-multimedia-audiovisual-1886781538 | Community Manager | 3 |  |  |
+| ≈2026-10-15 | Part-Time Social Media & Video Content Specialist | The Business Year (medio internacional) | Bogotá, presencial | https://www.linkedin.com/jobs/view/4480103181/ | Community Manager | 3 | Solicitud sencilla en LinkedIn | — |
+| 2026-10-15 | Analista I productor/a audiovisual | Porvenir S.A. | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/analista-i-productor-a-audiovisual-1886781141 | Community Manager | 3 |  |  |
+| 2026-10-13 | Líder Senior de Comunicaciones | Sinergia Animal Colombia | Bogotá | https://www.instagram.com/p/DecMcr9kY6m/ | Comunicadora Social | 3 | Ver la publicación | — |
+| 2026-10-13 | Project Manager & Social Media Strategist | Somos Tr3s | Medellín / remoto | https://www.instagram.com/p/DecfFhrP2rF/ | Community Manager | 3 | HV y portafolio a mafe@somostres.online | — |
+| 2026-10-13 | Community manager bilingüe | Manpower | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/community-manager-bilingue-1886779469 | Community Manager | 3 |  |  |
+| 2026-10-13 | Comunicador corporativo | Confidencial (servicios) | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/comunicador-corporativo-1886779758 | Comunicadora Social | 3 |  |  |
+| ≈2026-10-08 | Director(a) de Marketing / Community Manager | Makrosoft de Colombia | Bogotá | (post de Makrosoft) | Community Manager | 3 | HV a claudia-quintero@makrosoft.com.co o WhatsApp 313 200 6606 | — |
+| ≈2026-10-08 | Asistente de Marketing y Comunicaciones | Más Empleo ANDI | Cota (remoto) | https://www.linkedin.com/jobs/view/4476195968/ | Comunicadora Social | 3 | Botón "Solicitar" | — |
+| ≈2026-10-08 | Community manager | Casa Origen Centro Holístico | Bogotá (Suba) | https://co.jooble.org/jdp/1720627083268522109 | Community Manager | 3 |  |  |
+| 2026-10-06 | Editor de contenido audiovisual | Confidencial | Bogotá alrededores | https://www.elempleo.com/co/ofertas-trabajo/editor-de-contenido-audiovisual-1886777260 | Community Manager | 3 |  |  |
+| 2026-10-06 | Community manager medio tiempo | Tous | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/community-manager-medio-tiempo-1886776651 | Community Manager | 3 |  |  |
+| ≈2026-10-06 | Community manager | BRAVO Colombia | Bogotá | https://co.jooble.org/jdp/-2998982895733732131 | Community Manager | 3 |  |  |
+| 2026-10-02 | Coordinador(a) de comunicaciones, posicionamiento e incidencia | Uniandes – Escuela de Gobierno | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/coordinadora-de-comunicaciones-posicionamiento-e-incidencia-1886775768 | Comunicadora Social | 3 |  |  |
+| ≈2026-10-01 | Account Executive, Health Communications | Edelman Colombia | Bogotá | https://lnkd.in/eBYe2Vmi (Workday) | Comunicadora Social | 3 | Portal Workday | — |
+| ≈2026-09-29 | Creador de contenido audiovisual – redes y fotografía | Confidencial (restaurantes) | Bogotá (norte) | https://co.jooble.org/jdp/-515811951296539325 | Community Manager | 3 |  |  |
+| ≈2026-09-29 | Social media y content creator | COCOBRAND | Bogotá | https://co.jooble.org/jdp/-3541292340213746724 | Community Manager | 3 |  |  |
+| 2026-09-28 | Community manager & content creator | My Doll Hair SAS | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/community-manager-content-creator-1886773523 | Community Manager | 3 |  |  |
+| 2026-09-25 | Copywriter publicitario | Cheil Colombia | Bogotá (Usaquén) | https://www.elempleo.com/co/ofertas-trabajo/copywriter-publicitario-1886772324 | Community Manager | 3 |  |  |
+| 2026-09-24 | Analista senior marca y comunicaciones | Confidencial (manufactura) | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/analista-senior-marca-y-comunicaciones-1886771842 | Comunicadora Social | 3 |  |  |
+|  | Estratega de Contenidos | Ubits | Bogotá | https://co.talent.com/view?id=571867134153136098 | Community Manager | 3 |  |  |
+|  | Community Manager | Paxzu | Bogotá | https://co.indeed.com/viewjob?jk=5be71c794977e0f8 | Community Manager | 3 |  |  |
+|  | Especialista en Comunicaciones, RSE y Eventos | Eurofarma | Bogotá | https://co.indeed.com/viewjob?jk=53d5ddea619e1b45 | Comunicadora Social | 3 |  |  |
+|  | Community Manager | Indumentaria sanitaria | Bogotá | https://co.indeed.com/viewjob?jk=8b4e257fe5d7d30e | Community Manager | 3 |  |  |
+|  | Community Manager | Abazcu SAS | Bogotá | https://co.indeed.com/viewjob?jk=a4f78d44a6a85390 | Community Manager | 3 |  |  |
+|  | Social Media Manager | E8 | Bogotá | https://co.indeed.com/viewjob?jk=e39e33bbed4a3f7b | Community Manager | 3 |  |  |
+| 2026-10-22 | Jefe(a) de Comunicación Interna | Mibanco Colombia | Bogotá, híbrido | https://www.linkedin.com/jobs/view/4482727066/ | Comunicadora Social | 2 | Botón "Solicitar" | — |
+| ≈2026-10-21 | Junior Copywriter | Rush Street Interactive (RushBet) | Bogotá, presencial | https://www.linkedin.com/jobs/view/4473512285/ | Community Manager | 2 | Botón "Solicitar" | — |
+| 2026-10-21 | Editor/a (convocatoria inclusiva) | Publicaciones Semana | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/convocatoria-laboral-inclusiva-editor-a-1886783596 | Periodista Multimedia | 2 |  |  |
+| ≈2026-10-21 | Community Manager (Freelancer) | Agency Within LLC | Bogotá, presencial | https://co.jooble.org/jdp/-4032893884800874536 | Community Manager | 2 |  |  |
+| 2026-10-20 | Editor/diseñador | Michael Page | Bogotá | https://www.elempleo.com/co/ofertas-trabajo/editor-disenador-1886783067 | Community Manager | 2 |  |  |
+| ≈2026-10-17 | Copywriter | Nodi | Remoto | https://co.jooble.org/jdp/244063061728181145 | Community Manager | 2 |  |  |
+| ≈2026-10-17 | Diseñador y Community Manager | SERVIALCO SAS | Bogotá, presencial | https://co.jooble.org/jdp/6120195491505029591 | Community Manager | 2 |  |  |
+| ≈2026-10-15 | Journalist (contractor) | Citywire | Remoto (Bogotá/Medellín) | https://www.linkedin.com/jobs/view/4479292303/ | Periodista Multimedia | 2 | Botón "Solicitar" | — |
+| ≈2026-10-15 | Diseñador(a) gráfico(a) / Comunicador(a) social y periodista | Visualizamos Laboratorio Óptico | Bogotá, presencial | (post en LinkedIn) | Community Manager | 2 | HV a seleccionvisualizamoslab@gmail.com | — |
+| ≈2026-10-15 | Copy | Publicis Groupe Colombia | Bogotá, híbrido | https://www.linkedin.com/jobs/view/4469055669/ | Community Manager | 2 | Botón "Solicitar" | — |
+| ≈2026-10-15 | Copy | Leo Colombia | Bogotá, híbrido | https://www.linkedin.com/jobs/view/4314215777/ | Community Manager | 2 | Botón "Solicitar" | — |
+| 2026-10-15 | Diseñador gráfico y creador de contenido multimedia | ZTE Colombia | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/disenador-grafico-y-creador-de-contenido-multimedia-1886780658 | Community Manager | 2 |  |  |
+| ≈2026-10-01 | Digital Trafficker & Community Manager | BIT – Build, Innovate & Transform | Bogotá, híbrido | (vacante en LinkedIn de BIT) | Community Manager | 2 | En LinkedIn | — |
+| ≈2026-10-01 | Social Media Associate | Auxis | Colombia, remoto | https://www.linkedin.com/jobs/view/4472066991/ | Community Manager | 2 | Solicitud sencilla | — |
+| ≈2026-10-01 | Creador de Contenido Digital / Image Maker | Tu Mejor Bodega LED | Bogotá | https://co.jooble.org/jdp/-685687342305190985 | Community Manager | 2 |  |  |
+| 2026-09-29 | Experto en comunicaciones proyectos sociales | Confidencial (consultora) | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/experto-en-comunicaciones-proeyctos-sociales-1886774097 | Comunicadora Social | 2 |  |  |
+| 2026-09-24 | Digital trafficker y community manager | RROMBO | Bogotá, híbrido | https://www.elempleo.com/co/ofertas-trabajo/digital-trafficker-y-community-manager-1886772048 | Community Manager | 2 |  |  |
+| 2026-09-22 | Editor(a) de video y motion graphics | Montessori British School | Bogotá, presencial | https://www.elempleo.com/co/ofertas-trabajo/editora-de-video-y-motion-graphics-1886770777 | Community Manager | 2 |  |  |
+|  | Redactor de contenido (bilingüe) | Paxzu | Usaquén | https://co.indeed.com/viewjob?jk=7f5a0a0c82601e37 | Periodista Multimedia | 2 |  |  |
+| 2026-10-21 | Communications Consultant (Digital Engagement and Protection) | UNICEF | Remoto | https://jobs.unicef.org/en-us/job/596446/ | Comunicadora Social |  |  | 31-oct |
+| ≈2026-10-21 | Periodista Digital | El Colombiano | Envigado (híbrido) |  |  |  | HV a atraccion@elcolombiano.com.co |  |
+| 2026-10-21 | Community Manager | Fundación Universitaria Juan de Castellanos | Tunja | https://www.linkedin.com/jobs/view/4482187053/ |  |  | https://www.linkedin.com/jobs/view/4482187053/ |  |
+| 2026-10-20 | Communications and Advocacy Consultant, Child Nutrition Fund | UNICEF | Remoto | https://jobs.unicef.org/en-us/job/596441/ | Comunicadora Social |  |  | 26-oct |
+| 2026-10-19 | Communication Analyst, Home Based (EU4GE) | ONU Mujeres | Remoto | https://estm.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions/job/37540 | Comunicadora Social |  |  | 26-oct |
+| 2026-10-19 | Periodista Digital | La Caliente Digital | San Gil, Santander | https://www.instagram.com/p/Der2gaOEQK0/ |  |  | WhatsApp 311 246 4115 — https://www.instagram.com/p/Der2gaOEQK0/ |  |
+| 2026-10-17 | Paid Media Consultant for LAC Markets | UNICEF | Remoto | https://jobs.unicef.org/en-us/job/596385/ | Community Manager |  |  | 23-oct |
+| 2026-10-16 | Knowledge Management and Communications Analyst (Home Based), Gender Team | PNUD | Remoto | https://estm.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/37515 | Comunicadora Social |  |  | 23-oct 22:59 (Bogotá) |
+| ≈2026-10-15 | Periodista Digital | Professional Consulting Services | Neiva |  |  |  | HV a recursos.humanos@inmigracionaldia.com |  |
+| ≈2026-10-15 | Analista de Comunicaciones – Periodista | UPB | Medellín (cierra 23-oct) |  |  |  | convocatorias.gestionhumana@upb.edu.co, asunto "Vacante Analista de comunicaciones" |  |
+| 2026-10-05 | LTA consultores de fact-checking e investigación | UNICEF | Remoto | https://jobs.unicef.org/en-us/job/596087/ | Periodista Multimedia |  |  | 23-oct |
+| 2026-10-02 | Periodista y creador(a) de contenido | JLV Marketing | Sabaneta, Antioquia | https://www.instagram.com/p/DeAgkp1xha_/ |  |  | WhatsApp 318 548 4652 — https://www.instagram.com/p/DeAgkp1xha_/ |  |
+| 2026-10-02 | Periodista | Zona Digital (@md.zonadigital) | Ubicación no indicada | https://www.instagram.com/p/DeAV0fqDomr/ |  |  | https://www.instagram.com/p/DeAV0fqDomr/ |  |
+
+## Conteo por pestaña
+
+- Nuevas hoy: 115
+- Bogotá y remoto CO: 92
+- Fecha no verificada: 10
+- Remotas internacionales: 6
+- Fuera de Bogotá: 7
+- Prácticas y becas: 0
+- Contactos: 39
+- Acumulado 30 días: 115
+- Esfuerzo agentes: 1
+
+## Cobertura
+
+| Fuente | Estado | Nota |
+|---|---|---|
+| Casa Editorial El Tiempo (El Tiempo, CityTV, Portafolio) | revisado | sin vacantes afines |
+| Caracol TV / Noticias Caracol / Blu Radio / La Kalle (Magneto) | revisado | solo cargos de tecnología |
+| Cablenoticias | revisado | sin plataforma pública |
+| Canal RCN / NTN24 / RCN Radio / La FM / Win Sports | revisado | canalrcn.com 403; LinkedIn: solo NTN24 |
+| Prisa: Caracol Radio, W, Tropicana, Bésame, Los 40, Radioacktiva | revisado | sin vacantes afines (ePreselec solo España) |
+| Canal 1 (Magneto CANAL1) | revisado | única vacante de julio, vencida |
+| Claro / Red+ Noticias (Magneto) | revisado | 1 vacante afín |
+| Organización Radial Olímpica | revisado | sin sección de empleo |
+| RTVC: Señal Colombia, Institucional, Radio Nacional, Radiónica | revisado | convocatorias cerradas |
+| Canal Capital | revisado | remite a banco de proveedores |
+| Canal Trece | revisado | todo cerrado |
+| Teleantioquia | revisado | solo invitación de seguros (may-2026) |
+| Telecaribe | revisado | solo contratación de producciones |
+| Telepacífico | revisado | vencida |
+| Telecafé | revisado | sin sección |
+| TRO | revisado | solo banco de HV |
+| Teleislas | revisado | "próximo lanzamiento" |
+| X: cuentas de TV y radio | revisado | sin vacantes (solo "convocatorias" deportivas y culturales) |
+| LinkedIn por empresa (Caracol TV, RCN, Prisa, RTVC, Win Sports, Canal 1, Blu, regionales) | revisado | sin vacantes de comunicación en el último mes |
+
+## Esfuerzo por agente
+
+| Agente | Modelo | Esfuerzo asignado | Fuentes revisadas | Bloqueos | Dificultad real | Recomendación | Por qué ese modelo |
+|---|---|---|---|---|---|---|---|
+| Webs de TV y radio (búsqueda puntual) | sonnet | medium | 44 | canalrcn.com 403; IDtalento y Teleantioquia con JS; Magneto Canal 1 500 | alta | Para el barrido diario de URLs fijas basta Haiku; el cuello de botella es el acceso, no el razonamiento | Descubrir por primera vez la plataforma de empleo de ~30 medios |
+
+## Descartadas
+
+| Cargo | Empresa | Motivo |
+|---|---|---|
+| Jefe(a) Edición Web Noticiero | Claro | Ficha eliminada (HTTP 410) |
+| Consultor(a) Comercial Contenido | Claro | Cargo comercial |
+| Asistente de producción | Canal 1 | Publicada en julio, vencida |

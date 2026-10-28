@@ -158,7 +158,7 @@ npm run build
 npm run preview
 
 # 4 · Publicar
-git add src index.html docs DESPLIEGUE_PERFILES.md
+git add src index.html docs documentacion/DESPLIEGUE_PERFILES.md
 git commit -m "Perfiles dinámicos de HV con métricas de impacto"
 git push origin main
 ```
@@ -199,8 +199,12 @@ originales (Chrome headless imprimiendo un HTML). Un solo comando:
 ./hv/generar.sh
 ```
 
-Sobrescribe los tres `CV_Laura_Hernandez_*.pdf` de la raíz. **No hay nada que
-instalar**: solo Python 3 y el Chrome del sistema (o el que indique la variable
+Crea la versión siguiente en `CV/` —`CV/V1`, `CV/V2`…— con los tres
+`CV_Laura_Hernandez_*_V<n>.pdf`, sin tocar las anteriores. Cada carpeta trae
+`contenido.txt` (el texto de las tres HV) y `cambios.txt` (qué cambió respecto
+a la versión anterior). Si la HV no cambió, no se crea versión nueva; para
+crearla igual: `./hv/generar.sh --forzar`. `CV/V0` es la HV original, anterior
+al generador. **No hay nada que instalar**: solo Python 3 y el Chrome del sistema (o el que indique la variable
 `CHROME_BIN`, por si está en otra ruta):
 
 ```bash
@@ -213,7 +217,7 @@ hv/
 ├── datos.py        ← TEXTOS de las tres HV (es el archivo a editar)
 ├── plantilla.py    el diseño: HTML + CSS de impresión (A4, dos columnas)
 ├── metricas.py     lee las cifras desde `src/data/*.ts` (no tocar a mano)
-├── generar.py      imprime cada HTML a PDF con Chrome headless
+├── generar.py      imprime cada HTML a PDF con Chrome headless y numera la versión
 └── assets/
     └── foto-laura-circulo.jpg   foto con su anillo punteado
 ```
@@ -229,7 +233,7 @@ python3 hv/metricas.py
 ### El diseño reproduce la HV original de Canva
 
 `hv/plantilla.py` replica la maqueta de la HV que Laura hizo en Canva
-(`CV (2).pdf`): barra lateral lila de 232 pt con la foto circular de borde
+(`CV/V0/CV_Laura_Hernandez_original_V0.pdf`): barra lateral lila de 232 pt con la foto circular de borde
 punteado, títulos morados subrayados y barras de habilidades; a la derecha,
 el nombre alineado a la derecha y cada sección abierta por una «píldora».
 
@@ -244,7 +248,8 @@ La paleta y las medidas se tomaron del PDF original:
 | anillo punteado de la foto | `#8C52FF` |
 | riel de las barras | `#A9AAAE` |
 
-La foto de `hv/assets/` se recortó del propio `CV (2).pdf` a 600 ppp —con su
+La foto de `hv/assets/` se recortó del propio PDF original (hoy
+`CV/V0/CV_Laura_Hernandez_original_V0.pdf`) a 600 ppp —con su
 anillo incluido— y se recortó en círculo, así que el borde punteado del PDF
 original se conserva tal cual.
 
@@ -304,9 +309,9 @@ lleva el parámetro de su perfil, y es un hipervínculo real, no solo texto:
 
 | Archivo PDF | Enlace |
 |---|---|
-| `CV_Laura_Hernandez_Community_Manager.pdf` | `…/Portfolio_Personal/?perfil=community-manager` |
-| `CV_Laura_Hernandez_Periodista_Multimedia.pdf` | `…/Portfolio_Personal/?perfil=periodista` |
-| `CV_Laura_Hernandez_Comunicadora_Social.pdf` | `…/Portfolio_Personal/?perfil=comunicadora` |
+| `CV_Laura_Hernandez_Community_Manager_V<n>.pdf` | `…/Portfolio_Personal/?perfil=community-manager` |
+| `CV_Laura_Hernandez_Periodista_Multimedia_V<n>.pdf` | `…/Portfolio_Personal/?perfil=periodista` |
+| `CV_Laura_Hernandez_Comunicadora_Social_V<n>.pdf` | `…/Portfolio_Personal/?perfil=comunicadora` |
 
 Así, quien recibe la HV de community manager aterriza en la versión de redes y
 no ve las secciones de periodismo.

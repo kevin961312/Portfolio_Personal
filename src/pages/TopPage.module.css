@@ -1,0 +1,1137 @@
+/* Colores registrados para que el fondo cambie de tono con una
+   transición suave al pasar de una cuenta a otra. */
+@property --c1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #6b21a8;
+}
+
+@property --c2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #c084fc;
+}
+
+/* Paleta por cuenta, siempre en morados y lilas: --c1 es el tono oscuro
+   (lleva texto blanco encima) y --c2 el lila claro de los brillos. */
+[data-cuenta='eltiempo'] {
+  --c1: #7e22ce;
+  --c2: #c084fc;
+}
+
+[data-cuenta='cuestionp'] {
+  --c1: #5b21b6;
+  --c2: #a78bfa;
+}
+
+[data-cuenta='lamartineris'] {
+  --c1: #3b0764;
+  --c2: #d8b4fe;
+}
+
+/* ── Escena ─────────────────────────────────────────────────── */
+.escena {
+  --texto-suave: rgba(255, 255, 255, 0.72);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: calc(100dvh - 64px);
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  row-gap: 0.9rem;
+  padding: 0.75rem max(1.5rem, calc((100% - 1150px) / 2)) 1rem;
+  background: #160a29;
+  color: #fff;
+  transition: --c1 0.9s ease, --c2 0.9s ease;
+}
+
+.fondo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.mancha {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.42;
+  animation: flotar 16s ease-in-out infinite alternate;
+}
+
+.mancha:first-child {
+  top: -28vmax;
+  left: -18vmax;
+  background: var(--c1);
+}
+
+.mancha:nth-child(2) {
+  right: -18vmax;
+  bottom: -32vmax;
+  background: var(--c2);
+  animation-delay: -8s;
+}
+
+.fondo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(22, 10, 41, 0.85) 100%);
+}
+
+/* Número gigante del puesto, de fondo. */
+.fondoNumero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -55%;
+  font-size: min(70vh, 60vw);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.07);
+  animation: aparecerNumero 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes flotar {
+  to {
+    transform: translate(8vmax, 6vmax) scale(1.12);
+  }
+}
+
+@keyframes aparecerNumero {
+  from {
+    opacity: 0;
+    scale: 0.85;
+  }
+}
+
+/* ── Barras de progreso (historias) ─────────────────────────── */
+.segmentos {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 4px;
+  transition: opacity 0.3s;
+}
+
+.segmentos[data-oculto] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.segmento {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.pista {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+}
+
+.relleno {
+  display: block;
+  height: 100%;
+  background: #fff;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.segmento[data-estado='visto'] .relleno {
+  transform: none;
+}
+
+.segmento[data-estado='activo'] .relleno {
+  animation-name: llenar;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes llenar {
+  to {
+    transform: none;
+  }
+}
+
+/* ── Carrusel 3D de portadas ────────────────────────────────── */
+/* Cada tarjeta se ubica según su distancia a la central (--offset);
+   cambiar de puesto solo cambia esa variable y la transición mueve
+   todo el carrusel. Las medidas salen del tamaño del contenedor. */
+.carrusel {
+  grid-row: 2;
+  position: relative;
+  container-type: size;
+  perspective: 1400px;
+  min-height: 0;
+}
+
+.tarjeta {
+  --alto: min(94cqh, 118cqw, 675px);
+  --ancho: calc(var(--alto) * 0.8);
+  --paso: calc(var(--ancho) * 0.74);
+  container-type: inline-size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--ancho);
+  height: var(--alto);
+  margin: calc(var(--alto) / -2) 0 0 calc(var(--ancho) / -2);
+  border-radius: 22px;
+  transform: translateX(calc(var(--offset) * var(--paso))) translateZ(calc(var(--distancia) * -170px))
+    rotateY(calc(var(--offset) * -26deg));
+  z-index: calc(10 - var(--distancia));
+  opacity: calc(1 - var(--distancia) * 0.3);
+  filter: brightness(calc(1 - var(--distancia) * 0.22));
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.85);
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.7s, filter 0.7s, width 0.45s ease,
+    height 0.45s ease, margin 0.45s ease;
+}
+
+.tarjeta[data-oculta] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tarjeta[data-centro] {
+  box-shadow: 0 40px 100px -30px var(--c1), 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Abierta crece, pero sigue en 4:5 para que el recorte del post calce. */
+.carrusel[data-abierta] .tarjeta[data-centro] {
+  --alto: min(100cqh, 125cqw, 675px);
+}
+
+.carrusel[data-abierta] .tarjeta:not([data-centro]) {
+  opacity: 0.1;
+}
+
+/* ── Podio del inicio ── */
+/* Las mismas tarjetas del carrusel, en abanico: el #1 al frente y el #2
+   y el #3 abiertos a los lados. Al empezar, la transición de transform
+   las lleva a su lugar en el carrusel. */
+.carrusel[data-podio] .tarjeta {
+  --alto: min(80cqh, 70cqw);
+  animation: entrarPodio 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.carrusel[data-podio] .tarjeta[data-lugar='1'] {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+  filter: none;
+}
+
+.carrusel[data-podio] .tarjeta[data-lugar='2'] {
+  z-index: 2;
+  transform: translateX(calc(var(--ancho) * -0.5)) rotate(-11deg) scale(0.84);
+  opacity: 1;
+  filter: brightness(0.85);
+  animation-delay: 0.12s;
+}
+
+.carrusel[data-podio] .tarjeta[data-lugar='3'] {
+  z-index: 1;
+  transform: translateX(calc(var(--ancho) * 0.5)) rotate(11deg) scale(0.84);
+  opacity: 1;
+  filter: brightness(0.85);
+  animation-delay: 0.2s;
+}
+
+.carrusel[data-podio] .tarjeta:not([data-lugar]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes entrarPodio {
+  from {
+    opacity: 0;
+    translate: 0 40px;
+  }
+}
+
+.pistaAbrir {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  translate: -50% 0;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(22, 10, 41, 0.6);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.capaAbrir:hover .pistaAbrir,
+.capaAbrir:focus-visible .pistaAbrir {
+  opacity: 1;
+}
+
+/* En pantallas táctiles no hay hover: la pista queda siempre visible. */
+@media (hover: none) {
+  .pistaAbrir {
+    opacity: 1;
+  }
+}
+
+/* ── Portada ────────────────────────────────────────────────── */
+/* Todo se mide en cqw de la tarjeta que la contiene, así se ve igual en
+   la central, en las laterales y en el podio. */
+.portada {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 6cqw;
+  overflow: hidden;
+  border-radius: inherit;
+  color: #fff;
+  text-align: left;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.28), transparent 42%),
+    linear-gradient(155deg, var(--c1), color-mix(in srgb, var(--c1) 45%, var(--c2)));
+}
+
+.portada:not([data-imagen])::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0 2px, transparent 2px 16px);
+}
+
+.portada[data-imagen]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 26%, transparent 66%, rgba(0, 0, 0, 0.6));
+}
+
+.portadaImagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portadaNumero {
+  position: absolute;
+  right: -3cqw;
+  bottom: -14cqw;
+  font-size: 66cqw;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  color: transparent;
+  -webkit-text-stroke: 0.5cqw rgba(255, 255, 255, 0.38);
+  pointer-events: none;
+}
+
+.portada[data-imagen] .portadaNumero {
+  display: none;
+}
+
+.portadaCabecera,
+.portadaTitulo,
+.portadaPie,
+.portadaPlay {
+  position: relative;
+  z-index: 1;
+}
+
+.portadaCabecera {
+  display: flex;
+  align-items: center;
+  gap: 2.6cqw;
+  font-size: 4.4cqw;
+  font-weight: 700;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 10cqw;
+  height: 10cqw;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--c1);
+  font-size: 3.6cqw;
+  font-weight: 800;
+  box-shadow: 0 0 0 0.7cqw rgba(255, 255, 255, 0.4);
+}
+
+.portadaCuenta {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portadaTipo {
+  display: flex;
+  margin-left: auto;
+}
+
+.portadaTipo svg {
+  width: 6cqw;
+  height: 6cqw;
+}
+
+.portadaPlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 20cqw;
+  height: 20cqw;
+  border-radius: 50%;
+  background: rgba(22, 10, 41, 0.35);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 0 0.8cqw rgba(255, 255, 255, 0.35);
+}
+
+.portadaPlay svg {
+  width: 9cqw;
+  height: 9cqw;
+  margin-left: 1cqw;
+}
+
+/* Titular resaltado, como las portadas de carruseles de noticias. */
+.portadaTitulo {
+  margin-top: auto;
+  margin-bottom: 4cqw;
+  font-size: 7cqw;
+  font-weight: 800;
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+}
+
+.portadaTitulo span {
+  padding: 0.06em 0.3em;
+  border-radius: 0.12em;
+  background: #fff;
+  color: #1e1033;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.portada[data-imagen] .portadaPie {
+  margin-top: auto;
+}
+
+.portadaPie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 4.4cqw;
+  font-weight: 800;
+}
+
+.portadaLikes {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4cqw;
+}
+
+.portadaLikes svg {
+  width: 5cqw;
+  height: 5cqw;
+  fill: currentColor;
+}
+
+.puntos {
+  display: flex;
+  gap: 1.3cqw;
+}
+
+.puntos i {
+  width: 1.8cqw;
+  height: 1.8cqw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.puntos i:first-child {
+  background: #fff;
+}
+
+/* ── Post real en la tarjeta ────────────────────────────────── */
+/* El iframe sube lo que mide su cabecera, así la tarjeta (4:5, igual que
+   el post) muestra solo la imagen, sin el marco blanco de Instagram. Lo de
+   adentro del iframe no se puede tocar (es otro dominio), solo recortarlo
+   desde afuera. Abierta, además se puede tocar: reel y carrusel funcionan. */
+.vivo {
+  --cabecera-embed: 55px;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.vivo[data-listo],
+.vivo[data-abierta] {
+  opacity: 1;
+}
+
+/* Recargando tras cerrarse: vuelve a verse la portada diseñada. */
+.vivo[data-recargando]:not([data-abierta]) {
+  opacity: 0;
+  transition: none;
+}
+
+.vivoScroll {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cargando {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #6b7280;
+  font-size: 0.88rem;
+  background: linear-gradient(110deg, #f5f0ff 30%, #fff 50%, #f5f0ff 70%);
+  background-size: 200% 100%;
+  animation: brillo 1.4s linear infinite;
+}
+
+.embed {
+  position: relative;
+  z-index: 1;
+  width: max(calc(100% + 2px), 328px);
+  margin: calc(-1 * var(--cabecera-embed)) 0 0 min(-1px, calc((100% - 328px) / 2));
+  pointer-events: none;
+}
+
+.vivo[data-abierta] .embed {
+  pointer-events: auto;
+}
+
+/* Encima del post cerrado: el clic abre la publicación aquí mismo. */
+.capaAbrir {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(22, 10, 41, 0.35), transparent 22%);
+  cursor: pointer;
+}
+
+.capaAbrir:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.tarjeta:not([data-centro]) .capaAbrir {
+  background: none;
+}
+
+.capaPuesto {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--c1), color-mix(in srgb, var(--c1) 55%, var(--c2)));
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+}
+
+.cerrar {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  background: #160a29;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes brillo {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ── Info de la pieza activa ────────────────────────────────── */
+.info {
+  grid-row: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 2.5rem;
+}
+
+.info > * {
+  animation: subir 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.info > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+}
+
+.infoTexto {
+  min-width: 0;
+  max-width: 640px;
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.puesto {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.chip {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--c1), color-mix(in srgb, var(--c1) 55%, var(--c2)));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cuenta {
+  font-weight: 700;
+  color: #fff;
+}
+
+.titulo {
+  font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.infoLikes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.likes svg {
+  width: 0.85em;
+  height: 0.85em;
+  fill: var(--c2);
+  stroke: var(--c2);
+  animation: latido 1.3s ease-in-out infinite;
+}
+
+.likesEtiqueta {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--texto-suave);
+}
+
+@keyframes latido {
+  0%,
+  100% {
+    scale: 1;
+  }
+  15% {
+    scale: 1.22;
+  }
+  30% {
+    scale: 1;
+  }
+}
+
+.comparacion {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-width: 260px;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+  white-space: nowrap;
+}
+
+.comparacionBarra {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.comparacionBarra span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  transform-origin: left;
+  animation: crecer 1s 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes crecer {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.botonPrincipal,
+.botonSecundario,
+.empezar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.botonPrincipal {
+  min-height: 42px;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  background: #fff;
+  color: #1e1033;
+  font-size: 0.88rem;
+}
+
+.botonSecundario {
+  min-height: 42px;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  font-size: 0.88rem;
+}
+
+.botonPrincipal:hover,
+.empezar:hover {
+  transform: translateY(-2px);
+}
+
+.botonSecundario:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* ── Controles ──────────────────────────────────────────────── */
+.controles {
+  grid-row: 4;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.control {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.control:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.control:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.contador {
+  min-width: 4.2em;
+  text-align: center;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.tira {
+  position: relative;
+  display: flex;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+  margin: 0 0 0 0.75rem;
+  padding: 0.2rem;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tira::-webkit-scrollbar {
+  display: none;
+}
+
+.tiraBoton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 54px;
+  padding: 0.35rem 0.45rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--texto-suave);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tiraBoton:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tiraBoton[aria-current='true'] {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--c1), color-mix(in srgb, var(--c1) 55%, var(--c2)));
+  color: #fff;
+}
+
+.tiraPuesto {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.tiraLikes {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* ── Inicio y cierre ────────────────────────────────────────── */
+.escena[data-modo='inicio'] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 3rem;
+}
+
+.escena[data-modo='inicio'] .carrusel {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.portadaFin {
+  grid-column: 1 / -1;
+  grid-row: 2 / span 2;
+  align-self: center;
+}
+
+.inicioTexto {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.inicioTexto > * {
+  animation: subir 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.inicioTexto > :nth-child(2) { animation-delay: 0.08s; }
+.inicioTexto > :nth-child(3) { animation-delay: 0.16s; }
+.inicioTexto > :nth-child(4) { animation-delay: 0.24s; }
+.inicioTexto > :nth-child(5) { animation-delay: 0.32s; }
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.inicioTitulo,
+.finTitulo {
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.inicioTitulo {
+  font-size: clamp(4rem, 11vw, 8.5rem);
+}
+
+.inicioTitulo span {
+  background: linear-gradient(135deg, #fff 0%, var(--c2) 60%, var(--c1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.inicioLead {
+  max-width: 520px;
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.datoValor {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.datoEtiqueta {
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.empezar {
+  min-height: 52px;
+  padding: 0.9rem 1.6rem;
+  border: none;
+  background: linear-gradient(135deg, var(--c1), color-mix(in srgb, var(--c1) 55%, var(--c2)));
+  color: #fff;
+  font-size: 1.02rem;
+  box-shadow: 0 18px 44px -14px var(--c2);
+  animation: pulso 2.4s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  50% {
+    box-shadow: 0 18px 54px -8px var(--c2);
+  }
+}
+
+.portadaFin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+
+.finTitulo {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+}
+
+.finAcciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Celular y tablet ───────────────────────────────────────── */
+@media (max-width: 899px) {
+  .escena {
+    min-height: 0;
+    row-gap: 0.6rem;
+    padding: 0.4rem 1rem 0.75rem;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .titulo {
+    font-size: 1.12rem;
+  }
+
+  .infoLikes {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .likes {
+    font-size: 1.6rem;
+  }
+
+  .comparacion,
+  .botonPrincipal,
+  .tira {
+    display: none;
+  }
+
+  .botonSecundario {
+    min-height: 36px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .controles {
+    justify-content: space-between;
+  }
+
+  .escena[data-modo='inicio'] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .escena[data-modo='inicio'] .carrusel {
+    grid-row: 2;
+  }
+
+  .carrusel[data-podio] .tarjeta {
+    --alto: min(94cqh, 70cqw);
+  }
+
+  .inicioTexto {
+    grid-column: 1;
+    grid-row: 3;
+    gap: 0.7rem;
+  }
+
+  .inicioTitulo {
+    font-size: 3.8rem;
+  }
+
+  .datoValor {
+    font-size: 1.4rem;
+  }
+
+  .dato {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .empezar {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mancha,
+  .fondoNumero,
+  .info > *,
+  .inicioTexto > *,
+  .carrusel[data-podio] .tarjeta,
+  .empezar,
+  .likes svg,
+  .comparacionBarra span,
+  .cargando {
+    animation: none;
+  }
+
+  /* Sin animación de la barra no hay avance automático. */
+  .segmento[data-estado='activo'] .relleno {
+    animation: none;
+  }
+
+  .tarjeta,
+  .vivo {
+    transition: none;
+  }
+}

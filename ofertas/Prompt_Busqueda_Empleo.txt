@@ -1,0 +1,178 @@
+PROMPT PARA CLAUDE EN CHROME: BÚSQUEDA DE OFERTAS DE TRABAJO PARA LA HV DE LAURA HERNÁNDEZ
+
+---
+
+### 0. DATOS DE CONTROL (actualizar cada vez que se use)
+
+- FECHA DE HOY: 22 de octubre de 2026 (si usas el comando /buscar-ofertas en Claude Code, la fecha se calcula sola)
+- VENTANA DE BÚSQUEDA: solo ofertas publicadas desde el 22 de septiembre de 2026 (máximo 1 mes de antigüedad).
+- Archivo de fuentes con todas las URLs verificadas: /Users/KEPINEDA/Downloads/Portfolio_Personal/ofertas/fuentes.md
+
+---
+
+### 1. TU ROL Y LÍMITES
+
+Actúa como reclutador/a especializado/a en medios de comunicación de Colombia. Usa el navegador (Chrome) para ENCONTRAR ofertas de trabajo vigentes y los canales o correos donde se recibe la hoja de vida. Tu trabajo es solo de búsqueda y lectura.
+
+NO hagas nada de esto:
+- No hagas clic en "Postularme", "Aplicar", "Solicitud sencilla" ni "Enviar".
+- No llenes formularios, no envíes correos ni mensajes directos, no comentes ni reacciones a publicaciones.
+- No sigas cuentas, no pidas unirte a grupos y no crees cuentas.
+Yo me encargo de postular con la lista que me entregues.
+
+---
+
+### 2. PERFIL DE LA CANDIDATA (para medir la afinidad de cada oferta)
+
+Laura Viviana Hernández Martin — Bogotá.
+
+- Comunicación Social, Universidad Cooperativa de Colombia (2021–2026).
+- Escuela de Periodismo Multimedia EL TIEMPO (2025–2026).
+- Diplomado en reportería y presentación de noticias con énfasis en periodismo judicial y político (2024).
+- Experiencia:
+  * Cuestión Pública (2026): contenido para audiencias digitales; parrillas, reels, carruseles e historias de Instagram; seguimiento de métricas y estrategia.
+  * No Es Hora de Callar · Casa Editorial EL TIEMPO (2025–2026): periodista con enfoque de género; notas para eltiempo.com y edición impresa; producción, pietaje y pasos en cámara para TV.
+  * Escuela de Periodismo Multimedia EL TIEMPO (2025–2026): reportera multimedia; reportaje emitido por CityTV; cobertura en foto y video.
+  * Ventana U (2024–2025) y Capital Enigma (2024): periodismo universitario e investigación de casos judiciales para redes.
+- Habilidades: redacción y ortografía, reportería en terreno, investigación y verificación, periodismo judicial y político, enfoque de género y DD.HH., producción para TV, paso en cámara, edición de video (CapCut), Canva, Meta Business Suite, Instagram Insights, copywriting, parrillas de contenido.
+- Nivel: junior (0–2 años de experiencia). No declara inglés.
+
+Tiene tres versiones de HV. Indica cuál corresponde a cada oferta:
+| Tipo de cargo | HV |
+|---|---|
+| Periodista, redactor/a, reportero/a, periodista judicial o político, productor/a de noticias, periodista de TV, presentador/a, fact-checking, periodismo de género | Periodista Multimedia |
+| Comunicador/a social, comunicaciones internas o externas, prensa institucional, productor/a de contenidos transmedia, comunicaciones en ONG o entidades públicas | Comunicadora Social |
+| Community manager, social media, creador/a de contenido, editor/a de video para redes, estratega digital, copywriter, audiencias digitales | Community Manager |
+
+---
+
+### 3. REGLAS DE FILTRO
+
+1. Antigüedad: descarta toda oferta publicada antes de la VENTANA DE BÚSQUEDA. Convierte fechas relativas ("hace 2 semanas") a fecha exacta. Si no puedes determinar la fecha, inclúyela marcada como "Fecha no verificada".
+2. Vigencia: abre cada oferta y confirma que sigue abierta (descarta si dice "ya no acepta postulaciones", "vencida" o similar).
+3. Ubicación: prioridad Bogotá (presencial o híbrido) y remoto desde Colombia. Otras ciudades solo si son remotas o híbridas.
+4. Ofertas anónimas o confidenciales ("importante medio de comunicación", "empresa confidencial"): NO las descartes. Si el cargo encaja (redactor/a, periodista, reportero/a, productor/a, community manager, comunicador/a), inclúyelas marcadas como "Confidencial".
+5. Experiencia: NO filtres por experiencia. Incluye la oferta sin importar los años que pida y no le bajes la afinidad por eso. Si exigen inglés avanzado, márcalo.
+6. Descarta y no reportes: ofertas que piden pagar por algo, ventas o call center disfrazados de "comunicador", multinivel, y estudios webcam disfrazados de "creadora de contenido", "modelo" o "presentadora".
+7. Prácticas o pasantías: ponlas en una sección aparte, no mezcladas con los empleos.
+
+---
+
+### 4. DÓNDE BUSCAR (en este orden de prioridad)
+
+Los medios en Colombia reclutan mucho por sus páginas oficiales y por sus propias redes sociales, y muchas de esas vacantes nunca llegan a los portales de empleo. Por eso las secciones A y B van primero.
+
+Términos base (combínalos): periodista, redactor, redactora, reportero, reportera, periodista multimedia, periodista digital, editor de contenidos, productor de noticias, productora periodística, periodista judicial, periodista política, comunicador social, comunicadora social, community manager, social media, creador de contenido, editor de video, estratega de contenidos, audiencias digitales.
+
+Palabras que usan los medios al reclutar en redes: vacante, convocatoria, buscamos, estamos buscando, estamos contratando, únete a nuestro equipo, trabaja con nosotros, "envía tu hoja de vida", "envía tu HV", "envía tu CV".
+
+A. MEDIOS COLOMBIANOS — PÁGINA OFICIAL + REDES DEL MEDIO
+Para CADA medio de la lista revisa estos 5 canales:
+1. Página web oficial: busca (normalmente en el pie de página) "Trabaje con nosotros", "Trabaja con nosotros", "Empleo", "Talento", "Convocatorias" o "Únete al equipo". Si te lleva a una plataforma externa de vacantes (SuccessFactors, Workday, Magneto, Hiring Room, Buk, Computrabajo, etc.), entra y revisa las vacantes publicadas.
+2. LinkedIn, página de empresa del medio: pestaña "Empleos" y publicaciones del último mes.
+3. Instagram del medio: publicaciones del último mes e historias destacadas con nombres como "Vacantes", "Convocatorias", "Trabaja con nosotros" o "Equipo".
+4. X (Twitter) del medio, con búsqueda avanzada, por ejemplo:
+   from:[cuenta_del_medio] (vacante OR convocatoria OR buscamos OR "hoja de vida" OR "estamos contratando") since:2026-09-22
+5. Facebook, página del medio: publicaciones del último mes.
+Revisa también los perfiles de LinkedIn y X de directores, editores y jefes de redacción de esos medios: es común que publiquen "busco periodista para mi equipo" desde su cuenta personal.
+
+Lista de medios — Prioridad 1 (nacionales y con sede en Bogotá):
+- Prensa y digitales: El Tiempo, El Espectador, Semana, Cambio, La Silla Vacía, Vorágine, Mutante, Baudó Agencia Pública, 070, Rutas del Conflicto, Verdad Abierta, Colombiacheck, La Liga Contra el Silencio, Razón Pública, Los Danieles, Pulzo, Infobae Colombia, Publimetro, Kienyke, Las2orillas, El Nuevo Siglo.
+- Agencias: EFE, AFP, Europa Press, Colprensa.
+- Televisión y radio: revisa TODOS los de la tabla siguiente, en su plataforma de empleo y en sus redes. Muchos medios comparten la plataforma de su grupo: revísala una vez y busca ahí los cargos de cada medio.
+
+| Grupo | Medios | Plataforma de empleo / canal |
+|---|---|---|
+| Casa Editorial El Tiempo | El Tiempo, CityTV, Portafolio | https://trabajaconnosotros.eltiempo.com/eltiempo/ofertas-laborales |
+| Grupo Valorem (Caracol) | Caracol Televisión, Noticias Caracol, Blu Radio, La Kalle | Magneto: https://www.magneto365.com/co/empresas/caracol/empleos |
+| Cablenoticias (emite también Noticias Uno) | Cablenoticias | Sin plataforma pública de empleo; revisar LinkedIn, X (@CABLENOTICIAS) y cablenoticias.com |
+| Organización Ardila Lülle | Canal RCN, Noticias RCN, NTN24, RCN Radio, La FM, El Sol, La Mega, Radio Uno, Antena 2, Win Sports / Win Sports+ | Publica sobre todo en LinkedIn (empleos y publicaciones de la coordinación de selección de RCN TV); canalrcn.com bloquea la lectura automática. RCN Radio cerró su cadena básica en ago-2025. |
+| Prisa | Caracol Radio y W Radio (fusionadas en ene-2026), Tropicana, Bésame, Los 40, Radioacktiva, Canal 1 | https://www.elempleo.com/co/sitio-empresarial/caracol · https://prisajobs.epreselec.com/Ofertas/Ofertas.aspx (casi todo es de España) · Canal 1 publica en Magneto como "CANAL1" |
+| Claro | Red+ Noticias | Magneto: https://www.magneto365.com/co/empresas/claro-colombia/empleos (filtrar cargos de noticias, contenido y comunicación) |
+| Organización Radial Olímpica | Olímpica Stereo, Radio Tiempo, Mix | Sin sección de empleo (https://oro.com.co/contacto/); revisar sus redes. No confundir con los supermercados Olímpica. |
+| RTVC (medios públicos) | Señal Colombia, Canal Institucional, Radio Nacional de Colombia, Radiónica | https://www.rtvc.gov.co/quienes-somos/ofertas-de-empleo · banco de HV: https://www.rtvc.gov.co/content/registre-su-hoja-de-vida · talentohumano@rtvc.gov.co |
+| Canales regionales | Canal Capital (Bogotá) | https://www.canalcapital.gov.co/institucional/11-atencion-y-servicios-a-la-ciudadania/11-8-trabaja-con-nosotros/ |
+|  | Canal Trece | https://www.teveandina.gov.co/trabaja-con-nosotros/ |
+|  | Teleantioquia | https://www.teleantioquia.co/convocatorias (carga con JavaScript) |
+|  | Telecaribe | https://telecaribe.co/transparencia/convocatorias/convocatorias-2026 |
+|  | Telepacífico | https://www.telepacifico.com/convocatorias |
+|  | Telecafé | Sin sección de empleo (https://telecafe.gov.co/transparencia-acceso-a-la-informacion/) |
+|  | TRO | Banco de HV: https://canaltro.com/trabaja-con-nosotros/ · empleos: https://canaltro.com/canal-tro-2/empleos/ |
+|  | Teleislas | https://www.teleislas.com.co (sin sección de empleo) |
+
+Ojo: los canales públicos y regionales publican muchas "convocatorias" que son para contratar productoras, seguros o servicios, no empleos. Solo cuentan las de cargos o prestación de servicios personales.
+
+Lista de medios — Prioridad 2 (regionales, solo cargos remotos o híbridos): El Colombiano, El País (Cali), El Heraldo, El Universal, Vanguardia, La Patria. Los canales regionales de TV fuera de Bogotá también entran aquí: incluir sus vacantes solo si son remotas o híbridas.
+
+B. REDES SOCIALES EN GENERAL (más allá de las cuentas de los medios)
+- LinkedIn, búsqueda de PUBLICACIONES (no solo empleos), filtro "Último mes": "buscamos periodista", "vacante periodista", "envía tu hoja de vida" periodista, "estamos contratando" redactor, "#vacante" community manager, "convocatoria" comunicador social Bogotá.
+- X (Twitter), búsqueda avanzada, por ejemplo:
+  (buscamos OR vacante OR convocatoria OR "estamos contratando") (periodista OR redactor OR redactora OR "community manager" OR reportera OR "comunicador social") ("hoja de vida" OR HV OR CV) since:2026-09-22 lang:es
+- Facebook: grupos públicos o de los que Laura ya sea miembro sobre empleo de periodistas y comunicadores en Colombia o Bogotá. Solo lee.
+- Instagram: hashtags como #vacantesbogota, #empleobogota, #vacanteperiodista, #empleocomunicadores, y cuentas dedicadas a publicar vacantes en Colombia.
+- Google con la herramienta "Último mes", por ejemplo:
+  site:linkedin.com/posts periodista "hoja de vida" Bogotá
+  site:instagram.com vacante periodista Bogotá
+  "trabaje con nosotros" periodista Colombia
+  vacante "redactor" "medio de comunicación" Bogotá
+
+C. PORTALES DE EMPLEO (usa siempre el filtro de "último mes" o "últimos 30 días")
+- LinkedIn Empleos (en la URL puedes agregar &f_TPR=r2592000 para "último mes"; ubicación Colombia o Bogotá).
+- Computrabajo Colombia, elempleo.com, Magneto, Indeed Colombia (en la URL puedes agregar &fromage=30).
+- Agregadores: Jooble, Talent.com.
+- Servicio Público de Empleo (buscadordeempleo.gov.co).
+- Talento No Palanca (vacantes en entidades del Distrito de Bogotá).
+- Bolsa de empleo de egresados de la Universidad Cooperativa de Colombia.
+
+D. ONG, ORGANISMOS Y SECTOR PERIODÍSTICO (página oficial + redes, igual que en la sección A)
+- FLIP, Dejusticia, Sisma Mujer, Indepaz, Fundación Ideas para la Paz, Temblores ONG, Comisión Colombiana de Juristas, Casa de la Mujer.
+- Organismos internacionales en Colombia: ONU Mujeres, ACNUR, PNUD, OIM, UNICEF (cargos de comunicaciones o contenidos, nivel junior o consultoría).
+- Convocatorias del sector: IJNet en español, Fundación Gabo, Consejo de Redacción, Chicas Poderosas. Solo las que sean empleo o trabajo remunerado; las becas van en la sección aparte.
+
+---
+
+### 5. CORREOS Y CANALES DE CONTACTO
+
+Mientras revisas medios y ONG, anota también a quién se le puede enviar la HV aunque no haya vacante publicada:
+- A quién: editor/a general, jefe/a de redacción, editores de sección (judicial, política, género, país, Bogotá), editor/a de redes o audiencias, productores de noticieros y áreas de talento humano.
+- Dónde: páginas "Contacto", "Quiénes somos", "Equipo" o "Directorio"; buzones de redacción; firmas de autor que publiquen correo; publicaciones donde la persona pida enviar la HV a un correo.
+- Reglas estrictas:
+  * Solo correos publicados públicamente en un contexto profesional. Para cada correo anota la URL exacta donde aparece.
+  * No inventes ni deduzcas correos por patrón (nombre.apellido@...). Si no hay correo público, deja la URL del perfil de LinkedIn de la persona como canal alternativo.
+  * No incluyas correos o teléfonos personales que no hayan sido publicados para recibir contacto profesional.
+
+---
+
+### 6. MÉTODO DE TRABAJO
+
+1. Trabaja por fases y entrégame resultados parciales al terminar cada una para no perder información:
+   Fase 1: medios de Prioridad 1 — página oficial y redes (sección A).
+   Fase 2: redes sociales en general (sección B).
+   Fase 3: portales de empleo (sección C).
+   Fase 4: medios de Prioridad 2, ONG y organismos (secciones A y D), y correos de contacto (sección 5).
+2. Elimina duplicados: la misma oferta suele aparecer en varios canales. Quédate con el enlace original del medio o empleador si existe y anota en qué otros canales apareció.
+3. Si un sitio pide iniciar sesión y no hay sesión abierta, o muestra un captcha, no intentes saltarlo: anótalo en "Fuentes no revisadas" y sigue con la siguiente.
+4. Califica la afinidad de cada oferta de 1 a 5 comparando los requisitos con el perfil de la sección 2, con una razón de una línea.
+
+---
+
+### 7. ENTREGABLE
+
+TABLA A — OFERTAS (ordenada por afinidad y luego por fecha, de la más reciente a la más antigua)
+| # | Fecha de publicación | Cargo | Empresa o medio (o "Confidencial") | Ciudad / modalidad | Dónde se encontró (web oficial, Instagram, LinkedIn, X, portal...) | Enlace | HV a usar | Afinidad (1–5) y razón | Cómo se aplica (botón, correo, formulario, mensaje directo) | Correo o canal para enviar la HV y URL donde aparece | Fecha de cierre | Salario (si aparece) | Alertas (3+ años, inglés, fecha no verificada) |
+
+TABLA B — CONTACTOS PARA ENVIAR LA HV SIN VACANTE PUBLICADA
+| # | Medio u organización | Persona | Cargo | Correo | URL donde aparece el correo | Canal alternativo (LinkedIn) | HV sugerida |
+
+TABLA C — COBERTURA DE MEDIOS (para saber qué se revisó)
+| Medio | Web oficial | LinkedIn | Instagram | X | Facebook | ¿Encontró vacantes? |
+(En cada canal: "Revisado", "Sin sección de empleo", "Requiere sesión" o "No revisado".)
+
+SECCIÓN APARTE — Prácticas, pasantías y becas.
+
+RESUMEN
+- Cuántas ofertas revisaste, cuántas incluiste y cuántas descartaste (con los motivos agrupados).
+- Fuentes no revisadas y por qué.
+- Las 5 ofertas que recomiendas priorizar esta semana.
+
+CSV — Repite las tablas A y B en formato CSV (separado por comas) para pegarlas en Google Sheets o Excel.

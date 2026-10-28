@@ -94,3 +94,8 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-purple-light);
 }
+
+/* Con un visor (dialog) abierto, la página de fondo no se desplaza. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}

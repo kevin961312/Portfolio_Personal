@@ -12,7 +12,11 @@ export interface ArticuloDigital {
   titulo: string;
   publicacion: string;
   url: string;
+  /** Fecha de publicación en la web (AAAA-MM-DD). */
+  fecha: string;
   imagen?: string;
+  /** Escaneo de la versión publicada en la edición impresa, si la hubo. */
+  impreso?: string;
 }
 
 export interface PostInstagram {
@@ -23,7 +27,13 @@ export interface PostInstagram {
   fecha: string;
   descripcion?: string;
   likes?: number;
+  /** Cuenta que lo publicó, sin `@` (p. ej. `cuestionp`). */
+  cuenta?: string;
+  /** Imagen de portada en `public/` (p. ej. `/images/instagram/DU27bb3jPGu.jpg`).
+      Sin ella, el Top 20 dibuja una portada con el título del post. */
+  portada?: string;
 }
+
 
 /* ──────────────────────────────────────────────────────────────
    Perfiles dinámicos de la Hoja de Vida

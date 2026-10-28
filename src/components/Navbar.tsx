@@ -6,6 +6,7 @@ import styles from './Navbar.module.css';
 
 const navItems = [
   { path: '/', label: 'Sobre mí' },
+  { path: '/top-20', label: 'Top 20' },
   { path: '/articulos-impresos', label: 'Artículos impresos' },
   { path: '/articulos-digitales', label: 'Artículos digitales' },
   { path: '/posts-instagram', label: 'Posts de Instagram' },

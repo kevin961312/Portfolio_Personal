@@ -6,6 +6,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "'La Fiscalía me dijo ‘cuando sepamos de su hija la llamamos’, el sábado se cumplen 23 años y nadie nos ha dado respuesta': Margarita Restrepo",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/la-fiscalia-me-dijo-cuando-sepamos-de-su-hija-la-llamamos-el-sabado-se-cumplen-23-anos-y-nadie-nos-ha-dado-respuesta-margarita-restrepo-3502582',
+    fecha: '2025-10-23',
+    impreso: '/images/Impreso/cuchas_impreso.jpeg',
     imagen: '/images/articulos/Las_cuchas.jpg',
   },
   {
@@ -13,6 +15,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "'He tumbado este muro': colombiana que cambió norma en España que discriminaba a investigadoras migrantes",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/he-tumbado-este-muro-colombiana-que-cambio-norma-en-espana-que-discriminaba-a-investigadoras-migrantes-3507437',
+    fecha: '2025-11-11',
+    impreso: '/images/Impreso/Espanola.jpeg',
     imagen: '/images/articulos/He_tumbado_muro.jpeg',
   },
   {
@@ -20,6 +24,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "Los misterios de la muerte de Baby Demoni",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/investigacion/los-misterios-de-la-muerte-de-baby-demoni-3518744',
+    fecha: '2025-12-22',
+    impreso: '/images/Impreso/Demoni_impreso.jpeg',
     imagen: '/images/articulos/Demoni.jpeg',
   },
   {
@@ -27,6 +33,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "¿Han difundido su contenido sexual sin consentimiento? Ley que busca castigar la violencia digital fue aprobada en segundo debate",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/han-difundido-su-contenido-sexual-sin-consentimiento-ley-que-busca-castigar-la-violencia-digital-fue-aprobada-en-segundo-debate-3498470',
+    fecha: '2025-10-09',
     imagen: '/images/articulos/Ley.jpeg',
   },
   {
@@ -34,6 +41,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "En un mar de gorras rojas, Limp Bizkit volvió a Bogotá con homenaje a Sam Rivers en el festival Loserville",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/cultura/musica-y-libros/en-un-mar-de-gorras-rojas-limp-bizkit-volvio-a-bogota-con-homenaje-a-sam-rivers-en-el-festival-loserville-3514965',
+    fecha: '2025-12-06',
     imagen: '/images/articulos/Lincosito.jpeg',
   },
   {
@@ -41,6 +49,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "Aprobada en segundo debate la ley Jineth Bedoya Lima que hace obligatoria la capacitación de los funcionarios públicos del país en violencia de género",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/politica/congreso/aprobada-en-segundo-debate-la-ley-jineth-bedoya-lima-que-obliga-la-capacitacion-de-los-funcionarios-del-pais-en-violencia-de-genero-3517066',
+    fecha: '2025-12-15',
+    impreso: '/images/Impreso/Funcionarios.jpeg',
     imagen: '/images/articulos/Ley_bedoya.jpeg',
   },
   {
@@ -48,6 +58,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "Mujeres iraníes del mundo se movilizan ante la crisis de su país",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/mujeres-iranies-del-mundo-se-movilizan-ante-la-crisis-de-su-pais-3523988',
+    fecha: '2026-01-14',
     imagen: '/images/articulos/Iran.jpeg',
   },
   {
@@ -55,6 +66,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "Casa de la Mujer denuncia robo de información, 15 computadores y vandalismo en su sede",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/bogota/casa-de-la-mujer-denuncia-robo-de-informacion-15-computadores-y-vandalismo-en-su-sede-3533124',
+    fecha: '2026-02-17',
     imagen: '/images/articulos/Casa_Mujer.jpeg',
   },
   {
@@ -62,6 +74,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "El 90 % de las mujeres gasta el doble de tiempo que los hombres en trabajos del hogar no pagos",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/el-90-de-las-mujeres-gasta-el-doble-de-tiempo-que-los-hombres-en-trabajos-no-pagos-3504372',
+    fecha: '2025-10-30',
     imagen: '/images/articulos/Trabajadora.jpeg',
   },
   {
@@ -69,6 +82,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "La población LGBTIQ+ tiene nuevo Sistema Nacional para la garantía de sus derechos",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/la-poblacion-lgbtiq-tiene-nuevo-sistema-nacional-para-la-garantia-de-sus-derechos-3515457',
+    fecha: '2025-12-09',
     imagen: '/images/articulos/Lgtbiq.jpg',
   },
   {
@@ -76,6 +90,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "¿Cómo se debe narrar a las defensoras de DD.HH. en medios de comunicación?: ONU Mujeres lanza manual",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/como-se-debe-retratar-a-las-defensoras-de-dd-hh-en-medios-de-comunicacion-onu-mujeres-lanza-manual-3513463',
+    fecha: '2025-12-04',
     imagen: '/images/articulos/Narrar.jpg',
   },
   {
@@ -83,13 +98,16 @@ export const articulosDigitales: ArticuloDigital[] = [
     titulo: "Perros deambulantes son objeto de una polémica entre el Politécnico Grancolombiano y defensores de animales",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/bogota/perros-deambulantes-son-objeto-de-una-polemica-entre-el-politecnico-grancolombiano-y-defensores-de-animales-3479972',
+    fecha: '2025-08-10',
     imagen: '/images/articulos/Firulais.jpg',
   },
   {
-    id: '12',
+    id: '13',
     titulo: "¿Es usted feliz?: la pregunta que la Bienal de Arte BOG25 hace en su inauguración con flores y besos",
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/cultura/arte-y-teatro/es-usted-feliz-la-pregunta-que-la-bienal-bog25-hace-en-su-inauguracion-con-flores-y-besos-3492723',
+    fecha: '2025-09-21',
+    impreso: '/images/Impreso/Bog.jpeg',
     imagen: '/images/articulos/Bog.jpg',
   },
 ];

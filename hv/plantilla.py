@@ -2,7 +2,7 @@
 """
 Plantilla HTML de la Hoja de Vida (el «diseño»).
 
-Reproduce la HV original hecha en Canva («CV (2).pdf»): barra lateral lila con
+Reproduce la HV original hecha en Canva («CV/V0/CV_Laura_Hernandez_original_V0.pdf»): barra lateral lila con
 la foto circular de borde punteado, títulos morados subrayados, barras de
 habilidades, y en la columna derecha el nombre alineado a la derecha con cada
 sección abierta por una «píldora».
