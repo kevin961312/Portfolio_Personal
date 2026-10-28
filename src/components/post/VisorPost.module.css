@@ -1,0 +1,275 @@
+/* Pantalla completa y transparente: el post y su ficha flotan sobre el
+   fondo oscuro, con un brillo del color de la cuenta detrás. */
+.visor {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.visor::backdrop {
+  background: rgba(10, 4, 18, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 6.5rem;
+  background: radial-gradient(ellipse 55% 65% at 40% 50%, color-mix(in srgb, var(--c1) 45%, transparent), transparent 70%);
+  transition: --c1 0.6s ease;
+}
+
+.escenario {
+  display: grid;
+}
+
+/* El embed llega a 540 px con su borde de 1 px a cada lado: con 538 px el
+   marco calza justo y no asoma el borde ni el pie blanco del post. */
+.marco {
+  position: relative;
+  width: min(538px, calc((100dvh - 4rem) * 0.8));
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: 0 0 0 1px rgba(216, 180, 254, 0.22), 0 40px 120px -30px var(--c1);
+  animation: entrar 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--color-lilac-border);
+  background: rgba(27, 13, 47, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.medio {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-acento-texto);
+}
+
+.titulo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.datos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+}
+
+.likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.likes svg {
+  fill: var(--color-lilac-mid);
+  stroke: var(--color-lilac-mid);
+}
+
+.ayuda {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(192, 132, 252, 0.1);
+  font-size: 0.8rem;
+  color: var(--color-lilac-light);
+}
+
+.instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.instagram:hover {
+  color: #fff;
+  filter: brightness(1.12);
+}
+
+/* En escritorio solo se ve el contador: para pasar están las flechas de los lados. */
+.navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.navegacion button {
+  display: none;
+}
+
+.cerrar,
+.flecha,
+.navegacion button {
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-lilac-border);
+  background: rgba(27, 13, 47, 0.8);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.cerrar:hover,
+.flecha:hover:not(:disabled),
+.navegacion button:hover:not(:disabled) {
+  background: rgba(126, 34, 206, 0.55);
+}
+
+.flecha:disabled,
+.navegacion button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.cerrar {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 2;
+  display: grid;
+  width: 46px;
+  height: 46px;
+}
+
+.flecha {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  translate: 0 -50%;
+}
+
+.flechaAnterior {
+  left: 1.5rem;
+}
+
+.flechaSiguiente {
+  right: 1.5rem;
+}
+
+/* Móvil y tablet: el post arriba a todo el ancho, la ficha debajo y las
+   flechas junto al contador (a los lados taparían las del carrusel). */
+@media (max-width: 899px) {
+  .contenido {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    justify-items: center;
+    gap: 1rem;
+    padding: 4.25rem 1rem 1.5rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: radial-gradient(ellipse 90% 45% at 50% 30%, color-mix(in srgb, var(--c1) 45%, transparent), transparent 70%);
+  }
+
+  .escenario {
+    width: 100%;
+    justify-items: center;
+  }
+
+  .marco {
+    width: min(100%, 538px, max(260px, calc((100dvh - 18rem) * 0.8)));
+    border-radius: 16px;
+  }
+
+  .panel {
+    width: min(100%, 540px);
+    gap: 0.7rem;
+    padding: 1.1rem;
+  }
+
+  .titulo {
+    font-size: 1.02rem;
+  }
+
+  .datos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.9rem;
+  }
+
+  .ayuda {
+    display: none;
+  }
+
+  .flecha {
+    display: none;
+  }
+
+  .navegacion {
+    justify-content: space-between;
+  }
+
+  .navegacion button {
+    display: grid;
+    width: 44px;
+    height: 44px;
+  }
+
+  .cerrar {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marco {
+    animation: none;
+  }
+
+  .contenido {
+    transition: none;
+  }
+}

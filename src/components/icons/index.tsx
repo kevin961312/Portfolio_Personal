@@ -138,3 +138,9 @@ export const IconChevronRight = ({ size = 24, color = 'currentColor', className 
     <path d="M9 5l7 7-7 7" />
   </svg>
 );
+
+export const IconExpand = ({ size = 24, color = 'currentColor', className }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+  </svg>
+);

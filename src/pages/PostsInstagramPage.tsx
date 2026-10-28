@@ -2,28 +2,28 @@ import { useEffect, useMemo, useState } from 'react';
 import { postsInstagram } from '../data/posts-instagram';
 import EncabezadoPagina from '../components/EncabezadoPagina';
 import TarjetaPost from '../components/post/TarjetaPost';
+import VisorPost from '../components/post/VisorPost';
 import { IconExternalLink, IconHeart } from '../components/icons';
 import { formatearMetrica } from '../lib/formato';
 import { porFecha, porLikes, tituloPost } from '../lib/posts';
-import { useReinicios } from '../hooks/useReinicios';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './PostsInstagramPage.module.css';
 
-type Tipo = 'todos' | 'video' | 'carrusel';
+type Tipo = 'video' | 'carrusel';
 type Orden = 'likes' | 'recientes';
 
+/* Sin ninguno marcado se ven todos; tocar el marcado lo desmarca. */
 const TIPOS: { id: Tipo; etiqueta: string }[] = [
-  { id: 'todos', etiqueta: 'Todo' },
   { id: 'video', etiqueta: 'Reels' },
   { id: 'carrusel', etiqueta: 'Carruseles' },
 ];
 
-
 export default function PostsInstagramPage() {
   const { perfil } = usePerfil();
-  const [tipo, setTipo] = useState<Tipo>('todos');
+  const [tipo, setTipo] = useState<Tipo | null>(null);
   const [orden, setOrden] = useState<Orden>('likes');
-  const { marcar, soltar, clave } = useReinicios();
+  // Posición en `lista` del post abierto en grande.
+  const [abierto, setAbierto] = useState<number | null>(null);
 
   useEffect(() => {
     document.title = `Posts de Instagram · ${perfil.tituloDocumento}`;
@@ -32,7 +32,7 @@ export default function PostsInstagramPage() {
   const lista = useMemo(
     () =>
       postsInstagram
-        .filter((p) => tipo === 'todos' || p.tipo === tipo)
+        .filter((p) => !tipo || p.tipo === tipo)
         .sort(orden === 'likes' ? porLikes : porFecha),
     [tipo, orden],
   );
@@ -43,7 +43,7 @@ export default function PostsInstagramPage() {
         eyebrow="Redes sociales"
         titulo="Posts de"
         resaltado="Instagram"
-        lead="Reels y carruseles producidos para EL TIEMPO y Cuestión Pública. Toca cualquiera para reproducirlo aquí mismo."
+        lead="Reels y carruseles producidos para EL TIEMPO y Cuestión Pública. Toca cualquiera para verlo en grande: ahí se reproduce el reel o se pasa el carrusel."
       />
 
       <div className={styles.barra}>
@@ -54,7 +54,7 @@ export default function PostsInstagramPage() {
               type="button"
               className={styles.chip}
               aria-pressed={tipo === t.id}
-              onClick={() => setTipo(t.id)}
+              onClick={() => setTipo((actual) => (actual === t.id ? null : t.id))}
             >
               {t.etiqueta}
             </button>
@@ -78,17 +78,9 @@ export default function PostsInstagramPage() {
         <p className={styles.vacio}>No hay publicaciones con estos filtros.</p>
       ) : (
         <ul className={styles.muro}>
-          {lista.map((p) => (
+          {lista.map((p, i) => (
             <li key={p.url} className={`${styles.item} revelar`}>
-              <TarjetaPost
-                post={p}
-                claveVivo={clave(p.url)}
-                // Solo suena uno a la vez: tocar este corta los demás.
-                onTocado={() => {
-                  marcar(p.url);
-                  soltar(p.url);
-                }}
-              />
+              <TarjetaPost post={p} onAbrir={() => setAbierto(i)} />
               <div className={styles.pie}>
                 <p className={styles.titulo}>{tituloPost(p)}</p>
                 <div className={styles.meta}>
@@ -111,6 +103,8 @@ export default function PostsInstagramPage() {
           ))}
         </ul>
       )}
+
+      <VisorPost posts={lista} indice={abierto} onCambiar={setAbierto} onCerrar={() => setAbierto(null)} />
     </div>
   );
 }
