@@ -8,7 +8,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "carrusel",
     fecha: "2026-02-17",
-    likes: 69000,
+    likes: 68900,
   },
   {
     id: "2",
@@ -17,7 +17,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "carrusel",
     fecha: "2026-02-20",
-    likes: 13000,
+    likes: 13200,
   },
   {
     id: "3",
@@ -26,7 +26,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "carrusel",
     fecha: "2026-03-19",
-    likes: 10000,
+    likes: 10600,
   },
   {
     id: "4",
@@ -35,7 +35,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "carrusel",
     fecha: "2026-01-19",
-    likes: 19000,
+    likes: 19100,
   },
   {
     id: "5",
@@ -44,7 +44,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "carrusel",
     fecha: "2025-10-27",
-    likes: 8000,
+    likes: 8139,
   },
   {
     id: "6",
@@ -53,7 +53,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "carrusel",
     fecha: "2026-03-25",
-    likes: 5900,
+    likes: 5909,
   },
   {
     id: "7",
@@ -80,7 +80,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "video",
     fecha: "2026-01-09",
-    likes: 1589,
+    likes: 1587,
   },
   {
     id: "10",
@@ -98,7 +98,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo: "video",
     fecha: "2025-11-06",
-    likes: 2409,
+    likes: 2408,
   },
   {
     id: "12",
@@ -107,7 +107,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "lamartineris",
     tipo: "video",
     fecha: "2025-10-26",
-    likes: 4563,
+    likes: 4551,
   },
   {
     id:"13",
@@ -116,7 +116,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo:"video",
     fecha:"2026-02-11",
-    likes: 4320,
+    likes: 4315,
   },
   {
     id:"14",
@@ -125,7 +125,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo:"video",
     fecha:"2025-11-14",
-    likes: 3262,
+    likes: 3252,
   },
   {
     id:"15",
@@ -134,7 +134,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo:"video",
     fecha:"2026-01-16",
-    likes: 3929,
+    likes: 3920,
   },
   {
     id:"16",
@@ -143,7 +143,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo:"carrusel",
     fecha:"2026-01-23",
-    likes: 7900,
+    likes: 7860,
   },
   {
     id:"17",
@@ -152,7 +152,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo:"carrusel",
     fecha:"2026-03-04",
-    likes: 2500,
+    likes: 2481,
   },
   {
     id:"18",
@@ -161,7 +161,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "eltiempo",
     tipo:"carrusel",
     fecha:"2026-03-10",
-    likes: 2500,
+    likes: 2495,
   },
   {
     id:"19",
@@ -169,7 +169,7 @@ export const postsInstagram: PostInstagram[] = [
     url:"https://www.instagram.com/p/DW81I56iPXl/",
     tipo:"carrusel",
     fecha:"2026-04-10",
-    likes: 3100,
+    likes: 5465,
   },
 
 
@@ -181,7 +181,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-06-17",
-    likes: 6200,
+    likes: 6201,
   },
   {
     id:"21",
@@ -190,7 +190,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-06-21",
-    likes: 12100,
+    likes: 12200,
   },
   {
     id:"22",
@@ -199,7 +199,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-07-16",
-    likes: 1500,
+    likes: 1523,
   },
   {
     id:"23",
@@ -208,7 +208,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-07-18",
-    likes: 2200,
+    likes: 2203,
   },
   {
     id:"24",
@@ -217,7 +217,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-07-24",
-    likes: 7400,
+    likes: 7374,
   },
   {
     id:"25",
@@ -225,7 +225,7 @@ export const postsInstagram: PostInstagram[] = [
     url:"https://www.instagram.com/p/DbWWXN9pAJJ/",
     tipo:"video",
     fecha:"2026-07-28",
-    likes: 2500,
+    likes: 2499,
   },
   {
     id:"26",
@@ -242,7 +242,7 @@ export const postsInstagram: PostInstagram[] = [
     url:"https://www.instagram.com/p/Dbosbw6iidk/",
     tipo:"video",
     fecha:"2026-08-04",
-    likes: 779,
+    likes: 778,
   },
     {
     id:"28",
@@ -251,7 +251,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-08-07",
-    likes: 516,
+    likes: 513,
   },
   {
     id:"29",
@@ -259,7 +259,7 @@ export const postsInstagram: PostInstagram[] = [
     url:"https://www.instagram.com/p/Db8UDB4jtdK/",
     tipo:"video",
     fecha:"2026-08-12",
-    likes: 4300,
+    likes: 4330,
   },
   {
     id:"30",
@@ -267,7 +267,7 @@ export const postsInstagram: PostInstagram[] = [
     url:"https://www.instagram.com/p/Db-sG7qih9s/",
     tipo:"video",
     fecha:"2026-08-13",
-    likes: 2200,
+    likes: 2177,
   },
  
 
@@ -279,7 +279,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-08-17",
-    likes: 6068,
+    likes: 6081,
   },
 
   {
@@ -289,7 +289,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-08-19",
-    likes: 4400,
+    likes: 4455,
   },
   {
     id:"33",
@@ -298,7 +298,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha: "2026-08-19",
-    likes: 69000,
+    likes: 61400,
   },
   {
     id:"34",
@@ -307,7 +307,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"carrusel",
     fecha:"2026-09-29",
-    likes: 4800,
+    likes: 6072,
   },
   {
     id:"35",
@@ -316,7 +316,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha: "2026-09-23",
-    likes: 3942,
+    likes: 3956,
   },
   {
     id:"36",
@@ -334,7 +334,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"carrusel",
     fecha: "2026-09-05",
-    likes: 9700,
+    likes: 9737,
   },
   {
     id:"38",
@@ -343,7 +343,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-09-03",
-    likes: 7818,
+    likes: 7814,
   },
   {
     id:"39",
@@ -352,7 +352,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"video",
     fecha:"2026-09-18",
-    likes: 4400,
+    likes: 4388,
   },
   {
     id:"40",
@@ -361,7 +361,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"carrusel",
     fecha:"2026-09-15",
-    likes: 10900,
+    likes: 11100,
   },
   {
     id:"41",
@@ -370,7 +370,7 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "cuestionp",
     tipo:"carrusel",
     fecha:"2026-09-10",
-    likes: 9600,
+    likes: 9575,
   },
   {
     id:"42",
@@ -388,6 +388,6 @@ export const postsInstagram: PostInstagram[] = [
     cuenta: "lamartineris",
     tipo:"video",
     fecha:"2026-10-14",
-    likes: 40100,
+    likes: 45600,
   },
 ];
