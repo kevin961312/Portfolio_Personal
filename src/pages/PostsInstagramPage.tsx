@@ -18,12 +18,10 @@ const TIPOS: { id: Tipo; etiqueta: string }[] = [
   { id: 'carrusel', etiqueta: 'Carruseles' },
 ];
 
-const CUENTAS = [...new Set(postsInstagram.map((p) => p.cuenta).filter((c): c is string => Boolean(c)))];
 
 export default function PostsInstagramPage() {
   const { perfil } = usePerfil();
   const [tipo, setTipo] = useState<Tipo>('todos');
-  const [cuenta, setCuenta] = useState<string>('todas');
   const [orden, setOrden] = useState<Orden>('likes');
   const { marcar, soltar, clave } = useReinicios();
 
@@ -35,9 +33,8 @@ export default function PostsInstagramPage() {
     () =>
       postsInstagram
         .filter((p) => tipo === 'todos' || p.tipo === tipo)
-        .filter((p) => cuenta === 'todas' || p.cuenta === cuenta)
         .sort(orden === 'likes' ? porLikes : porFecha),
-    [tipo, cuenta, orden],
+    [tipo, orden],
   );
 
   return (
@@ -60,22 +57,6 @@ export default function PostsInstagramPage() {
               onClick={() => setTipo(t.id)}
             >
               {t.etiqueta}
-            </button>
-          ))}
-        </div>
-        <div className={styles.grupo} role="group" aria-label="Cuenta">
-          <button type="button" className={styles.chip} aria-pressed={cuenta === 'todas'} onClick={() => setCuenta('todas')}>
-            Todas
-          </button>
-          {CUENTAS.map((c) => (
-            <button
-              key={c}
-              type="button"
-              className={styles.chip}
-              aria-pressed={cuenta === c}
-              onClick={() => setCuenta(c)}
-            >
-              @{c}
             </button>
           ))}
         </div>
