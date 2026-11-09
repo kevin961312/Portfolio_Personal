@@ -49,7 +49,7 @@ function GuardiaSecciones({ children }: { children: ReactNode }) {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Portfolio_Personal">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <PerfilSync />
       <div className={styles.layout}>
         <Navbar />
