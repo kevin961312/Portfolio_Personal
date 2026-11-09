@@ -6,8 +6,9 @@ import { PERFILES, PERFIL_POR_DEFECTO, esPerfilValido } from '../data/perfiles';
 
    Fuente de verdad en este orden:
      1. Query param de la URL  →  ?perfil=periodista
-     2. sessionStorage         →  sobrevive a F5 y a limpiezas de la URL
-     3. PERFIL_POR_DEFECTO     →  comunicadora
+     2. PERFIL_POR_DEFECTO     →  comunicadora (dominio sin parámetro)
+   Dentro de la visita, el perfil activo se conserva en memoria al
+   navegar aunque un enlace llegue sin el parámetro.
 
    Es un store externo puro (sin React): la capa de UI se suscribe
    con `useSyncExternalStore`. Así la lógica de ruteo se puede
@@ -55,9 +56,14 @@ function guardarEnSession(id: PerfilId): void {
   }
 }
 
-/** Resuelve el perfil inicial aplicando la cascada URL → sessionStorage → defecto. */
+/**
+ * Resuelve el perfil al abrir el sitio: el de la URL o, si no viene
+ * (`https://lamartineris.site` a secas), siempre comunicadora. No se usa
+ * sessionStorage aquí para que escribir el dominio sin parámetro nunca
+ * abra el último perfil visto en esa pestaña.
+ */
 export function resolverPerfilInicial(): PerfilId {
-  return leerPerfilDeUrl() ?? leerPerfilDeSession() ?? PERFIL_POR_DEFECTO;
+  return leerPerfilDeUrl() ?? PERFIL_POR_DEFECTO;
 }
 
 /* ── Estado ─────────────────────────────────────────────────── */
