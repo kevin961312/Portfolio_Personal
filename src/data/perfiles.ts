@@ -69,7 +69,7 @@ const RUTAS_PERIODISMO = ['/articulos-impresos', '/articulos-digitales', '/repor
 const RUTAS_REDES = ['/posts-instagram'];
 const RUTAS_GALERIA = ['/galeria', '/libro-de-fotos'];
 
-/** Perfil que se carga cuando la URL no trae `?perfil=`. */
+/** Perfil que se carga cuando la URL no trae `?perf=`. */
 export const PERFIL_POR_DEFECTO: PerfilId = 'comunicadora';
 
 export const PERFILES: Record<PerfilId, PerfilContenido> = {

@@ -494,7 +494,7 @@ export const postsInstagram: PostConTema[] = [
     url:"https://www.instagram.com/p/DeM6ulaidKT/",
     cuenta: "cuestionp",
     tipo:"carrusel",
-    fecha:"2026-10-7",
+    fecha:"2026-10-07",
     likes: 542,
   },
   {
@@ -505,7 +505,7 @@ export const postsInstagram: PostConTema[] = [
     url:"https://www.instagram.com/p/DeCHi8cj0Kv/",
     cuenta: "cuestionp",
     tipo:"video",
-    fecha:"2026-10-7",
+    fecha:"2026-10-07",
     likes: 272,
   },
   {

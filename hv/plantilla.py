@@ -29,9 +29,14 @@ AQUI = Path(__file__).resolve().parent
 FOTO = base64.b64encode((AQUI / "assets" / "foto-laura-circulo.jpg").read_bytes()).decode()
 
 
+# Valor corto del perfil en la URL (igual que `CODIGO_PERFIL` en
+# `src/lib/perfilStore.ts`): lamartineris.site/?perf=per
+CODIGO_PERFIL = {"comunicadora": "comu", "periodista": "per", "community-manager": "manager"}
+
+
 def url_perfil(perfil):
     """URL pública de esta versión de la HV, con su parámetro de perfil."""
-    return "%s?perfil=%s" % (SITIO, perfil)
+    return "%s?perf=%s" % (SITIO, CODIGO_PERFIL[perfil])
 
 
 def _url_visible(perfil):
@@ -466,8 +471,8 @@ def construir_html(hoja):
             ICONOS["portafolio"],
             '<a href="%s">'
             '<span class="portafolio-nombre">Ver portafolio en línea</span>'
-            '<span class="portafolio-url">kevin961312.github.io/Portfolio_Personal</span></a>'
-            % url_perfil(perfil),
+            '<span class="portafolio-url">%s</span></a>'
+            % (url_perfil(perfil), _url_visible(perfil)),
         )
     )
 

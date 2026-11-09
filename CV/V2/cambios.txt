@@ -1,0 +1,29 @@
+--- V1
++++ V2
+@@ -4,7 +4,7 @@
+ 3222448811
+ laurahernandezfcb@hotmail.com
+ Bogotá
+-Ver portafolio en línea kevin961312.github.io/Portfolio_Personal
++Ver portafolio en línea lamartineris.site/?perf=comu
+ Estudios
+ 2025 – 2026
+ Programa de la Escuela de Periodismo Multimedia EL TIEMPO
+@@ -74,7 +74,7 @@
+ 3222448811
+ laurahernandezfcb@hotmail.com
+ Bogotá
+-Ver portafolio en línea kevin961312.github.io/Portfolio_Personal
++Ver portafolio en línea lamartineris.site/?perf=per
+ Estudios
+ 2025 – 2026
+ Programa de la Escuela de Periodismo Multimedia EL TIEMPO
+@@ -144,7 +144,7 @@
+ 3222448811
+ laurahernandezfcb@hotmail.com
+ Bogotá
+-Ver portafolio en línea kevin961312.github.io/Portfolio_Personal
++Ver portafolio en línea lamartineris.site/?perf=manager
+ Estudios
+ 2025 – 2026
+ Programa de la Escuela de Periodismo Multimedia EL TIEMPO

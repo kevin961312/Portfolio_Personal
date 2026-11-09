@@ -55,7 +55,7 @@ export type PostConTema = PostInstagram & { tema: TemaPost };
    Comunicadora Social) se modela como un `PerfilContenido`.
    ────────────────────────────────────────────────────────────── */
 
-/** Identificador de perfil. Coincide con el valor del query param `?perfil=`. */
+/** Identificador de perfil. En la URL va abreviado (`?perf=comu|per|manager`, ver `CODIGO_PERFIL`). */
 export type PerfilId = 'community-manager' | 'periodista' | 'comunicadora';
 
 /** Categoría de la métrica; define el ícono y el acento de color de la tarjeta. */

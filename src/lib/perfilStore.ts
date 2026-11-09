@@ -5,7 +5,9 @@ import { PERFILES, PERFIL_POR_DEFECTO, esPerfilValido } from '../data/perfiles';
    Store del perfil activo.
 
    Fuente de verdad en este orden:
-     1. Query param de la URL  →  ?perfil=periodista
+     1. Query param de la URL  →  ?perf=per  (corto: comu, per, manager;
+                                  también se aceptan los enlaces viejos
+                                  ?perfil=periodista y se reescriben)
      2. PERFIL_POR_DEFECTO     →  comunicadora (dominio sin parámetro)
    Dentro de la visita, el perfil activo se conserva en memoria al
    navegar aunque un enlace llegue sin el parámetro.
@@ -15,8 +17,23 @@ import { PERFILES, PERFIL_POR_DEFECTO, esPerfilValido } from '../data/perfiles';
    probar y reutilizar sin montar un componente.
    ────────────────────────────────────────────────────────────── */
 
-/** Nombre del parámetro en la query string. */
-export const PARAM_PERFIL = 'perfil';
+/** Nombre del parámetro en la query string: `?perf=per`. */
+export const PARAM_PERFIL = 'perf';
+
+/** Parámetro de los enlaces anteriores (`?perfil=periodista`), aún aceptado. */
+const PARAM_PERFIL_ANTIGUO = 'perfil';
+
+/** Valor corto que va en la URL para cada perfil. */
+export const CODIGO_PERFIL: Record<PerfilId, string> = {
+  comunicadora: 'comu',
+  periodista: 'per',
+  'community-manager': 'manager',
+};
+
+function perfilDesdeCodigo(codigo: string | null): PerfilId | null {
+  const encontrado = (Object.keys(CODIGO_PERFIL) as PerfilId[]).find((id) => CODIGO_PERFIL[id] === codigo);
+  return encontrado ?? null;
+}
 
 /** Clave de `sessionStorage` donde se persiste el perfil elegido. */
 const CLAVE_SESSION = 'portafolio:perfil-activo';
@@ -28,11 +45,16 @@ const enNavegador = typeof window !== 'undefined';
 
 /* ── Lecturas ───────────────────────────────────────────────── */
 
-/** Lee `?perfil=` de una query string. Devuelve `null` si falta o es inválido. */
+/**
+ * Lee el perfil de una query string: `?perf=per` o, en enlaces viejos,
+ * `?perfil=periodista`. Devuelve `null` si falta o es inválido.
+ */
 export function leerPerfilDeUrl(search: string = enNavegador ? window.location.search : ''): PerfilId | null {
   const params = new URLSearchParams(search);
-  const valor = params.get(PARAM_PERFIL);
-  return esPerfilValido(valor) ? valor : null;
+  const corto = perfilDesdeCodigo(params.get(PARAM_PERFIL));
+  if (corto) return corto;
+  const antiguo = params.get(PARAM_PERFIL_ANTIGUO);
+  return esPerfilValido(antiguo) ? antiguo : null;
 }
 
 /** Lee el perfil persistido en `sessionStorage`. Tolera almacenamiento bloqueado. */
@@ -80,18 +102,19 @@ export function getContenidoActivo(): PerfilContenido {
 
 /* ── Construcción de URLs ───────────────────────────────────── */
 
-/** Devuelve la query string canónica del perfil: `?perfil=periodista`. */
+/** Devuelve la query string canónica del perfil: `?perf=per`. */
 export function construirSearch(id: PerfilId = perfilActual): string {
-  return `?${PARAM_PERFIL}=${id}`;
+  return `?${PARAM_PERFIL}=${CODIGO_PERFIL[id]}`;
 }
 
 /**
- * Reescribe una URL conservando su path y su hash, y fijando `?perfil=`.
- * Mantiene cualquier otro parámetro que ya viniera en la query.
+ * Reescribe una URL conservando su path y su hash, y fijando `?perf=`.
+ * Quita el parámetro viejo `perfil` y mantiene cualquier otro.
  */
 export function construirUrlConPerfil(id: PerfilId, url: string = enNavegador ? window.location.href : '/'): string {
   const destino = new URL(url, enNavegador ? window.location.origin : 'http://localhost');
-  destino.searchParams.set(PARAM_PERFIL, id);
+  destino.searchParams.delete(PARAM_PERFIL_ANTIGUO);
+  destino.searchParams.set(PARAM_PERFIL, CODIGO_PERFIL[id]);
   return `${destino.pathname}${destino.search}${destino.hash}`;
 }
 
@@ -150,22 +173,14 @@ export function setPerfilActivo(id: PerfilId, { modo = 'push' }: OpcionesCambio 
  * `popstate` (botones Atrás/Adelante del navegador).
  */
 export function sincronizarDesdeUrl(): void {
-  const deUrl = leerPerfilDeUrl();
-  if (deUrl) {
-    if (deUrl !== perfilActual) {
-      perfilActual = deUrl;
-      guardarEnSession(deUrl);
-      notificar();
-    }
-    return;
-  }
-  // La URL perdió el parámetro (navegación interna, recarga limpia…):
-  // lo reponemos desde el estado actual sin ensuciar el historial.
-  setPerfilActivo(perfilActual, { modo: 'replace' });
+  // Si la URL perdió el parámetro (navegación interna) se repone desde el
+  // estado actual; si trae la forma vieja (`?perfil=…`) se pasa a la corta.
+  // Todo con replaceState, sin ensuciar el historial.
+  setPerfilActivo(leerPerfilDeUrl() ?? perfilActual, { modo: 'replace' });
 }
 
 /**
- * Arranque: fija `?perfil=` en la URL actual usando `replaceState` para que
+ * Arranque: fija `?perf=` en la URL actual usando `replaceState` para que
  * la primera entrada del historial ya sea compartible, y engancha `popstate`.
  * Idempotente: llamarla dos veces (StrictMode) no duplica listeners.
  */

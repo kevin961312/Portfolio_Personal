@@ -16,7 +16,7 @@ import { sincronizarDesdeUrl } from './lib/perfilStore';
 import styles from './App.module.css';
 
 /**
- * Mantiene `?perfil=` presente en cada navegación interna de React Router.
+ * Mantiene `?perf=` presente en cada navegación interna de React Router.
  * Si un enlace llega sin el parámetro, lo repone con `replaceState`
  * (sin crear una entrada extra en el historial).
  */

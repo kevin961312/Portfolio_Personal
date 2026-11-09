@@ -17,7 +17,7 @@ const navItems = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  // Todos los enlaces internos arrastran `?perfil=` para no perder la
+  // Todos los enlaces internos arrastran `?perf=` para no perder la
   // versión de HV al navegar entre secciones.
   const { perfil, search } = usePerfil();
 

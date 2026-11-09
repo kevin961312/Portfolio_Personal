@@ -236,7 +236,7 @@ export default function SobreMiPage() {
 
   return (
     <div className={styles.page}>
-      {/* Portada: el contenido lo decide `?perfil=`, no hay selector visible */}
+      {/* Portada: el contenido lo decide `?perf=`, no hay selector visible */}
       <section className={styles.hero}>
         <div className={styles.heroTexto} key={perfilId}>
           <p className={styles.eyebrow}>{perfil.rol}</p>

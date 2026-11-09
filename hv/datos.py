@@ -29,7 +29,7 @@ Secciones opcionales de cada hoja:
 
 from metricas import M, compacto, miles  # noqa: F401  (se usan al editar)
 
-SITIO = "https://kevin961312.github.io/Portfolio_Personal/"
+SITIO = "https://lamartineris.site/"
 
 
 # ─────────────────────────────────────────────────────────────────────
