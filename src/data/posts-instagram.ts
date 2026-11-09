@@ -1,8 +1,10 @@
-import type { PostInstagram } from "../types";
+import type { PostConTema } from "../types";
 
-export const postsInstagram: PostInstagram[] = [
+export const postsInstagram: PostConTema[] = [
   {
     id: "1",
+    tema: "politica",
+    genero: true,
     titulo: "Afganistán: nuevo código penal talibán legaliza la violencia contra las mujeres",
     url: "https://www.instagram.com/p/DU27bb3jPGu/",
     cuenta: "eltiempo",
@@ -12,6 +14,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "2",
+    tema: "politica",
+    genero: true,
     titulo: "Sanción histórica a la Universidad de Cartagena por fallas ante casos de acoso",
     url: "https://www.instagram.com/p/DU-pwonDdsB/",
     cuenta: "eltiempo",
@@ -21,6 +25,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "3",
+    tema: "cubrimiento",
+    genero: true,
     titulo: "Colombiana denuncia abuso sexual y retención ilegal en una churrería de Valencia",
     url: "https://www.instagram.com/p/DWELtRgjnl5/",
     cuenta: "eltiempo",
@@ -30,6 +36,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "4",
+    tema: "politica",
+    genero: true,
     titulo: "Corte IDH condena a México por el caso de Ernestina Ascencio, 18 años después",
     url: "https://www.instagram.com/p/DTsQbeMjZ52/",
     cuenta: "eltiempo",
@@ -39,6 +47,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "5",
+    tema: "politica",
+    genero: true,
     titulo: "Capturan a subcomandante de Policía de La Guajira por delitos sexuales",
     url: "https://www.instagram.com/p/DQT9lOlDZXH/",
     cuenta: "eltiempo",
@@ -48,6 +58,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "6",
+    tema: "cultura",
+    genero: true,
     titulo: "MeToo Colombia: periodistas rompen el silencio sobre el acoso en los medios",
     url: "https://www.instagram.com/p/DWU6cUWjWxW/",
     cuenta: "eltiempo",
@@ -57,6 +69,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "7",
+    tema: "cubrimiento",
+    genero: true,
     titulo: "Carnaval de Barranquilla: campaña 'No es No' contra la violencia hacia las mujeres",
     url: "https://www.instagram.com/p/DUstWFXj1iY/",
     cuenta: "eltiempo",
@@ -66,6 +80,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "8",
+    tema: "politica",
+    genero: true,
     titulo: "Melika Azizi, de 18 años, enfrenta la pena de muerte en Irán por protestar",
     url: "https://www.instagram.com/p/DVLhtr-Edua/",
     cuenta: "eltiempo",
@@ -75,6 +91,8 @@ export const postsInstagram: PostInstagram[] = [
   },  
   {
     id: "9",
+    tema: "politica",
+    genero: true,
     titulo: "2025 cerró con más de 621 feminicidios y 2026 empezó sin tregua para las mujeres",
     url: "https://www.instagram.com/p/DTSuEQTj7GF/",
     cuenta: "eltiempo",
@@ -84,6 +102,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "10",
+    tema: "cultura",
     titulo: "Festival Loserville: Limp Bizkit, 311 y Bullet For My Valentine en el Medplus",
     url: "https://www.instagram.com/p/DR-1WmBDy61/",
     cuenta: "lamartineris",
@@ -93,6 +112,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "11",
+    tema: "politica",
+    genero: true,
     titulo: "Claudia Sheinbaum denuncia al hombre que la acosó sexualmente en la calle",
     url: "https://www.instagram.com/p/DQtt1CVDYg-/",
     cuenta: "eltiempo",
@@ -102,6 +123,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "12",
+    tema: "cultura",
     titulo: "Linkin Park regresa a Bogotá para iniciar su gira por Latinoamérica",
     url: "https://www.instagram.com/p/DQSofnijXKX/",
     cuenta: "lamartineris",
@@ -111,6 +133,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"13",
+    tema: "cubrimiento",
+    genero: true,
     titulo: "Hombre agrede a su pareja hasta dejarla inconsciente en un ascensor en Montería",
     url:"https://www.instagram.com/p/DUnenX_jclW/",
     cuenta: "eltiempo",
@@ -120,6 +144,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"14",
+    tema: "cultura",
+    genero: true,
     titulo: "Nadia Murad, Nobel de Paz, llega a Colombia para el She Is Global Forum 2025",
     url:"https://www.instagram.com/p/DRCT3dyjaBj/",
     cuenta: "eltiempo",
@@ -129,6 +155,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"15",
+    tema: "politica",
+    genero: true,
     titulo: "Las mujeres vuelven a encabezar la resistencia en Irán",
     url:"https://www.instagram.com/p/DTkh_eDjRGp/",
     cuenta: "eltiempo",
@@ -138,6 +166,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"16",
+    tema: "cultura",
+    genero: true,
     titulo: "Murió Gladys West, la matemática pionera del GPS",
     url:"https://www.instagram.com/p/DT2yedtja8F/",
     cuenta: "eltiempo",
@@ -147,6 +177,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"17",
+    tema: "cultura",
+    genero: true,
     titulo: "VPH: una de las infecciones de transmisión sexual más comunes del mundo",
     url:"https://www.instagram.com/p/DVdjW3dDVOj/",
     cuenta: "eltiempo",
@@ -156,6 +188,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"18",
+    tema: "politica",
+    genero: true,
     titulo: "Corte IDH condena a Perú por la esterilización forzada y muerte de Celia Ramos",
     url:"https://www.instagram.com/p/DVtAB4BjTJS/",
     cuenta: "eltiempo",
@@ -165,6 +199,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"19",
+    tema: "cultura",
+    genero: true,
     titulo:"Bonnie Prado Pino, la ingeniera colombiana que calcula trayectorias a la Luna y a Marte para la NASA",
     url:"https://www.instagram.com/p/DW81I56iPXl/",
     cuenta: "eltiempo",
@@ -177,6 +213,7 @@ export const postsInstagram: PostInstagram[] = [
 
   {
     id:"20",
+    tema: "politica",
     titulo: "Las contradicciones del candidato Abelardo de la Espriella",
     url:"https://www.instagram.com/p/DZs_aWJD6nl/",
     cuenta: "cuestionp",
@@ -186,6 +223,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"21",
+    tema: "politica",
     titulo: "Defensores de la Patria: datos de contratistas quedaron expuestos",
     url:"https://www.instagram.com/p/DZ2s7LiOuiC/",
     cuenta: "cuestionp",
@@ -195,6 +233,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"22",
+    tema: "politica",
     titulo: "¿Cambio de gobierno o regreso del conservadurismo más radical?",
     url:"https://www.instagram.com/p/Da3JX_nlSWp/",
     cuenta: "cuestionp",
@@ -204,6 +243,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"23",
+    tema: "politica",
     titulo: "De la Espriella no se pronuncia por la muerte de Joan Sebastian Durán",
     url:"https://www.instagram.com/p/Da726tfndb2/",
     cuenta: "cuestionp",
@@ -213,6 +253,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"24",
+    tema: "cubrimiento",
     titulo: "20 de julio: dos Colombias caminaron por la misma avenida",
     url:"https://www.instagram.com/p/DbLiN-CCe_B/",
     cuenta: "cuestionp",
@@ -222,6 +263,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"25",
+    tema: "politica",
     titulo:"De la Espriella quiere gobernar desde un batallón, como Videla, Pinochet y Franco",
     url:"https://www.instagram.com/p/DbWWXN9pAJJ/",
     cuenta: "cuestionp",
@@ -231,6 +273,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"26",
+    tema: "cubrimiento",
     titulo: "¿Posesión presidencial o concierto del año? La cobertura del 7 de agosto",
     url:"https://www.instagram.com/p/Dbl4LYAE1nl/",
     cuenta: "cuestionp",
@@ -240,6 +283,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"27",
+    tema: "cubrimiento",
     titulo:"Masacre en Florida, Valle: asesinan al gobernador del resguardo Nasa Kwe'sx Yu Kiwe",
     url:"https://www.instagram.com/p/Dbosbw6iidk/",
     cuenta: "cuestionp",
@@ -249,6 +293,7 @@ export const postsInstagram: PostInstagram[] = [
   },
     {
     id:"28",
+    tema: "cubrimiento",
     titulo: "Carlos Fernando Galán habla de la posesión presidencial fuera de Bogotá",
     url:"https://www.instagram.com/p/Dbw0p5pjhKl/",
     cuenta: "cuestionp",
@@ -258,6 +303,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"29",
+    tema: "cubrimiento",
     titulo:"Buenaventura, sin alimentos ni gasolina tras el cierre de su única vía por el terremoto",
     url:"https://www.instagram.com/p/Db8UDB4jtdK/",
     cuenta: "cuestionp",
@@ -267,6 +313,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"30",
+    tema: "cubrimiento",
     titulo:"Terremoto en Cali: hallan a una joven abrazada a dos personas mayores en las ruinas del Edificio Mirasol",
     url:"https://www.instagram.com/p/Db-sG7qih9s/",
     cuenta: "cuestionp",
@@ -279,6 +326,7 @@ export const postsInstagram: PostInstagram[] = [
 
   {
     id:"31",
+    tema: "cubrimiento",
     titulo: "Sindicalista del HUV denuncia falta de acción institucional en el hospital",
     url:"https://www.instagram.com/p/DcJDSwhApFr/",
     cuenta: "cuestionp",
@@ -289,6 +337,7 @@ export const postsInstagram: PostInstagram[] = [
 
   {
     id:"32",
+    tema: "politica",
     titulo: "Concejal de Valledupar muestra su arma y lanza amenaza contra petristas",
     url:"https://www.instagram.com/p/DcO5fpBjV6y/",
     cuenta: "cuestionp",
@@ -298,6 +347,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"33",
+    tema: "politica",
+    genero: true,
     titulo: "Fundadora de Resistencia Chiquita cuenta cómo nació el colectivo",
     url:"https://www.instagram.com/p/DcPZDRpCti2/",
     cuenta: "cuestionp",
@@ -307,6 +358,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"34",
+    tema: "politica",
     titulo: "Presidencia busca apartar a jueza de tutela sobre fundación Luz y Sonrisas",
     url:"https://www.instagram.com/p/Dd4nViICYVk/",
     cuenta: "cuestionp",
@@ -316,6 +368,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"35",
+    tema: "cubrimiento",
     titulo: "Madre de joven abatido en operativo en Santa Marta: 'me mataste a mi hijo'",
     url:"https://www.instagram.com/p/DdpW33HON1f/",
     cuenta: "cuestionp",
@@ -325,6 +378,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"36",
+    tema: "politica",
     titulo: "Abelardo Airlines: 219 vuelos en los primeros 32 días de Gobierno",
     url:"https://www.instagram.com/p/DdcvMMIGpMz/",
     cuenta: "cuestionp",
@@ -334,6 +388,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"37",
+    tema: "politica",
     titulo: "Representante Carol Borda propone eliminar los impuestos saludables",
     url:"https://www.instagram.com/p/Dc56U37m4Vq/",
     cuenta: "cuestionp",
@@ -343,6 +398,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"38",
+    tema: "politica",
     titulo: "Debate de control al ministro de Vivienda por la reconstrucción tras el sismo",
     url:"https://www.instagram.com/p/Dc2DKO8ieRw/",
     cuenta: "cuestionp",
@@ -352,6 +408,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"39",
+    tema: "politica",
     titulo: "En dos días, dos ministros de De la Espriella rinden cuentas ante el Congreso",
     url:"https://www.instagram.com/p/DdblFuDOnvU/",
     cuenta: "cuestionp",
@@ -361,6 +418,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"40",
+    tema: "politica",
     titulo: "Proponen ingreso de la fuerza pública a universidades sin orden judicial",
     url:"https://www.instagram.com/p/DdT1aM_lpI4/",
     cuenta: "cuestionp",
@@ -370,6 +428,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"41",
+    tema: "politica",
     titulo: "Decreto presidencial y colapso de Indumil: el riesgo de armar a los civiles",
     url:"https://www.instagram.com/p/DdHG_5njxKf/",
     cuenta: "cuestionp",
@@ -379,6 +438,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id:"42",
+    tema: "politica",
     titulo: "Reforma tributaria de Galán sigue sin aprobarse en el Concejo de Bogotá",
     url:"https://www.instagram.com/p/DdFZIP9jCC_/",
     cuenta: "cuestionp",
@@ -388,6 +448,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "43",
+    tema: "cubrimiento",
     titulo: "Así respondió el ESMAD al festival Antifracking en el Parque de los Periodistas",
     url:"https://www.instagram.com/p/Def6vsMRBIa/",
     cuenta: "lamartineris",
@@ -397,6 +458,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "44",
+    tema: "cubrimiento",
     titulo: '"Ana Lucía, te robaste la plata". El graffiti que apareció durante las manifestaciones ',
     url:"https://www.instagram.com/p/Dee_Gf1Evuu/",
     cuenta: "cuestionp",
@@ -406,6 +468,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "45",
+    tema: "politica",
     titulo: 'Entrevista a Maria José Pizarro',
     url:"https://www.instagram.com/p/DeeyG_dHK0I/",
     cuenta: "cuestionp",
@@ -415,6 +478,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "46",
+    tema: "cubrimiento",
+    genero: true,
     titulo: 'El caso de Blanca no es aislado. Mujeres de 70 y 83 años también han sido víctimas de presuntas agresiones sexuales',
     url:"https://www.instagram.com/p/DeR0mhDFtGr/",
     cuenta: "cuestionp",
@@ -424,6 +489,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "47",
+    tema: "politica",
     titulo: 'Proyecto Condor 2.0',
     url:"https://www.instagram.com/p/DeM6ulaidKT/",
     cuenta: "cuestionp",
@@ -433,6 +499,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "48",
+    tema: "cubrimiento",
+    genero: true,
     titulo: 'Plantón convocado el 28 de septiembre por el Día de la Acción Global por el Aborto Seguro y Legal, en Bogotá,',
     url:"https://www.instagram.com/p/DeCHi8cj0Kv/",
     cuenta: "cuestionp",
@@ -442,6 +510,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "49",
+    tema: "politica",
     titulo: 'Moción de censura contra el ministro de Defensa, esta vez en la Cámara de Representantes',
     url:"https://www.instagram.com/p/Ddrxt6YOrMA/",
     cuenta: "cuestionp",
@@ -451,6 +520,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "50",
+    tema: "politica",
     titulo: 'Un juez de Bogotá le dio 48 horas al Gobierno Nacional para exponer la información relacionada a las donaciones que recaudó la fundación de la Primera Dama',
     url:"https://www.instagram.com/p/DdmxHZhCb18/",
     cuenta: "cuestionp",
@@ -460,6 +530,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "51",
+    tema: "politica",
     titulo: 'Un juez de Bogotá le dio 48 horas al Gobierno Nacional para exponer la información relacionada a las donaciones que recaudó la fundación de la Primera Dama',
     url:"https://www.instagram.com/p/DcTceKrlAO9/",
     cuenta: "cuestionp",
@@ -469,6 +540,8 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "52",
+    tema: "cubrimiento",
+    genero: true,
     titulo: 'En vivo con nuestro editor José Marulanda, la ex directora del ICBF, Astrid Cáceres y Antonia Gómez, fundadora del colectivo Resistencia Chiquita',
     url:"https://www.instagram.com/p/DcR8k3ildMI/",
     cuenta: "cuestionp",
@@ -478,6 +551,7 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "53",
+    tema: "cubrimiento",
     titulo: 'Pasó más de 21 horas bajo los escombros de las Torres del Limonar en la oscuridad total',
     url:"https://www.instagram.com/p/Dcwe6wHiZzU/",
     cuenta: "cuestionp",

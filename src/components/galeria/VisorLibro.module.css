@@ -1,0 +1,785 @@
+/* ── Libro de fotos: un fotolibro abierto sobre una mesa de luz ── */
+.seccion {
+  --ease-cine: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-hoja: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --sala-bg: #07030d;
+  --texto-suave: rgba(255, 255, 255, 0.72);
+  scroll-margin-top: 130px;
+}
+
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-acento-texto);
+}
+
+.titulo {
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.lead {
+  max-width: 680px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.datos span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.datos span + span::before {
+  content: '·';
+  margin: 0 0.6rem;
+  color: var(--color-lilac-mid);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.boton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.botonTexto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.4rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+/* ── Visor (la mesa de luz) ── */
+.visor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  border-radius: 28px;
+  border: 1px solid var(--color-lilac-border);
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(126, 34, 206, 0.28), transparent 70%),
+    var(--color-bg-elevado);
+}
+
+.visor:focus-visible {
+  outline-offset: 4px;
+}
+
+.visor[data-completa] {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(126, 34, 206, 0.3), transparent 70%),
+    var(--sala-bg);
+}
+
+/* Alternativa sin Fullscreen API (iPhone): el visor ocupa la pantalla. */
+.visor[data-ampliado] {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+/* ── Barras de la presentación ── */
+.segmentos {
+  display: flex;
+  gap: 4px;
+}
+
+.segmento {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.relleno {
+  display: block;
+  height: 100%;
+  background: #fff;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.segmento[data-estado='visto'] .relleno {
+  transform: none;
+}
+
+.relleno[data-corriendo] {
+  animation-name: llenar;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes llenar {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ── Herramientas ── */
+.herramientas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contadorArriba {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.grupoBotones {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.herramienta {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.herramienta:hover:not(:disabled) {
+  background: rgba(192, 132, 252, 0.25);
+}
+
+.herramienta:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.herramienta[aria-pressed='true'] {
+  background: rgba(192, 132, 252, 0.28);
+  border-color: rgba(216, 180, 254, 0.6);
+}
+
+.nivel {
+  min-width: 3.4rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-suave);
+}
+
+/* ── Escenario y página ── */
+.escenario {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flecha {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.flecha:hover:not(:disabled) {
+  background: rgba(192, 132, 252, 0.25);
+}
+
+.flecha:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pagina {
+  position: relative;
+  justify-self: center;
+  width: min(100%, calc((100dvh - 64px - 15rem) * 16 / 9));
+  min-width: min(100%, 280px);
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0d0618;
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.04),
+    0 30px 60px -20px rgba(0, 0, 0, 0.9),
+    0 60px 120px -40px #7e22ce;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pagina[data-zoom] {
+  cursor: grab;
+  touch-action: none;
+}
+
+.pagina[data-zoom][data-arrastrando] {
+  cursor: grabbing;
+}
+
+/* Lomo del libro al centro del pliego (no en la portada ni con zoom). */
+.pagina[data-lomo]:not([data-zoom])::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 47%;
+  z-index: 2;
+  width: 6%;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04) 30%, transparent 40%),
+    linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.18) 45%, rgba(0, 0, 0, 0.28) 50%, rgba(0, 0, 0, 0.18) 55%, transparent),
+    linear-gradient(90deg, transparent 60%, rgba(255, 255, 255, 0.04) 70%, transparent);
+  pointer-events: none;
+}
+
+.deslizador {
+  position: absolute;
+  inset: 0;
+}
+
+.deslizador[data-soltando] {
+  transition: transform 0.22s var(--ease-cine);
+}
+
+.lamina {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+}
+
+.lamina[data-transicion] {
+  transition: transform 0.28s var(--ease-cine);
+}
+
+.lamina[data-entrada='derecha'] {
+  animation: entrarDerecha 0.32s var(--ease-cine);
+}
+
+.lamina[data-entrada='izquierda'] {
+  animation: entrarIzquierda 0.32s var(--ease-cine);
+}
+
+.lamina[data-entrada='fundido'] {
+  animation: fundido 0.18s ease;
+}
+
+@keyframes entrarDerecha {
+  from {
+    translate: 100% 0;
+  }
+}
+
+@keyframes entrarIzquierda {
+  from {
+    translate: -100% 0;
+  }
+}
+
+@keyframes fundido {
+  from {
+    opacity: 0;
+  }
+}
+
+.imagen,
+.imagenGrande {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  -webkit-user-drag: none;
+}
+
+.imagenGrande {
+  transition-duration: 0.15s;
+}
+
+.imagen[data-cargada],
+.imagenGrande[data-cargada] {
+  opacity: 1;
+}
+
+.esqueleto {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.04) 30%, rgba(216, 180, 254, 0.1) 50%, rgba(255, 255, 255, 0.04) 70%);
+  background-size: 200% 100%;
+  animation: brillo 1.4s linear infinite;
+}
+
+@keyframes brillo {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.error a {
+  font-weight: 700;
+}
+
+.pistaZoom {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 4;
+  translate: -50% 0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(18, 8, 31, 0.85);
+  border: 1px solid var(--color-lilac-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: fundido 0.2s ease;
+}
+
+/* ── Giro de hoja sobre el lomo ── */
+.giro {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  perspective: 2200px;
+  pointer-events: none;
+}
+
+.mitad,
+.cara {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #0d0618;
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+}
+
+.mitad[data-lado='izquierda'] {
+  left: 0;
+}
+
+.mitad[data-lado='derecha'] {
+  left: 50%;
+}
+
+.hoja {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transform-style: preserve-3d;
+  animation: 0.8s var(--ease-hoja) forwards;
+}
+
+.hoja[data-dir='1'] {
+  left: 50%;
+  transform-origin: left center;
+  animation-name: girarAdelante;
+}
+
+.hoja[data-dir='-1'] {
+  left: 0;
+  transform-origin: right center;
+  animation-name: girarAtras;
+}
+
+@keyframes girarAdelante {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes girarAtras {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+.cara {
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.cara[data-cara='dorso'] {
+  transform: rotateY(180deg);
+}
+
+/* Sombra de giro y un brillo lila que cruza la hoja a mitad de camino. */
+.cara::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.35),
+    transparent 40%,
+    rgba(216, 180, 254, 0.12) 60%,
+    transparent 80%
+  );
+  opacity: 0;
+  animation: sombraHoja 0.8s var(--ease-hoja);
+}
+
+.hoja[data-dir='-1'] .cara::after {
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.35),
+    transparent 40%,
+    rgba(216, 180, 254, 0.12) 60%,
+    transparent 80%
+  );
+}
+
+@keyframes sombraHoja {
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Sombra que la hoja proyecta sobre la página de abajo. */
+.sombraBase {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  opacity: 0;
+  animation: sombraBase 0.8s var(--ease-hoja);
+}
+
+.sombraBase[data-dir='1'] {
+  left: 50%;
+  transform-origin: left;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.45), transparent 70%);
+}
+
+.sombraBase[data-dir='-1'] {
+  left: 0;
+  transform-origin: right;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.45), transparent 70%);
+}
+
+@keyframes sombraBase {
+  0% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+/* ── Pie de foto ── */
+.pie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.pieTexto {
+  max-width: 720px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+  text-wrap: balance;
+}
+
+.navegacionMovil {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navegacionMovil button {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+}
+
+.navegacionMovil button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.contador {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Miniaturas ── */
+.miniaturas {
+  display: flex;
+  justify-content: safe center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.5rem 0.25rem 0.25rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.miniatura {
+  position: relative;
+  display: block;
+  width: 112px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--color-surface);
+  opacity: 0.55;
+  filter: saturate(0.8);
+  cursor: pointer;
+  scroll-snap-align: center;
+  transition: opacity 0.2s, transform 0.2s var(--ease-cine), box-shadow 0.2s, filter 0.2s;
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.miniatura:hover {
+  opacity: 0.9;
+}
+
+.miniatura[aria-current='page'] {
+  opacity: 1;
+  filter: none;
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 6px rgba(192, 132, 252, 0.35);
+}
+
+.miniaturaNumero {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: rgba(18, 8, 31, 0.85);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+/* ── Pantalla completa ── */
+/* El visor mide justo la pantalla: ningún bloque se encoge (la tira de
+   miniaturas, con overflow, se recortaba a la mitad); el que se ajusta es
+   el ancho de la página. */
+.visor[data-completa] > * {
+  flex-shrink: 0;
+}
+
+.visor[data-completa] .pagina {
+  width: min(calc(100vw - 9rem), calc((100dvh - 15rem) * 16 / 9));
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .miniatura {
+    width: 96px;
+  }
+
+  .escenario {
+    gap: 0.6rem;
+  }
+
+  .flecha {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ── Celular: página a todo el ancho, flechas bajo la página ── */
+@media (max-width: 600px) {
+  /* Los datos se parten en varias líneas: sin «·» (quedaban sueltos al
+     inicio de línea), separados solo por espacio. */
+  .datos {
+    gap: 0.35rem 1rem;
+  }
+
+  .datos span + span::before {
+    content: none;
+  }
+
+  .visor {
+    margin-inline: -0.5rem;
+    padding: 0.85rem 0.6rem;
+    border-radius: 20px;
+  }
+
+  .escenario {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .flecha,
+  .contadorArriba {
+    display: none;
+  }
+
+  .herramientas {
+    justify-content: flex-end;
+  }
+
+  .pagina {
+    width: 100%;
+  }
+
+  .navegacionMovil button {
+    display: grid;
+  }
+
+  .miniatura {
+    width: 80px;
+  }
+
+  .pieTexto {
+    font-size: 0.85rem;
+  }
+
+  .visor[data-completa] {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .visor[data-completa] .pagina {
+    width: 100%;
+  }
+}
+
+/* ── Movimiento reducido ── */
+@media (prefers-reduced-motion: reduce) {
+  .lamina[data-transicion],
+  .deslizador[data-soltando],
+  .boton,
+  .miniatura {
+    transition: none;
+  }
+
+  .esqueleto {
+    animation: none;
+  }
+
+  .hoja,
+  .cara::after,
+  .sombraBase {
+    animation-duration: 0.01s;
+  }
+}

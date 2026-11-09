@@ -8,6 +8,8 @@ import ArticulosImpresosPage from './pages/ArticulosImpresosPage';
 import ArticulosDigitalesPage from './pages/ArticulosDigitalesPage';
 import PostsInstagramPage from './pages/PostsInstagramPage';
 import ReportajePage from './pages/ReportajePage';
+import GaleriaPage from './pages/GaleriaPage';
+import LibroFotosPage from './pages/LibroFotosPage';
 import TopPage from './pages/TopPage';
 import { usePerfil } from './hooks/usePerfil';
 import { sincronizarDesdeUrl } from './lib/perfilStore';
@@ -60,6 +62,8 @@ export default function App() {
               <Route path="/articulos-digitales" element={<ArticulosDigitalesPage />} />
               <Route path="/posts-instagram" element={<PostsInstagramPage />} />
               <Route path="/reportaje" element={<ReportajePage />} />
+              <Route path="/galeria" element={<GaleriaPage />} />
+              <Route path="/libro-de-fotos" element={<LibroFotosPage />} />
             </Routes>
           </GuardiaSecciones>
         </main>

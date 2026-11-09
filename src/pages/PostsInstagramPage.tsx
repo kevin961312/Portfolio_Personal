@@ -6,6 +6,7 @@ import VisorPost from '../components/post/VisorPost';
 import { IconExternalLink, IconHeart } from '../components/icons';
 import { formatearMetrica } from '../lib/formato';
 import { porFecha, porLikes, tituloPost } from '../lib/posts';
+import type { PostInstagram, TemaPost } from '../types';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './PostsInstagramPage.module.css';
 
@@ -27,9 +28,31 @@ const TIPOS: { id: Tipo; etiqueta: string }[] = [
   { id: 'carrusel', etiqueta: 'Carruseles' },
 ];
 
+/* Género no es un tema más sino una etiqueta que se suma al tema del post
+   (`genero: true` en los datos); en el filtro se ofrece junto a los temas. */
+type FiltroTema = TemaPost | 'genero';
+
+/* En este orden se muestran los chips y las etiquetas de cada tarjeta. */
+const TEMAS: { id: FiltroTema; etiqueta: string }[] = [
+  { id: 'politica', etiqueta: 'Política' },
+  { id: 'genero', etiqueta: 'Género' },
+  { id: 'cultura', etiqueta: 'Cultura' },
+  { id: 'cubrimiento', etiqueta: 'Cubrimiento' },
+];
+const ETIQUETA_TEMA: Record<FiltroTema, string> = {
+  cultura: 'Cultura',
+  politica: 'Política',
+  cubrimiento: 'Cubrimiento',
+  genero: 'Género',
+};
+
+const cumpleTema = (p: PostInstagram, filtro: FiltroTema | null) =>
+  !filtro || (filtro === 'genero' ? !!p.genero : p.tema === filtro);
+
 export default function PostsInstagramPage() {
   const { perfil } = usePerfil();
   const [tipo, setTipo] = useState<Tipo | null>(null);
+  const [tema, setTema] = useState<FiltroTema | null>(null);
   const [orden, setOrden] = useState<Orden>('likes');
   // Cuántos posts de `lista` se muestran; crece de a una tanda al bajar.
   const [mostrados, setMostrados] = useState(POR_TANDA);
@@ -51,6 +74,10 @@ export default function PostsInstagramPage() {
     setTipo((actual) => (actual === t ? null : t));
     reiniciarMuro();
   };
+  const cambiarTema = (t: FiltroTema) => {
+    setTema((actual) => (actual === t ? null : t));
+    reiniciarMuro();
+  };
   const cambiarOrden = (o: Orden) => {
     setOrden(o);
     reiniciarMuro();
@@ -69,10 +96,20 @@ export default function PostsInstagramPage() {
   const lista = useMemo(
     () =>
       postsInstagram
-        .filter((p) => !tipo || p.tipo === tipo)
+        .filter((p) => (!tipo || p.tipo === tipo) && cumpleTema(p, tema))
         .sort(orden === 'likes' ? porLikes : porFecha),
-    [tipo, orden],
+    [tipo, tema, orden],
   );
+  // Conteo de cada tema dentro del formato elegido.
+  const porTema = useMemo(() => {
+    const cuenta: Record<FiltroTema, number> = { cultura: 0, politica: 0, cubrimiento: 0, genero: 0 };
+    for (const p of postsInstagram) {
+      if (tipo && p.tipo !== tipo) continue;
+      if (p.tema) cuenta[p.tema] += 1;
+      if (p.genero) cuenta.genero += 1;
+    }
+    return cuenta;
+  }, [tipo]);
   // Posición de cada post en `lista` (los que el filtro saca no están).
   const posicion = useMemo(() => new Map(lista.map((p, i) => [p.url, i])), [lista]);
   const hayMas = mostrados < lista.length;
@@ -124,6 +161,23 @@ export default function PostsInstagramPage() {
             </button>
           ))}
         </div>
+        <span className={styles.separador} aria-hidden="true" />
+        <div className={styles.grupo} role="group" aria-label="Tema">
+          {TEMAS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              className={styles.chip}
+              data-tema={t.id}
+              aria-pressed={tema === t.id}
+              disabled={porTema[t.id] === 0 && tema !== t.id}
+              onClick={() => cambiarTema(t.id)}
+            >
+              <span className={styles.punto} aria-hidden="true" />
+              {t.etiqueta} · {porTema[t.id]}
+            </button>
+          ))}
+        </div>
         <div className={styles.orden} role="group" aria-label="Ordenar">
           <button type="button" aria-pressed={orden === 'likes'} onClick={() => cambiarOrden('likes')}>
             Más vistos
@@ -136,6 +190,7 @@ export default function PostsInstagramPage() {
 
       <p className={styles.conteo} aria-live="polite">
         {lista.length} {lista.length === 1 ? 'publicación' : 'publicaciones'}
+        {tema && ` · ${ETIQUETA_TEMA[tema]}`}
       </p>
 
       {lista.length === 0 && <p className={styles.vacio}>No hay publicaciones con estos filtros.</p>}
@@ -160,6 +215,14 @@ export default function PostsInstagramPage() {
             >
               <TarjetaPost post={p} ancha={horizontal} onAbrir={() => i !== undefined && setAbierto(i)} />
               <div className={styles.pie}>
+                <span className={styles.temas}>
+                  {TEMAS.filter((t) => t.id === p.tema || (t.id === 'genero' && p.genero)).map((t) => (
+                    <span key={t.id} className={styles.tema} data-tema={t.id}>
+                      <span className={styles.punto} aria-hidden="true" />
+                      {t.etiqueta}
+                    </span>
+                  ))}
+                </span>
                 <p className={styles.titulo}>{tituloPost(p)}</p>
                 <div className={styles.meta}>
                   <span className={styles.likes}>

@@ -1,3 +1,8 @@
+[data-tema='cultura'] { --tema: #d8b4fe; }
+[data-tema='politica'] { --tema: #a78bfa; }
+[data-tema='cubrimiento'] { --tema: #a855f7; }
+[data-tema='genero'] { --tema: #e9d5ff; }
+
 .page {
   max-width: 1150px;
   margin: 0 auto;
@@ -51,6 +56,57 @@
   border-color: transparent;
   background: linear-gradient(135deg, #7e22ce, #9d5cf0);
   color: #fff;
+}
+
+.chip:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.punto {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 0.45rem;
+  border-radius: 50%;
+  background: var(--tema);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tema) 22%, transparent);
+}
+
+.chip[aria-pressed='true'] .punto {
+  background: #fff;
+}
+
+.separador {
+  width: 1px;
+  height: 22px;
+  flex-shrink: 0;
+  background: var(--color-lilac-border);
+}
+
+/* Tema y, si aplica, Género, uno al lado del otro. */
+.temas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tema);
+}
+
+.tema .punto {
+  width: 6px;
+  height: 6px;
+  margin-right: 0;
+  box-shadow: none;
 }
 
 /* Orden: control segmentado. */
@@ -236,6 +292,19 @@
     display: none;
   }
 
+  /* Pista de que hay más filtros a la derecha: un velo pegado al borde que
+     se desvanece cuando se llega al final (ocupa su propio hueco). */
+  .barra::after {
+    content: '';
+    position: sticky;
+    right: -1rem;
+    flex: 0 0 2.5rem;
+    align-self: stretch;
+    margin: -0.6rem -1rem -0.6rem -2.5rem;
+    background: linear-gradient(to right, rgba(18, 8, 31, 0), rgba(18, 8, 31, 0.95) 70%);
+    pointer-events: none;
+  }
+
   .grupo {
     flex-wrap: nowrap;
   }
@@ -253,6 +322,10 @@
 
   .titulo {
     font-size: 0.8rem;
+  }
+
+  .tema {
+    font-size: 0.62rem;
   }
 
   .cuenta {

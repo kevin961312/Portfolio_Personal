@@ -78,7 +78,43 @@
   padding: 0.25rem;
 }
 
-@media (max-width: 900px) {
+/* Con ocho secciones el menú en línea va justo: la barra es un poco más
+   ancha que el contenido, entre 1081 y 1400 px se compactan los enlaces,
+   hasta 1140 px la marca queda solo con el ícono y por debajo de 1081 px
+   pasa al menú desplegable. */
+@media (min-width: 1081px) {
+  .inner {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .inner {
+    gap: 0.75rem;
+  }
+
+  .navList {
+    gap: 0.1rem;
+  }
+
+  .navLink {
+    padding: 0.42rem 0.6rem;
+    font-size: 0.84rem;
+  }
+}
+
+@media (min-width: 1081px) and (max-width: 1140px) {
+  .brand span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1080px) {
   .menuBtn {
     display: flex;
     align-items: center;
@@ -96,6 +132,9 @@
     border-bottom: 1px solid var(--color-lilac-border);
     padding: 0.75rem 1rem 1rem;
     gap: 0.25rem;
+    /* Con el teléfono acostado, las ocho secciones no caben: se desplaza. */
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
   }
 
   .navList.open {

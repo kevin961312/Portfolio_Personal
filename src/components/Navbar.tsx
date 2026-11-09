@@ -10,7 +10,9 @@ const navItems = [
   { path: '/articulos-impresos', label: 'Artículos impresos' },
   { path: '/articulos-digitales', label: 'Artículos digitales' },
   { path: '/posts-instagram', label: 'Posts de Instagram' },
+  { path: '/galeria', label: 'Galería de fotos' },
   { path: '/reportaje', label: 'Reportaje' },
+  // '/libro-de-fotos' no va en el menú: se entra desde la Galería.
 ];
 
 export default function Navbar() {
@@ -33,7 +35,8 @@ export default function Navbar() {
         <button
           className={styles.menuBtn}
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <IconClose size={22} /> : <IconMenu size={22} />}
         </button>

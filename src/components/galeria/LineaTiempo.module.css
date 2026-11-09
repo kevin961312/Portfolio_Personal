@@ -1,0 +1,712 @@
+/* ── Línea de tiempo vertical ─────────────────────────────────────
+   Del más reciente (arriba) al más antiguo. Un eje luminoso baja por el
+   centro y se llena con el scroll (--progreso, de 0 a 1, lo pone el
+   componente); los álbumes alternan de lado. En tablet y celular el eje
+   pasa a la izquierda y todo va en una columna. */
+.linea {
+  --ease-cine: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --texto-suave: rgba(255, 255, 255, 0.72);
+  --eje-x: 50%;
+  --separacion: 88px;
+  --alto-marca: 2.4rem;
+  --progreso: 0;
+  position: relative;
+  isolation: isolate;
+  padding: 1.5rem 0 2rem;
+  transition:
+    --c1 0.9s ease,
+    --c2 0.9s ease;
+}
+
+/* Manchas difusas con los colores del álbum activo (como en el Top). Van
+   pegadas a la ventana mientras se recorre la línea. */
+.fondo {
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.fondoFijo {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mancha {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.32;
+  animation: flotar 16s ease-in-out infinite alternate;
+}
+
+.mancha:first-child {
+  top: -25vmax;
+  left: -20vmax;
+  background: var(--c1);
+}
+
+.mancha:nth-child(2) {
+  right: -25vmax;
+  bottom: -30vmax;
+  background: var(--c2);
+  opacity: 0.2;
+  animation-delay: -8s;
+}
+
+@keyframes flotar {
+  to {
+    translate: 6vmax 4vmax;
+  }
+}
+
+/* ── Eje ── */
+.recorrido {
+  position: relative;
+}
+
+.eje {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--eje-x);
+  width: 2px;
+  translate: -50% 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(216, 180, 254, 0.35) 3%,
+    rgba(216, 180, 254, 0.35) 94%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Perforaciones de película a los dos lados del eje. */
+.eje::before,
+.eje::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(180deg, rgba(216, 180, 254, 0.14) 0 10px, transparent 10px 22px);
+  mask-image: linear-gradient(180deg, transparent, #000 4%, #000 92%, transparent);
+}
+
+.eje::before {
+  left: -12px;
+}
+
+.eje::after {
+  left: 9px;
+}
+
+/* Lo recorrido: degradado morado con brillo que baja con el scroll. */
+.ejeRelleno {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #7e22ce, #c084fc 70%, var(--c2));
+  box-shadow: 0 0 14px rgba(192, 132, 252, 0.65);
+  transform-origin: top;
+  transform: scaleY(var(--progreso));
+}
+
+/* La punta encendida del relleno. */
+.ejeCabeza {
+  position: absolute;
+  top: calc(var(--progreso) * 100%);
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 0 4px rgba(192, 132, 252, 0.25),
+    0 0 22px 6px var(--c2);
+  opacity: calc(min(var(--progreso) * 40, 1));
+}
+
+/* ── Hitos ── */
+.pista {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 7vw, 5.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hito {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  /* Fila 1: cambio de año (si hay); fila 2: marca y contenido. */
+  grid-template-rows: auto auto;
+  column-gap: var(--separacion);
+}
+
+/* Cambio de año: pastilla sobre el eje y el año gigante de fondo. */
+.anio {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.anioPastilla {
+  position: relative;
+  z-index: 1;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(216, 180, 254, 0.45);
+  background: var(--color-bg);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 0 24px -4px var(--c2);
+}
+
+.anioFondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  translate: -50% -50%;
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* La marca (nodo + fecha) comparte fila con el contenido y no ocupa alto. */
+.marca {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  position: relative;
+  align-self: start;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Rayita que une el nodo con la tarjeta. */
+.marca::before {
+  content: '';
+  position: absolute;
+  top: var(--alto-marca);
+  width: calc(var(--separacion) / 2 - 10px);
+  height: 1px;
+  background: rgba(216, 180, 254, 0.4);
+}
+
+.hito[data-lado='izquierda'] .marca::before {
+  right: calc(50% + 10px);
+}
+
+.hito[data-lado='derecha'] .marca::before {
+  left: calc(50% + 10px);
+}
+
+.nodo {
+  position: absolute;
+  top: var(--alto-marca);
+  left: var(--eje-x);
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-lilac-mid);
+  transition:
+    transform 0.3s var(--ease-cine),
+    background 0.3s var(--ease-cine),
+    box-shadow 0.3s var(--ease-cine);
+}
+
+.hito[data-estado='pasado'] .nodo {
+  background: var(--color-lilac-mid);
+}
+
+.hito[data-estado='activo'] .nodo {
+  transform: scale(1.3);
+  background: #fff;
+  box-shadow:
+    0 0 0 6px rgba(192, 132, 252, 0.2),
+    0 0 26px 5px var(--c2);
+}
+
+/* Fecha al otro lado del eje: el día grande y el mes debajo. */
+.fecha {
+  position: absolute;
+  top: var(--alto-marca);
+  display: flex;
+  flex-direction: column;
+  translate: 0 -0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.hito[data-lado='izquierda'] .fecha {
+  left: calc(50% + 28px);
+  align-items: flex-start;
+}
+
+.hito[data-lado='derecha'] .fecha {
+  right: calc(50% + 28px);
+  align-items: flex-end;
+}
+
+.dia {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.3s ease;
+}
+
+.mes {
+  margin-top: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--texto-suave);
+}
+
+.hito[data-estado='activo'] .dia {
+  color: #fff;
+}
+
+/* ── Contenido: tarjeta y ficha ── */
+.contenido {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(100%, 380px);
+}
+
+.hito[data-horizontal] .contenido {
+  width: min(100%, 500px);
+}
+
+.hito[data-lado='izquierda'] .contenido {
+  grid-column: 1;
+  justify-self: end;
+}
+
+.hito[data-lado='derecha'] .contenido {
+  grid-column: 2;
+  justify-self: start;
+}
+
+.tarjeta {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  background: var(--color-surface);
+  box-shadow:
+    0 0 0 1px var(--color-lilac-border),
+    var(--sombra-tarjeta);
+  transition:
+    translate 0.25s var(--ease-cine),
+    box-shadow 0.3s var(--ease-cine);
+}
+
+/* Álbum de fotos apaisadas: tarjeta panorámica (PostVivo recorta el 16:9). */
+.tarjeta[data-horizontal] {
+  aspect-ratio: 16 / 9;
+}
+
+.hito[data-estado='activo'] .tarjeta {
+  box-shadow:
+    0 40px 100px -30px var(--c1),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.tarjeta:has(.abrir:hover),
+.tarjeta:has(.abrir:focus-visible) {
+  translate: 0 -6px;
+}
+
+.sello {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(18, 8, 31, 0.78);
+  border: 1px solid var(--color-lilac-border);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
+/* Toda la tarjeta es el botón que proyecta el álbum. */
+/* La capa no tapa el post (sus flechas reciben los toques): solo la
+   pastilla «Proyectar» es clicable. */
+.abrir {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 14px;
+  overflow: hidden;
+  border: none;
+  border-radius: inherit;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.abrir:hover,
+.abrir:focus-visible {
+  background: linear-gradient(to top, rgba(18, 8, 31, 0.7), transparent 50%);
+}
+
+.abrir:focus-visible {
+  outline-offset: -3px;
+}
+
+/* Destello de proyector: un brillo lila cruza la tarjeta al pasar el cursor. */
+.destello {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(216, 180, 254, 0.24) 50%, transparent 60%);
+  translate: -100% 0;
+  pointer-events: none;
+}
+
+.abrir:hover .destello,
+.abrir:focus-visible .destello {
+  translate: 100% 0;
+  transition: translate 0.7s var(--ease-cine);
+}
+
+.proyectar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-lilac-border);
+  background: rgba(18, 8, 31, 0.85);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: zoom-in;
+  pointer-events: auto;
+  transition:
+    opacity 0.2s ease,
+    translate 0.2s ease;
+}
+
+.abrir:hover .proyectar,
+.abrir:focus-visible .proyectar,
+.hito[data-estado='activo'] .proyectar {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* En pantallas táctiles no hay hover: la pastilla se ve siempre. */
+@media (hover: none) {
+  .proyectar {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Instagram bloqueado: la portada se queda y se ofrece el enlace. */
+.enlaceFallo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  translate: -50% -50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #3b0764;
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+.enlaceFallo:hover {
+  color: #3b0764;
+  background: var(--color-lilac-light);
+}
+
+/* ── Ficha ── */
+.ficha {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-acento-texto);
+}
+
+.meta span,
+.lugar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.meta svg,
+.lugar svg {
+  flex-shrink: 0;
+}
+
+.titulo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  color: #fff;
+}
+
+.lugar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.descripcion {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.botonProyectar,
+.enlace {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 40px;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+
+.botonProyectar {
+  border: none;
+  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  color: #fff;
+  box-shadow: 0 12px 30px -14px #c084fc;
+}
+
+.botonProyectar:hover {
+  transform: translateY(-2px);
+}
+
+.enlace {
+  border: 1px solid var(--color-lilac-border);
+  background: var(--color-surface);
+  color: #fff;
+}
+
+.enlace:hover {
+  color: #fff;
+  background: var(--color-surface-hover);
+}
+
+/* ── Tablet y celular: una columna con el eje a la izquierda ── */
+@media (max-width: 900px) {
+  .linea {
+    --eje-x: 17px;
+    --separacion: 0px;
+    --sangria: 44px;
+    --alto-marca: 0.7rem;
+  }
+
+  .hito {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    padding-left: var(--sangria);
+  }
+
+  .anio {
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  /* La pastilla del año se centra sobre el eje (a la izquierda de la sangría). */
+  .anioPastilla {
+    left: calc(var(--eje-x) - var(--sangria));
+    translate: -50% 0;
+    margin-left: 0;
+  }
+
+  .anioFondo {
+    left: auto;
+    right: 0;
+    translate: 0 -50%;
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+
+  /* La marca pasa a ser la fila de la fecha, encima del contenido. */
+  .marca {
+    grid-row: 2;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.85rem;
+  }
+
+  .marca::before {
+    display: none;
+  }
+
+  .nodo {
+    left: calc(var(--eje-x) - var(--sangria));
+    top: 50%;
+  }
+
+  .fecha,
+  .hito[data-lado='izquierda'] .fecha,
+  .hito[data-lado='derecha'] .fecha {
+    position: static;
+    flex: 1;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+    translate: none;
+  }
+
+  /* Línea fina de la fecha hacia la derecha. */
+  .fecha::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    align-self: center;
+    background: rgba(216, 180, 254, 0.25);
+  }
+
+  .dia {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .mes {
+    margin-top: 0;
+  }
+
+  .contenido,
+  .hito[data-lado='izquierda'] .contenido,
+  .hito[data-lado='derecha'] .contenido {
+    grid-row: 3;
+    grid-column: 1;
+    justify-self: start;
+    width: min(100%, 420px);
+  }
+
+  .hito[data-horizontal] .contenido {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .linea {
+    --sangria: 40px;
+    --eje-x: 13px;
+  }
+
+  .tarjeta {
+    border-radius: 16px;
+  }
+
+  .contenido,
+  .hito[data-lado='izquierda'] .contenido,
+  .hito[data-lado='derecha'] .contenido {
+    width: 100%;
+  }
+
+  .titulo {
+    font-size: 1.05rem;
+  }
+}
+
+/* ── Movimiento reducido ── */
+@media (prefers-reduced-motion: reduce) {
+  .mancha {
+    animation: none;
+  }
+
+  .linea,
+  .tarjeta,
+  .destello,
+  .proyectar,
+  .nodo,
+  .dia,
+  .botonProyectar {
+    transition: none !important;
+  }
+
+  .tarjeta:has(.abrir:hover),
+  .tarjeta:has(.abrir:focus-visible) {
+    translate: none;
+  }
+}

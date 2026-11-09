@@ -67,6 +67,7 @@ const RUTA_SOBRE_MI = '/';
 const RUTA_TOP = '/top-20';
 const RUTAS_PERIODISMO = ['/articulos-impresos', '/articulos-digitales', '/reportaje'];
 const RUTAS_REDES = ['/posts-instagram'];
+const RUTAS_GALERIA = ['/galeria', '/libro-de-fotos'];
 
 /** Perfil que se carga cuando la URL no trae `?perfil=`. */
 export const PERFIL_POR_DEFECTO: PerfilId = 'comunicadora';
@@ -127,7 +128,7 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       'Adaptación de investigación periodística densa (leyes, casos judiciales, datos de género) a formatos nativos de Instagram sin perder rigor informativo.',
     ],
     // Solo la evidencia de redes: las secciones de periodismo quedan ocultas.
-    secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES],
+    secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES, ...RUTAS_GALERIA],
     cargos: {
       'Cuestión Pública': 'Community Manager · Creadora de contenido digital',
       'No Es Hora de Callar · Casa Editorial El Tiempo':
@@ -198,7 +199,7 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       'Perros deambulantes en el Politécnico Grancolombiano, regreso de Limp Bizkit al festival Loserville e inauguración de la Bienal de Arte BOG25.',
     ],
     // Solo la evidencia periodística: la parrilla de Instagram queda oculta.
-    secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES],
+    secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES, ...RUTAS_GALERIA],
     cargos: {
       'Cuestión Pública': 'Periodista · Contenido investigativo para audiencias digitales',
       'No Es Hora de Callar · Casa Editorial El Tiempo': 'Periodista con enfoque de género',
@@ -270,7 +271,7 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       `Redes sociales: ${TOTAL_REELS} Reels y ${TOTAL_CARRUSELES} carruseles sostenidos durante ${MESES_PUBLICANDO} meses de publicación continua.`,
     ],
     // Perfil transmedia: es el único que muestra el portafolio completo.
-    secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES],
+    secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES, ...RUTAS_GALERIA],
     cargos: {
       'Cuestión Pública': 'Estratega de contenidos digitales',
       'No Es Hora de Callar · Casa Editorial El Tiempo':

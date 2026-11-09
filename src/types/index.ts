@@ -19,6 +19,9 @@ export interface ArticuloDigital {
   impreso?: string;
 }
 
+/** Tema editorial de un post. */
+export type TemaPost = 'cultura' | 'politica' | 'cubrimiento';
+
 export interface PostInstagram {
   id: string;
   titulo: string;
@@ -35,7 +38,15 @@ export interface PostInstagram {
   /** `'horizontal'` para videos 16:9 (sin el campo, vertical 4:5 como los
       demás). En el muro ocupa dos columnas y en el visor se ve en 16:9. */
   orientacion?: 'horizontal';
+  /** Tema para el filtro de Posts de Instagram. */
+  tema?: TemaPost;
+  /** Etiqueta adicional para las piezas con enfoque de género (se suma al
+      tema: un post puede ser Política + Género). */
+  genero?: boolean;
 }
+
+/** Post del muro: aquí el tema es obligatorio. */
+export type PostConTema = PostInstagram & { tema: TemaPost };
 
 
 /* ──────────────────────────────────────────────────────────────
