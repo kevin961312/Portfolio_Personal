@@ -87,5 +87,9 @@ Bloquean la lectura automática: Cambio / Los Danieles, Canal RCN, CityTV, EFE, 
 - LinkedIn Empleos: periodista, redactor, reportero, comunicador social, community manager, creador de contenido, social media, contenido digital, editor de video, comunicaciones, productor audiovisual, copywriter.
 - LinkedIn publicaciones: "buscamos periodista", vacante periodista, vacante community manager bogotá, vacante comunicador social, "estamos buscando" periodista colombia, vacante redactor bogotá.
 - Instagram: #vacanteperiodista, #vacantesbogota, #vacantecomunicador, "vacante community manager", "vacante periodista bogota".
+- Instagram UTL (Unidad de Trabajo Legislativo del Congreso y del Concejo de Bogotá): "vacante UTL", "UTL comunicaciones", "unidad de trabajo legislativo", #UTL, "asesor de comunicaciones congreso". Muchas son flyers: leer la imagen.
+- Facebook UTL: vacante UTL comunicaciones, unidad de trabajo legislativo comunicador.
+- LinkedIn publicaciones UTL: UTL comunicaciones, unidad de trabajo legislativo comunicador, vacante UTL.
+- No se reportan prácticas, pasantías ni becas: Laura ya tiene título.
 - Facebook (publicaciones): vacante periodista bogotá, buscamos periodista colombia, vacante community manager bogotá, vacante comunicador social bogotá, vacante redactor bogotá.
 - X: ver la guía del navegador.

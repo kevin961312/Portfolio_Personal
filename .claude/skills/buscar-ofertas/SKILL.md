@@ -51,7 +51,9 @@ Responde al usuario en español, breve:
 1. Resumen del día y cuántas ofertas son **nuevas** (no estaban en el historial).
 2. Las prioridades, en orden, con cómo aplicar.
 3. Tabla de esfuerzo: agente, modelo, esfuerzo asignado, dificultad real y recomendación.
-4. Rutas: `ofertas/<fecha>/ofertas_<fecha>.xlsx` e `informe.md`.
+4. Rutas: `ofertas/<fecha>/ofertas_<fecha>.xlsx`, `informe.md` y `ofertas/Contactos_Laura.xlsx` (todos los contactos acumulados, sin duplicados; los nuevos marcados).
+
+No se reportan prácticas, pasantías ni becas (Laura ya tiene título). Sí se buscan vacantes de UTL del Congreso y se leen las ofertas que vienen en imagen.
 
 Si la tabla de esfuerzo recomienda subir o bajar el modelo o el esfuerzo de un agente, propón el cambio en `AGENTES` de `.claude/workflows/buscar-ofertas.js` y aplícalo solo si el usuario lo aprueba. Si hay `fuentes_nuevas`, ofrece agregarlas a `ofertas/fuentes.md`.
 

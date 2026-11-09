@@ -35,7 +35,8 @@ Laura Viviana Hernández Martin — Bogotá.
   * Escuela de Periodismo Multimedia EL TIEMPO (2025–2026): reportera multimedia; reportaje emitido por CityTV; cobertura en foto y video.
   * Ventana U (2024–2025) y Capital Enigma (2024): periodismo universitario e investigación de casos judiciales para redes.
 - Habilidades: redacción y ortografía, reportería en terreno, investigación y verificación, periodismo judicial y político, enfoque de género y DD.HH., producción para TV, paso en cámara, edición de video (CapCut), Canva, Meta Business Suite, Instagram Insights, copywriting, parrillas de contenido.
-- Nivel: junior (0–2 años de experiencia). No declara inglés.
+- Nivel: profesional TITULADA en Comunicación Social, junior (0–2 años de experiencia). No declara inglés.
+- Como ya tiene título, NO le sirven prácticas, pasantías, contratos de aprendizaje ni becas.
 
 Tiene tres versiones de HV. Indica cuál corresponde a cada oferta:
 | Tipo de cargo | HV |
@@ -54,7 +55,8 @@ Tiene tres versiones de HV. Indica cuál corresponde a cada oferta:
 4. Ofertas anónimas o confidenciales ("importante medio de comunicación", "empresa confidencial"): NO las descartes. Si el cargo encaja (redactor/a, periodista, reportero/a, productor/a, community manager, comunicador/a), inclúyelas marcadas como "Confidencial".
 5. Experiencia: NO filtres por experiencia. Incluye la oferta sin importar los años que pida y no le bajes la afinidad por eso. Si exigen inglés avanzado, márcalo.
 6. Descarta y no reportes: ofertas que piden pagar por algo, ventas o call center disfrazados de "comunicador", multinivel, y estudios webcam disfrazados de "creadora de contenido", "modelo" o "presentadora".
-7. Prácticas o pasantías: ponlas en una sección aparte, no mezcladas con los empleos.
+7. Prácticas, pasantías, contratos de aprendizaje, becas, fellowships y convocatorias para estudiantes: NO las reportes (Laura ya tiene título). Anótalas solo en "descartadas" con el motivo "práctica/beca".
+8. Unidades de Trabajo Legislativo (UTL) de congresistas, senadores, representantes a la Cámara, concejales y ediles de Bogotá: SÍ cuentan. Suelen buscar asesor/a de comunicaciones, prensa, community manager o periodista. Inclúyelas (presencial en Bogotá) aunque la publicación sea solo una imagen.
 
 ---
 
@@ -110,6 +112,8 @@ B. REDES SOCIALES EN GENERAL (más allá de las cuentas de los medios)
   (buscamos OR vacante OR convocatoria OR "estamos contratando") (periodista OR redactor OR redactora OR "community manager" OR reportera OR "comunicador social") ("hoja de vida" OR HV OR CV) since:2026-09-22 lang:es
 - Facebook: grupos públicos o de los que Laura ya sea miembro sobre empleo de periodistas y comunicadores en Colombia o Bogotá. Solo lee.
 - Instagram: hashtags como #vacantesbogota, #empleobogota, #vacanteperiodista, #empleocomunicadores, y cuentas dedicadas a publicar vacantes en Colombia.
+- Instagram, UTL del Congreso: muchas vacantes de comunicaciones salen en las cuentas de congresistas, senadores y representantes (y de sus equipos) como publicaciones de "UTL" o "Unidad de Trabajo Legislativo". Busca: "UTL" vacante, "UTL" comunicaciones, "unidad de trabajo legislativo", #UTL, "asesor de comunicaciones" congreso, "buscamos comunicador" senado, "equipo de prensa" congresista. Busca lo mismo en X, Facebook y publicaciones de LinkedIn.
+- Publicaciones que son solo una IMAGEN (flyer o pieza gráfica propia): muchas ofertas no traen el texto en el pie de foto, sino dentro de la imagen. Abre la publicación, toma captura (con zoom si hace falta) y LEE la imagen: cargo, requisitos, ciudad, salario, correo o WhatsApp de contacto y fecha de cierre. Anota en "donde" que la información salió de la imagen.
 - Google con la herramienta "Último mes", por ejemplo:
   site:linkedin.com/posts periodista "hoja de vida" Bogotá
   site:instagram.com vacante periodista Bogotá
@@ -127,13 +131,15 @@ C. PORTALES DE EMPLEO (usa siempre el filtro de "último mes" o "últimos 30 dí
 D. ONG, ORGANISMOS Y SECTOR PERIODÍSTICO (página oficial + redes, igual que en la sección A)
 - FLIP, Dejusticia, Sisma Mujer, Indepaz, Fundación Ideas para la Paz, Temblores ONG, Comisión Colombiana de Juristas, Casa de la Mujer.
 - Organismos internacionales en Colombia: ONU Mujeres, ACNUR, PNUD, OIM, UNICEF (cargos de comunicaciones o contenidos, nivel junior o consultoría).
-- Convocatorias del sector: IJNet en español, Fundación Gabo, Consejo de Redacción, Chicas Poderosas. Solo las que sean empleo o trabajo remunerado; las becas van en la sección aparte.
+- Convocatorias del sector: IJNet en español, Fundación Gabo, Consejo de Redacción, Chicas Poderosas. Solo las que sean empleo o trabajo remunerado; las becas, fellowships y prácticas NO se reportan.
 
 ---
 
 ### 5. CORREOS Y CANALES DE CONTACTO
 
-Mientras revisas medios y ONG, anota también a quién se le puede enviar la HV aunque no haya vacante publicada:
+Todos los contactos se guardan en UNA sola lista acumulada y sin duplicados (archivo ofertas/contactos.csv y pestaña "Contactos" del Excel de cada día, que muestra TODOS los contactos encontrados desde el primer día y marca los nuevos). Si encuentras un contacto que ya está, no lo repitas; si encuentras otro correo de la misma organización, agrégalo.
+
+Mientras revisas medios, ONG y UTL, anota también a quién se le puede enviar la HV aunque no haya vacante publicada:
 - A quién: editor/a general, jefe/a de redacción, editores de sección (judicial, política, género, país, Bogotá), editor/a de redes o audiencias, productores de noticieros y áreas de talento humano.
 - Dónde: páginas "Contacto", "Quiénes somos", "Equipo" o "Directorio"; buzones de redacción; firmas de autor que publiquen correo; publicaciones donde la persona pida enviar la HV a un correo.
 - Reglas estrictas:
@@ -168,7 +174,9 @@ TABLA C — COBERTURA DE MEDIOS (para saber qué se revisó)
 | Medio | Web oficial | LinkedIn | Instagram | X | Facebook | ¿Encontró vacantes? |
 (En cada canal: "Revisado", "Sin sección de empleo", "Requiere sesión" o "No revisado".)
 
-SECCIÓN APARTE — Prácticas, pasantías y becas.
+TABLA D — CONTACTOS ACUMULADOS: todos los contactos encontrados en todas las búsquedas, sin duplicados, con la fecha en que se encontró cada uno y si es nuevo hoy.
+
+(No se reportan prácticas, pasantías ni becas.)
 
 RESUMEN
 - Cuántas ofertas revisaste, cuántas incluiste y cuántas descartaste (con los motivos agrupados).

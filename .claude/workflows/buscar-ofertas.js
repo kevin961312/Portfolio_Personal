@@ -46,7 +46,7 @@ const str = { type: 'string' }
 const OFERTA = {
   type: 'object',
   properties: {
-    categoria: { type: 'string', enum: ['bogota', 'fecha_no_verificada', 'remota_internacional', 'fuera_bogota', 'practicas'] },
+    categoria: { type: 'string', enum: ['bogota', 'fecha_no_verificada', 'remota_internacional', 'fuera_bogota'] },
     fecha_pub: str, fecha_aprox: { type: 'boolean' }, cargo: str, empresa: str, ciudad_modalidad: str,
     donde: str, enlace: str,
     hv: { type: 'string', enum: ['Periodista Multimedia', 'Comunicadora Social', 'Community Manager'] },
@@ -97,8 +97,12 @@ Reglas:
 - Solo lectura: no postules, no llenes formularios, no envíes correos ni mensajes, no inicies sesión, no crees cuentas, no resuelvas captchas.
 - No inventes datos. Si un campo no aparece, déjalo vacío. Correos solo si están publicados, y anota la URL donde aparecen.
 - fecha_pub en formato AAAA-MM-DD. fecha_aprox=true si la calculaste a partir de "hace X días" o similar.
-- categoria: "bogota" (Bogotá o remoto desde Colombia), "remota_internacional" (remoto para un empleador fuera de Colombia), "fuera_bogota" (presencial en otra ciudad), "practicas" (prácticas, pasantías, contrato de aprendizaje o becas), "fecha_no_verificada" (no pudiste confirmar la fecha).
+- categoria: "bogota" (Bogotá o remoto desde Colombia), "remota_internacional" (remoto para un empleador fuera de Colombia), "fuera_bogota" (presencial en otra ciudad), "fecha_no_verificada" (no pudiste confirmar la fecha).
+- Laura YA TIENE TÍTULO profesional: NO reportes prácticas, pasantías, contratos de aprendizaje, becas, fellowships ni convocatorias para estudiantes. Ponlas solo en descartadas con motivo "práctica/beca" y no gastes tiempo abriéndolas.
 - Incluye ofertas anónimas o confidenciales si el cargo encaja.
+- Las vacantes de UTL (Unidad de Trabajo Legislativo) de congresistas, senadores, representantes, concejales o ediles SÍ cuentan (asesor de comunicaciones, prensa, community manager, periodista).
+- Si la oferta es una imagen (flyer) sin texto, toma captura y lee la imagen (cargo, requisitos, ciudad, salario, correo o WhatsApp, cierre). En donde anota "(leído de la imagen)".
+- contactos: agrega cada correo o canal publicado para recibir hojas de vida (también los que salen dentro de imágenes y los de UTL). Si ya está en ${BASE}/contactos.csv no lo repitas.
 - Descarta ventas disfrazadas, multinivel, estudios webcam y estafas; anótalas en descartadas con el motivo.
 - En cobertura pon una fila por fuente revisada, con estado "revisado", "requiere sesión", "bloqueado" o "no revisado".
 - esfuerzo: al terminar, evalúa con honestidad cuánto trabajo te costó tu parte (fuentes revisadas, consultas, bloqueos, dificultad baja/media/alta) y recomienda si mañana convendría un modelo o un esfuerzo más bajo o más alto, y por qué.`
@@ -113,12 +117,17 @@ const TAREAS = {
 1. LinkedIn Empleos: busca los 12 términos de fuentes.md con f_TPR=r604800 (última semana), en Colombia y en Bogotá cuando el término sea genérico (p. ej. comunicaciones, editor de video). Recoge las tarjetas en sessionStorage como indica la guía.
 2. Filtra por título las relevantes (periodismo, redacción, comunicación, redes, contenido, audiovisual) y abre el detalle de las que no estén en el historial para confirmar fecha, modalidad, requisitos y salario.
 3. LinkedIn publicaciones: las 6 búsquedas de fuentes.md con datePosted past-week, más "RCN Televisión vacante" y "Noticias Caracol vacante". Ahí aparecen vacantes con correo para enviar la HV (medios, agencias, reclutadores).
+3b. LinkedIn publicaciones de UTL: "UTL comunicaciones", "unidad de trabajo legislativo comunicador", "vacante UTL" (datePosted past-week).
 4. LinkedIn por empresa (TV y radio): las búsquedas de la sección "LinkedIn por empresa" de la guía, una empresa por búsqueda. Si LinkedIn dice "No se han encontrado empleos", no reportes el relleno de "Empleos que podrían interesarte".`),
   instagram: encargo(AGENTES.instagram.nombre, `${NAVEGADOR}
-Busca las 5 consultas de Instagram de fuentes.md. Calcula la fecha de cada post a partir de su código (sin llamadas a la API) y pide el texto solo de los posts publicados desde ${D}. Máximo 40 llamadas a la API en total, con 2 s entre llamadas; si recibes un 429, detén Instagram de inmediato y anótalo en bloqueos. Quédate solo con vacantes de Colombia.`),
+1. Consultas: las 5 de Instagram de fuentes.md y las 5 de UTL (Unidad de Trabajo Legislativo del Congreso) de fuentes.md. Recoge los enlaces de los posts y calcula su fecha a partir del código (método de la guía, sin pedir nada a Instagram). Quédate solo con los publicados desde ${D}.
+2. Lectura: NO uses fetch a /api/v1/... (el modo automático lo bloquea). Abre cada post en tu pestaña (navigate a https://www.instagram.com/p/<código>/), lee el pie de foto con get_page_text y toma una captura (computer screenshot, con zoom si hace falta) para LEER LA IMAGEN: muchas vacantes son flyers propios con el cargo, los requisitos y el correo dentro de la imagen. Prioriza los posts de UTL y de #vacanteperiodista / #vacantecomunicador.
+3. Límite: máximo 40 posts abiertos en total, con 3 s entre uno y otro. Si Instagram muestra un aviso de límite, error 429 o pide verificar, detén Instagram de inmediato y anótalo en bloqueos.
+4. Quédate solo con vacantes de Colombia (UTL: Congreso de Colombia, Concejo de Bogotá). Anota en contactos los correos publicados para recibir hojas de vida.`),
   facebook_x: encargo(AGENTES.facebook_x.nombre, `${NAVEGADOR}
 1. Facebook: las 5 búsquedas de publicaciones de fuentes.md. Confirma la fecha de las ofertas relevantes con captura y zoom (muchas son reposts viejos) y lee los correos que estén dentro de las imágenes.
-2. X: la consulta general, la consulta Colombia y las tres tandas de cuentas de medios de la guía, todas con since:${D}.
+1b. Facebook UTL: "vacante UTL comunicaciones", "unidad de trabajo legislativo comunicador". Si la vacante está en una imagen, léela con captura y zoom.
+2. X: la consulta general, la consulta Colombia, la consulta UTL y las tres tandas de cuentas de medios de la guía, todas con since:${D}.
 3. Páginas de empleo que solo cargan con navegador: https://www.teleantioquia.co/convocatorias (solo cuentan cargos o prestación de servicios personales, no contratación de productoras o seguros).
 4. Correos ocultos: para cada oferta o publicación de hoy cuyo correo salga como "[email protected]" (sobre todo notas de Las2orillas "¿Quiere trabajar en…?"), ábrela con el navegador y decodifícalo con el método de la guía. Reporta solo correos de talento humano, selección o redacción, en contactos y en el campo correo de la oferta.`),
   portales: encargo(AGENTES.portales.nombre, `${SOLO_WEB}
@@ -132,7 +141,7 @@ Abre cada URL de las tablas "Televisión y radio" y "Webs oficiales de medios" d
 - Si una página muestra un correo como "[email protected]" (oculto), anota la URL en fuentes_nuevas con la nota "correo oculto" para que el agente de navegador lo lea.
 En cobertura pon una fila por cada medio de la tabla de TV y radio. Si encuentras un correo nuevo de editores o talento humano publicado para recibir hojas de vida, agrégalo a contactos. No busques más allá de esas tablas.`),
   ong: encargo(AGENTES.ong.nombre, `${SOLO_WEB}
-Revisa las URLs de la tabla "ONG y organismos" de fuentes.md${LUNES ? ', incluida la última fila (hoy es lunes)' : ', sin la última fila (esa se revisa solo los lunes)'}. Busca cargos de comunicaciones, contenidos, prensa o periodismo: en Colombia o remotos. Marca en alertas si exigen inglés. Becas y convocatorias no laborales van con categoria "practicas".`),
+Revisa las URLs de la tabla "ONG y organismos" de fuentes.md${LUNES ? ', incluida la última fila (hoy es lunes)' : ', sin la última fila (esa se revisa solo los lunes)'}. Busca cargos de comunicaciones, contenidos, prensa o periodismo: en Colombia o remotos. Marca en alertas si exigen inglés. Becas, fellowships, pasantías y convocatorias no laborales NO se reportan (Laura ya tiene título): solo anótalas en descartadas.`),
 }
 
 phase('Buscar')
@@ -171,11 +180,20 @@ for (const [k, r] of Object.entries(res)) {
     dificultad: r.esfuerzo.dificultad, recomendacion: r.esfuerzo.recomendacion,
   })
 }
+// Laura ya tiene título: prácticas, pasantías y becas no se reportan aunque algún agente las devuelva.
+const NO_PRACTICAS = /pr[aá]ctica|practicante|pasant|beca\b|becas\b|fellow|aprendiz|intern(ship)?\b/i
+for (let i = ofertas.length - 1; i >= 0; i--) {
+  const o = ofertas[i]
+  if (o.categoria === 'practicas' || NO_PRACTICAS.test(`${o.cargo} ${o.empresa}`)) {
+    descartadas.push({ cargo: o.cargo, empresa: o.empresa, motivo: 'Práctica, pasantía o beca: Laura ya tiene título' })
+    ofertas.splice(i, 1)
+  }
+}
 ofertas.forEach((o, i) => { o.id = i + 1 })
 log(`${ofertas.length} ofertas y ${contactos.length} contactos reportados por ${Object.keys(res).length} agentes`)
 
 phase('Verificar')
-const candidatas = ofertas.filter(o => o.afinidad >= 4 && o.categoria !== 'practicas')
+const candidatas = ofertas.filter(o => o.afinidad >= 4)
 let verif = null
 if (candidatas.length) {
   log(`${candidatas.length} ofertas con afinidad 4–5 pasan a verificación; las de afinidad 1–3 no se verifican`)
@@ -227,7 +245,7 @@ Lee ${BASE}/Prompt_Busqueda_Empleo.txt (secciones 2 y 3; la experiencia NO impor
 Recibes las ofertas de hoy de varios agentes, ya verificadas las de afinidad 4–5. No reescribas las ofertas: devuelve solo tus decisiones.
 1. duplicados: grupos de ids que son la misma vacante publicada en varios canales (el primer id del grupo es el que se conserva).
 2. ajustes: corrige afinidad, categoria o hv solo cuando estén mal, con una nota breve.
-3. descartar: ids que no deberían estar (fuera de la ventana desde ${L30}, ventas disfrazadas, cargos que no son de comunicación), con el motivo.
+3. descartar: ids que no deberían estar (fuera de la ventana desde ${L30}, ventas disfrazadas, cargos que no son de comunicación, y CUALQUIER práctica, pasantía, aprendizaje o beca: Laura ya tiene título), con el motivo.
 4. prioridades: 5 a 7 frases, en orden, con las ofertas que Laura debería atender primero (prefiere las nuevas que no están en el historial, las de mayor afinidad y las que cierran pronto). Incluye empresa, cargo y cómo aplicar.
 5. resumen: 3 a 5 frases sobre el día (cuántas nuevas, qué tipo de cargos, bloqueos importantes).
 6. recomendaciones_esfuerzo: para cada agente, compara el modelo y esfuerzo asignados con lo que reportó (dificultad, bloqueos, resultados) y recomienda mantener, bajar o subir el modelo o el esfuerzo para mañana, con el porqué.
@@ -248,7 +266,7 @@ opts('consolidador', {
       duplicados: { type: 'array', items: { type: 'array', items: { type: 'integer' } } },
       ajustes: { type: 'array', items: { type: 'object', properties: {
         id: { type: 'integer' }, afinidad: { type: 'integer', minimum: 1, maximum: 5 },
-        categoria: { type: 'string', enum: ['bogota', 'fecha_no_verificada', 'remota_internacional', 'fuera_bogota', 'practicas'] },
+        categoria: { type: 'string', enum: ['bogota', 'fecha_no_verificada', 'remota_internacional', 'fuera_bogota'] },
         hv: { type: 'string', enum: ['Periodista Multimedia', 'Comunicadora Social', 'Community Manager'] }, nota: str }, required: ['id'] } },
       descartar: { type: 'array', items: { type: 'object', properties: { id: { type: 'integer' }, motivo: str }, required: ['id', 'motivo'] } },
       prioridades: { type: 'array', items: str },

@@ -40,7 +40,7 @@ Para cada correo, leer el texto de alrededor y quedarse solo con los de talento 
 - LinkedIn a veces redirige solo a otra página (p. ej. /mynetwork): volver a navegar a la URL.
 
 ## Instagram
-- **Límite estricto: máximo 40 llamadas a la API por día, con 2 s de pausa entre llamadas. Si una respuesta es 429, PARAR Instagram de inmediato** (el 22-oct se bloqueó tras ~100 llamadas y se arriesga la cuenta de Laura).
+- **Límite estricto: máximo 40 posts abiertos por día, con 3 s de pausa entre uno y otro. Si aparece un 429, un aviso de límite o una verificación, PARAR Instagram de inmediato** (el 22-oct se bloqueó tras ~100 llamadas y se arriesga la cuenta de Laura).
 - Búsqueda por palabra/hashtag: `https://www.instagram.com/explore/search/keyword/?q=%23vacanteperiodista`. Hacer scroll 4 veces (1,2 s) y recoger enlaces `a[href*="/p/"]`, `a[href*="/reel/"]`.
 - La fecha sale del código del post, sin pedir nada a Instagram:
   ```js
@@ -49,7 +49,9 @@ Para cada correo, leer el texto de alrededor y quedarse solo con los de talento 
   const fecha=sc=>new Date(Number(sc2id(sc)>>23n)+1314220021721).toISOString().slice(0,10);
   ```
   Filtrar por fecha ANTES de pedir el texto, y pedir texto solo de los posts dentro de la ventana.
-- Texto del post (cuenta como 1 llamada): `fetch('/api/v1/media/'+sc2id(sc)+'/info/',{headers:{'X-IG-App-ID':'936619743392459','X-Requested-With':'XMLHttpRequest'},credentials:'include'})` → `items[0].caption.text`, `items[0].user.username`, `items[0].location.name`.
+- Texto del post: NO usar `fetch('/api/v1/media/<id>/info/')` (el 3-nov el modo automático lo bloqueó). Abrir el post con navigate a `https://www.instagram.com/p/<código>/`, esperar 3 s, leer el pie de foto y la cuenta con get_page_text y tomar captura con `computer` (screenshot; zoom sobre la imagen si la letra es pequeña). Cada post abierto cuenta para el límite de 40.
+- **Flyers / imágenes propias:** muchas vacantes (sobre todo de UTL y de cuentas personales) traen el cargo, los requisitos y el correo solo DENTRO de la imagen. Leer siempre la imagen; si es carrusel, pasar las fotos con la flecha "Siguiente" (solo navegación) y capturar cada una.
+- **UTL del Congreso:** consultas `https://www.instagram.com/explore/search/keyword/?q=<texto>` con "vacante UTL", "UTL comunicaciones", "unidad de trabajo legislativo", "%23UTL", "asesor de comunicaciones congreso". Válidas solo las del Congreso de Colombia (Senado, Cámara) o del Concejo de Bogotá; descartar las de otros países.
 - La mayoría de resultados de hashtags son de otros países (México, Chile, Perú, Argentina): quedarse con los que mencionan Colombia, ciudades colombianas, celulares 3xx, dominios .co o pesos.
 - No revisar cuentas una por una (gasta llamadas).
 
@@ -64,6 +66,8 @@ Para cada correo, leer el texto de alrededor y quedarse solo con los de talento 
 - Extraer: `article[data-testid="tweet"]` → enlace `/status/<id>`, `time[datetime]`, `[data-testid="tweetText"]`. Scroll 10–12 veces (1,5 s).
 - Consulta general:
   `(buscamos OR vacante OR convocatoria OR "estamos contratando" OR "estamos buscando") (periodista OR redactor OR redactora OR reportera OR reportero OR "community manager" OR "comunicador social" OR "comunicadora social") ("hoja de vida" OR HV OR CV OR postula OR envía) since:<desde> lang:es`
+- Consulta UTL:
+  `("UTL" OR "unidad de trabajo legislativo") (vacante OR buscamos OR "hoja de vida" OR convocatoria) (comunicaciones OR comunicador OR comunicadora OR periodista OR prensa OR "community manager") since:<desde>`
 - Consulta Colombia:
   `(vacante OR convocatoria OR buscamos OR "hoja de vida") (periodista OR redactor OR "community manager" OR "comunicador social" OR comunicaciones) (Bogotá OR Colombia OR #TrabajoSíHay) since:<desde>`
 - Cuentas de medios (dos tandas con `from:` unidos por OR + `(vacante OR convocatoria OR buscamos OR "hoja de vida" OR "trabaja con nosotros" OR únete) since:<desde>`):
