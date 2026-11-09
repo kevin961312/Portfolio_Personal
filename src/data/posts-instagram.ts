@@ -436,15 +436,6 @@ export const postsInstagram: PostInstagram[] = [
     likes: 272,
   },
   {
-    id: "48",
-    titulo: 'Plantón convocado el 28 de septiembre por el Día de la Acción Global por el Aborto Seguro y Legal, en Bogotá,',
-    url:"https://www.instagram.com/p/DeCHi8cj0Kv/",
-    cuenta: "cuestionp",
-    tipo:"video",
-    fecha:"2026-10-3",
-    likes: 272,
-  },
-  {
     id: "49",
     titulo: 'Moción de censura contra el ministro de Defensa, esta vez en la Cámara de Representantes',
     url:"https://www.instagram.com/p/Ddrxt6YOrMA/",
@@ -473,15 +464,6 @@ export const postsInstagram: PostInstagram[] = [
   },
   {
     id: "52",
-    titulo: 'La iniciativa "Colombia un solo corazón", impulsada por la primera dama tras el terremoto de 7,4, promocionada por funcionarios, Fuerza Pública y medios públicos, direcciona las donaciones de dinero hacia Colombia Luz y Sonrisas',
-    url:"https://www.instagram.com/p/DcTceKrlAO9/",
-    cuenta: "cuestionp",
-    tipo:"video",
-    fecha:"2026-08-21",
-    likes: 11700,
-  },
-  {
-    id: "53",
     titulo: 'En vivo con nuestro editor José Marulanda, la ex directora del ICBF, Astrid Cáceres y Antonia Gómez, fundadora del colectivo Resistencia Chiquita',
     url:"https://www.instagram.com/p/DcR8k3ildMI/",
     cuenta: "cuestionp",
@@ -490,7 +472,7 @@ export const postsInstagram: PostInstagram[] = [
     likes: 3800,
   },
   {
-    id: "54",
+    id: "53",
     titulo: 'Pasó más de 21 horas bajo los escombros de las Torres del Limonar en la oscuridad total',
     url:"https://www.instagram.com/p/Dcwe6wHiZzU/",
     cuenta: "cuestionp",
