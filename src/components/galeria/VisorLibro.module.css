@@ -762,6 +762,18 @@
   .visor[data-completa] .pagina {
     width: 100%;
   }
+
+  /* Página angosta: perspectiva más corta para que el giro se note en 3D,
+     y un poco más rápido, como al pasar con el dedo. */
+  .giro {
+    perspective: 900px;
+  }
+
+  .hoja,
+  .cara::after,
+  .sombraBase {
+    animation-duration: 0.65s;
+  }
 }
 
 /* ── Movimiento reducido ── */

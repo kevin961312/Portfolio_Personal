@@ -84,8 +84,8 @@ function precargar(src: string) {
 
 /**
  * Visor del libro de fotos: un fotolibro abierto sobre una mesa de luz. En
- * escritorio la hoja gira sobre el lomo; en celular la página se desliza
- * con el dedo. Miniaturas, zoom (botones, doble clic, pellizco, rueda con
+ * escritorio y en celular la hoja gira sobre el lomo (con las flechas o
+ * deslizando el dedo). Miniaturas, zoom (botones, doble clic, pellizco, rueda con
  * Ctrl), pantalla completa, presentación automática y descarga del PDF.
  * Las páginas son WebP pre-renderizadas del PDF (scripts/renderizar-libro.sh).
  */
@@ -144,21 +144,20 @@ export default function VisorLibro({ libro, visorRef: visorRefExterno, titulado 
     setZoom(ZOOM_INICIAL);
   }, []);
 
-  /** Pasa de `desde` a `nuevo` con la transición que toca (giro, deslizar o fundido). */
+  /** Pasa de `desde` a `nuevo`: la hoja gira sobre el lomo (también en
+      celular) o, con movimiento reducido, un fundido. */
   const cambiarPagina = useCallback(
     (desde: number, nuevo: number) => {
       reiniciarZoom();
       setDeslizamiento(0);
       if (reducido) {
         setEntrada({ lado: 'fundido', id: Date.now() });
-      } else if (movil) {
-        setEntrada({ lado: nuevo > desde ? 'derecha' : 'izquierda', id: Date.now() });
       } else {
         setGiro({ desde, hacia: nuevo, dir: nuevo > desde ? 1 : -1 });
       }
       setPagina(nuevo);
     },
-    [movil, reducido, reiniciarZoom],
+    [reducido, reiniciarZoom],
   );
 
   const irA = useCallback(
@@ -316,9 +315,10 @@ export default function VisorLibro({ libro, visorRef: visorRefExterno, titulado 
       setConTransicion(false);
       setZoom(limitarZoom(g.zoom0.z, g.zoom0.x + dx, g.zoom0.y + dy, ancho, alto));
     } else if (g.tipo === 'swipe') {
-      // Resistencia en la primera y la última página.
+      // El dedo solo insinúa el movimiento: al soltar, la hoja gira entera.
+      // Más resistencia en la primera y la última página.
       const enBorde = (dx > 0 && pagina === 0) || (dx < 0 && pagina === ultima);
-      setDeslizamiento(enBorde ? dx * 0.35 : dx);
+      setDeslizamiento(dx * (enBorde ? 0.1 : 0.18));
     }
   };
 
@@ -336,7 +336,7 @@ export default function VisorLibro({ libro, visorRef: visorRefExterno, titulado 
 
     if (g.tipo === 'swipe') {
       const velocidad = Math.abs(dx) / Math.max(1, Date.now() - g.t0);
-      if ((Math.abs(dx) > ancho * 0.25 || velocidad > 0.4) && !((dx > 0 && pagina === 0) || (dx < 0 && pagina === ultima))) {
+      if ((Math.abs(dx) > ancho * 0.18 || velocidad > 0.35) && !((dx > 0 && pagina === 0) || (dx < 0 && pagina === ultima))) {
         irManual(pagina + (dx < 0 ? 1 : -1));
       } else {
         setDeslizamiento(0);
