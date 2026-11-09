@@ -1,0 +1,11 @@
+--- V2
++++ V3
+@@ -4,7 +4,7 @@
+ 3222448811
+ laurahernandezfcb@hotmail.com
+ Bogotá
+-Ver portafolio en línea lamartineris.site/?perf=comu
++Ver portafolio en línea lamartineris.site
+ Estudios
+ 2025 – 2026
+ Programa de la Escuela de Periodismo Multimedia EL TIEMPO

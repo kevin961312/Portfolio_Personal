@@ -34,14 +34,21 @@ FOTO = base64.b64encode((AQUI / "assets" / "foto-laura-circulo.jpg").read_bytes(
 CODIGO_PERFIL = {"comunicadora": "comu", "periodista": "per", "community-manager": "manager"}
 
 
+# Perfil que abre la web sin parámetro (`PERFIL_POR_DEFECTO` en
+# `src/data/perfiles.ts`): su HV enlaza solo el dominio.
+PERFIL_POR_DEFECTO = "comunicadora"
+
+
 def url_perfil(perfil):
     """URL pública de esta versión de la HV, con su parámetro de perfil."""
+    if perfil == PERFIL_POR_DEFECTO:
+        return SITIO
     return "%s?perf=%s" % (SITIO, CODIGO_PERFIL[perfil])
 
 
 def _url_visible(perfil):
-    """La misma URL sin el `https://`, para mostrarla impresa."""
-    return url_perfil(perfil).replace("https://", "")
+    """La misma URL sin el `https://` (ni la `/` final), para mostrarla impresa."""
+    return url_perfil(perfil).replace("https://", "").rstrip("/")
 
 
 # ── Iconos (mismos trazos que `src/components/icons`) ────────────────
