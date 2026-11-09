@@ -81,3 +81,9 @@
     transform: none;
   }
 }
+
+/* Ancha (video horizontal en el muro): sin proporción fija, el alto lo
+   pone quien la usa. */
+.tarjeta[data-ancha] {
+  aspect-ratio: auto;
+}

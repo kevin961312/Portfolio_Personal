@@ -50,6 +50,12 @@
   animation: entrar 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
+/* Video horizontal: marco 16:9, tan ancho como deje el panel lateral. */
+.marco[data-horizontal] {
+  width: min(880px, calc(100vw - 13rem - 300px - 2.5rem), calc((100dvh - 4rem) * 16 / 9));
+  aspect-ratio: 16 / 9;
+}
+
 @keyframes entrar {
   from {
     opacity: 0;
@@ -222,6 +228,10 @@
   .marco {
     width: min(100%, 538px, max(260px, calc((100dvh - 18rem) * 0.8)));
     border-radius: 16px;
+  }
+
+  .marco[data-horizontal] {
+    width: min(100%, 720px);
   }
 
   .panel {

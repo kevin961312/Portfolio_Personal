@@ -17,6 +17,7 @@ import { formatearMetrica } from '../lib/formato';
 import { porLikes, tituloPost } from '../lib/posts';
 import { useContadorAnimado } from '../hooks/useContadorAnimado';
 import { useReinicios } from '../hooks/useReinicios';
+import { useYaCargados } from '../hooks/useYaCargados';
 import { CONSULTA_MOVIL, useMediaQuery } from '../hooks/useMediaQuery';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './TopPage.module.css';
@@ -217,6 +218,7 @@ function TopEscritorio() {
   const actual = enPieza ? top[indice] : null;
   // En el inicio el carrusel (como podio) se ordena como si estuviera en el #1.
   const base = enPieza ? indice : 0;
+  const yaCargado = useYaCargados(base, DISTANCIA_PRECARGA);
 
   const ir = useCallback(
     (destino: number) => {
@@ -279,60 +281,63 @@ function TopEscritorio() {
 
       {/* En el inicio, el mismo carrusel hace de podio con el #1, #2 y #3:
           sus posts cargan mientras se lee la portada y, al empezar, las
-          tarjetas se despliegan en el carrusel sin recargar. */}
-      {(enPieza || indice === INICIO) && (
-        <div
-          className={styles.carrusel}
-          data-podio={!enPieza || undefined}
-          onTouchStart={alEmpezarToque}
-          onTouchEnd={alTerminarToque}
-        >
-          {top.map((p, i) => {
-            const offset = i - base;
-            const distancia = Math.abs(offset);
-            if (distancia > 3) return null;
-            const centro = enPieza && offset === 0;
-            // Misma estructura en todas las posiciones: así el PostVivo de
-            // una tarjeta lateral sigue montado (y cargado) al llegar al centro.
-            return (
-              <div
-                key={p.url}
-                className={styles.tarjeta}
-                data-centro={centro || undefined}
-                data-oculta={distancia === 3 || undefined}
-                data-lugar={!enPieza && i < 3 ? i + 1 : undefined}
-                style={{ '--offset': offset, '--distancia': distancia } as CSSProperties}
-                aria-hidden={!centro || undefined}
-              >
-                <PortadaPost post={p} puesto={i + 1} />
-                {distancia <= DISTANCIA_PRECARGA && (
-                  <PostVivo
-                    key={clave(p.url)}
-                    post={p}
-                    interactivo={centro}
-                    onTocado={() => {
-                      marcar(p.url);
-                      setPausado(true);
-                    }}
-                  />
-                )}
-                {centro ? (
-                  <span className={styles.capaPuesto}>#{i + 1}</span>
-                ) : (
-                  // Las tarjetas de los lados (y el podio) llevan a esa pieza.
-                  <button
-                    type="button"
-                    className={styles.capaIr}
-                    tabIndex={-1}
-                    onClick={() => ir(i)}
-                    aria-label={`Ir al puesto ${i + 1}`}
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
+          tarjetas se despliegan en el carrusel sin recargar. En el fin solo
+          se oculta (no se desmonta) para que los posts ya cargados sigan
+          listos al repetir. */}
+      <div
+        className={styles.carrusel}
+        data-podio={!enPieza || undefined}
+        hidden={indice === FIN}
+        onTouchStart={alEmpezarToque}
+        onTouchEnd={alTerminarToque}
+      >
+        {top.map((p, i) => {
+          const offset = i - base;
+          const distancia = Math.abs(offset);
+          const cargado = yaCargado(i);
+          if (distancia > 3 && !cargado) return null;
+          const centro = enPieza && offset === 0;
+          // Misma estructura en todas las posiciones: así el PostVivo de
+          // una tarjeta lateral sigue montado (y cargado) al llegar al centro.
+          // Las lejanas que ya cargaron siguen montadas, pero ocultas.
+          return (
+            <div
+              key={p.url}
+              className={styles.tarjeta}
+              data-centro={centro || undefined}
+              data-oculta={distancia >= 3 || undefined}
+              data-lugar={!enPieza && i < 3 ? i + 1 : undefined}
+              style={{ '--offset': offset, '--distancia': distancia } as CSSProperties}
+              aria-hidden={!centro || undefined}
+            >
+              <PortadaPost post={p} puesto={i + 1} />
+              {cargado && (
+                <PostVivo
+                  key={clave(p.url)}
+                  post={p}
+                  interactivo={centro}
+                  onTocado={() => {
+                    marcar(p.url);
+                    setPausado(true);
+                  }}
+                />
+              )}
+              {centro ? (
+                <span className={styles.capaPuesto}>#{i + 1}</span>
+              ) : (
+                // Las tarjetas de los lados (y el podio) llevan a esa pieza.
+                <button
+                  type="button"
+                  className={styles.capaIr}
+                  tabIndex={-1}
+                  onClick={() => ir(i)}
+                  aria-label={`Ir al puesto ${i + 1}`}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
 
       {actual && <Info key={indice} post={actual} puesto={indice + 1} />}
 
@@ -395,6 +400,7 @@ function TopMovil() {
   const { marcar, soltar, clave } = useReinicios();
 
   const enPieza = actual >= 0 && actual < FIN;
+  const yaCargado = useYaCargados(actual, DISTANCIA_PRECARGA);
 
   // La pieza que ocupa la pantalla es la actual.
   useEffect(() => {
@@ -473,7 +479,7 @@ function TopMovil() {
               <div className={styles.marcoMovil}>
                 <div className={styles.tarjetaMovil}>
                   <PortadaPost post={p} puesto={i + 1} />
-                  {Math.abs(i - actual) <= DISTANCIA_PRECARGA && (
+                  {yaCargado(i) && (
                     <PostVivo
                       key={clave(p.url)}
                       post={p}

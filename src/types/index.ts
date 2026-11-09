@@ -32,6 +32,9 @@ export interface PostInstagram {
   /** Imagen de portada en `public/` (p. ej. `/images/instagram/DU27bb3jPGu.jpg`).
       Sin ella, el Top 20 dibuja una portada con el título del post. */
   portada?: string;
+  /** `'horizontal'` para videos 16:9 (sin el campo, vertical 4:5 como los
+      demás). En el muro ocupa dos columnas y en el visor se ve en 16:9. */
+  orientacion?: 'horizontal';
 }
 
 

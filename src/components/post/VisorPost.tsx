@@ -119,7 +119,7 @@ export default function VisorPost({ posts, indice, onCambiar, onCerrar }: Props)
 
           <div className={styles.escenario}>
             {/* La key nueva desmonta el post anterior: si sonaba, se corta. */}
-            <div className={styles.marco} key={post.url}>
+            <div className={styles.marco} key={post.url} data-horizontal={post.orientacion === 'horizontal' || undefined}>
               <PortadaPost post={post} />
               <PostVivo post={post} interactivo />
             </div>

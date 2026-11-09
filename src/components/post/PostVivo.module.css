@@ -30,8 +30,56 @@
   pointer-events: auto;
 }
 
+/* Video horizontal: el embed va a su ancho propio (--ancho-embed) y se
+   escala desde la esquina para que el video 16:9 cubra el marco; --dx y
+   --dy lo centran y la cabecera queda arriba, fuera de la vista. */
+.vivo[data-horizontal] .embed {
+  width: var(--ancho-embed, 540px);
+  margin: 0;
+  transform: translate(var(--dx, 0px), calc(var(--dy, 0px) - var(--cabecera-embed) * var(--escala)))
+    scale(var(--escala));
+}
+
+/* Loader: velo suave sobre la portada con un aro lila que gira. */
+.cargando {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(18, 8, 31, 0.15), rgba(18, 8, 31, 0.45));
+  pointer-events: none;
+  animation: aparecer 0.3s ease 0.15s backwards;
+}
+
+.giro {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid rgba(216, 180, 254, 0.25);
+  border-top-color: var(--color-lilac-mid);
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .vivo {
     transition: none;
+  }
+
+  .giro {
+    animation-duration: 2.4s;
   }
 }
