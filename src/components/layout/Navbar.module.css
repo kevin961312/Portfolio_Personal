@@ -49,7 +49,7 @@
 .navLink {
   display: block;
   padding: 0.45rem 0.85rem;
-  border-radius: 999px;
+  border-radius: var(--radio-boton);
   color: var(--color-text-muted);
   text-decoration: none;
   font-size: 0.88rem;
@@ -64,9 +64,9 @@
 }
 
 .navLink.active {
-  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  background: var(--color-accion);
   color: #fff;
-  box-shadow: 0 8px 22px -10px #a855f7;
+  box-shadow: var(--sombra-elevada);
 }
 
 .menuBtn {

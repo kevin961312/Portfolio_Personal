@@ -42,7 +42,7 @@
 
 .chip[aria-pressed='true'] {
   border-color: transparent;
-  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  background: var(--color-accion);
   color: #fff;
 }
 
@@ -117,7 +117,7 @@
 
 .item:hover .frente {
   border-color: rgba(216, 180, 254, 0.4);
-  box-shadow: 0 28px 60px -30px #7e22ce;
+  box-shadow: var(--sombra-elevada);
 }
 
 .imagen {
@@ -175,7 +175,7 @@
 .seccion {
   left: 12px;
   bottom: 12px;
-  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  background: var(--color-accion);
   color: #fff;
 }
 
@@ -203,8 +203,9 @@
 }
 
 .titulo {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.14rem;
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
   line-height: 1.35;
   color: #fff;
   display: -webkit-box;
@@ -234,7 +235,7 @@
   gap: 0.35rem;
   min-height: 38px;
   padding: 0.45rem 0.9rem;
-  border-radius: 999px;
+  border-radius: var(--radio-boton);
   font-family: inherit;
   font-size: 0.82rem;
   font-weight: 700;

@@ -54,7 +54,7 @@
 
 .chip[aria-pressed='true'] {
   border-color: transparent;
-  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  background: var(--color-accion);
   color: #fff;
 }
 

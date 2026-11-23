@@ -1,0 +1,1 @@
+import{M as e,P as t}from"./usePerfil-Bszk8LgM.js";var n=t(e(),1);function r(e,t){let[r,i]=(0,n.useState)(()=>new Set),a=[];for(let n=e-t;n<=e+t;n++)n>=0&&!r.has(n)&&a.push(n);return a.length>0&&i(e=>new Set([...e,...a])),(0,n.useCallback)(n=>Math.abs(n-e)<=t||r.has(n),[e,t,r])}export{r as t};
