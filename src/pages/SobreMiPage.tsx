@@ -18,107 +18,9 @@ import { useReinicios } from '../hooks/useReinicios';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './SobreMiPage.module.css';
 import fotoLaura from '../assets/sobre-mi/foto-laura.jpeg';
-
-/* Experiencia, proyectos y educación son comunes a las tres versiones de la
-   HV; lo único que cambia por perfil es el cargo, que se resuelve contra
-   `perfil.cargos[empresa]`. */
-
-interface Trabajo {
-  periodo: string;
-  empresa: string;
-  items: string[];
-  /** Cuenta de Instagram donde se publicó su trabajo en redes. */
-  cuenta?: string;
-  /** Publicó notas en EL TIEMPO (digital e impreso). */
-  prensa?: boolean;
-  /** Produjo la nota de televisión de la sección Reportaje. */
-  tv?: boolean;
-}
-
-const experiencias: Trabajo[] = [
-  {
-    periodo: '2026 – 2026',
-    empresa: 'Cuestión Pública',
-    items: [
-      'Análisis y selección de temas para creación de parrillas de contenido.',
-      'Pre producción, producción, edición y publicación de carruseles, reels e historias para Instagram.',
-      'Seguimiento de resultados y creación de estrategia.',
-    ],
-    cuenta: 'cuestionp',
-  },
-  {
-    periodo: '2025 – 2026',
-    empresa: 'No Es Hora de Callar · Casa Editorial El Tiempo',
-    items: [
-      'Investigación y redacción de notas periodísticas para el periódico digital e impreso.',
-      'Creación de parrillas de contenido, carruseles, reels e historias para Instagram.',
-      'Producción, pietaje y pasos en cámara para programa televisivo.',
-    ],
-    cuenta: 'eltiempo',
-    prensa: true,
-  },
-  {
-    periodo: '2025 – 2026',
-    empresa: 'Escuela de Periodismo Multimedia El Tiempo',
-    items: [
-      'Investigación y redacción de notas periodísticas para el periódico digital e impreso.',
-      'Cobertura fotográfica y en video de conciertos y eventos.',
-      'Producción de nota periodística para televisión.',
-    ],
-    prensa: true,
-    tv: true,
-  },
-];
-
-const proyectos: Trabajo[] = [
-  {
-    periodo: '2024 – 2025',
-    empresa: 'Ventana U',
-    items: [
-      'Realización de notas en video y escritas para este periódico universitario.',
-      'Trabajo de producción, edición y presentación de eventos.',
-    ],
-  },
-  {
-    periodo: '2024',
-    empresa: 'Capital Enigma',
-    items: [
-      'Investigación periodística para creación de contenido en redes sociales sobre casos judiciales mediáticos.',
-    ],
-  },
-];
-
-const educacion = [
-  {
-    periodo: '2025 – 2026',
-    institucion: 'El Tiempo',
-    titulo: 'Programa de la Escuela de Periodismo Multimedia EL TIEMPO',
-  },
-  {
-    periodo: '2024',
-    institucion: 'Universidad Cooperativa de Colombia',
-    titulo: 'Diplomado en Reportería y presentación de noticias con énfasis en periodismo judicial y político',
-  },
-  {
-    periodo: '2021 – 2026',
-    institucion: 'Universidad Cooperativa de Colombia',
-    titulo: 'Comunicación Social',
-  },
-];
-
-const referencias = [
-  {
-    nombre: 'Carlos Solano',
-    cargo: 'Director de Escuela de Periodismo Multimedia EL TIEMPO y Editor de Podcasts',
-    telefono: '320 865 1735',
-    correo: 'carsol@eltiempo.com',
-  },
-  {
-    nombre: 'Rafael Quintero',
-    cargo: 'Periodista y Jefe editorial de Cuestión Pública',
-    telefono: '320 839 5534',
-  },
-];
+import { sitio } from '../data/sitio';
+import { educacion, experiencias, proyectos, referencias } from '../data/hoja-vida';
+import type { Trabajo } from '../data/hoja-vida';
 
 /** Posts que se muestran dentro de cada trabajo (los de más interacciones). */
 const POSTS_POR_TRABAJO = 3;
@@ -209,7 +111,7 @@ export default function SobreMiPage() {
                         )}
                         {t.prensa && (
                           <Link to={{ pathname: '/articulos-digitales', search }} className={styles.enlace}>
-                            <IconNewspaper size={15} /> Artículos en EL TIEMPO
+                            <IconNewspaper size={15} /> Artículos en {sitio.medio.nombre}
                           </Link>
                         )}
                         {t.prensa && (
@@ -219,7 +121,7 @@ export default function SobreMiPage() {
                         )}
                         {t.tv && (
                           <Link to={{ pathname: '/reportaje', search }} className={styles.enlace}>
-                            <IconPlay size={14} /> Reportaje en Canal CityTV
+                            <IconPlay size={14} /> Reportaje en {sitio.medioTv}
                           </Link>
                         )}
                       </div>
@@ -241,7 +143,7 @@ export default function SobreMiPage() {
         <div className={styles.heroTexto} key={perfilId}>
           <p className={styles.eyebrow}>{perfil.rol}</p>
           <h1 className={styles.nombre}>
-            Laura Viviana <span>Hernández Martin</span>
+            {sitio.portada.nombre} <span>{sitio.portada.apellido}</span>
           </h1>
           <p className={styles.titular}>{perfil.titular}</p>
           <div className={styles.sobreMi}>
@@ -250,14 +152,14 @@ export default function SobreMiPage() {
             ))}
           </div>
           <div className={styles.contactos}>
-            <a href="tel:3222448811" className={styles.contacto}>
-              <IconPhone size={15} /> 3222448811
+            <a href={`tel:${sitio.contacto.telefono.replace(/\s/g, '')}`} className={styles.contacto}>
+              <IconPhone size={15} /> {sitio.contacto.telefono}
             </a>
-            <a href="mailto:laurahernandezfcb@hotmail.com" className={styles.contacto}>
-              <IconMail size={15} /> laurahernandezfcb@hotmail.com
+            <a href={`mailto:${sitio.contacto.correo}`} className={styles.contacto}>
+              <IconMail size={15} /> {sitio.contacto.correo}
             </a>
             <span className={styles.contacto}>
-              <IconLocation size={15} /> Bogotá
+              <IconLocation size={15} /> {sitio.contacto.ciudad}
             </span>
           </div>
           <div className={styles.acciones}>
@@ -272,7 +174,7 @@ export default function SobreMiPage() {
 
         <div className={styles.heroFoto}>
           <span className={styles.halo} aria-hidden="true" />
-          <img src={fotoLaura} alt="Laura Hernández" className={styles.foto} />
+          <img src={fotoLaura} alt={sitio.nombre} className={styles.foto} />
         </div>
       </section>
 

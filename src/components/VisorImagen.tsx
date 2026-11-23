@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
 import { IconClose, IconExternalLink } from './icons';
 import styles from './VisorImagen.module.css';
+import { sitio } from '../data/sitio';
 
 export interface ImagenVisor {
   src: string;
@@ -91,7 +92,7 @@ export default function VisorImagen({ imagen, onCerrar }: Props) {
         <>
           <header className={styles.cabecera}>
             <div className={styles.cabeceraTexto}>
-              <p className={styles.medio}>Edición impresa · EL TIEMPO</p>
+              <p className={styles.medio}>Edición impresa · {sitio.medio.nombre}</p>
               <h2 className={styles.titulo}>{imagen.titulo}</h2>
             </div>
             <div className={styles.herramientas}>

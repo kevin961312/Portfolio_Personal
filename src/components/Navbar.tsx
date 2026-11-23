@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { IconMicrophone, IconMenu, IconClose } from './icons';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './Navbar.module.css';
+import { sitio } from '../data/sitio';
 
 const navItems = [
   { path: '/', label: 'Sobre mí' },
@@ -29,7 +30,7 @@ export default function Navbar() {
       <div className={styles.inner}>
         <NavLink to={{ pathname: '/', search }} className={styles.brand}>
           <IconMicrophone size={22} />
-          <span>Laura Hernández</span>
+          <span>{sitio.nombre}</span>
         </NavLink>
 
         <button

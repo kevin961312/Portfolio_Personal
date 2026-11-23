@@ -8,6 +8,7 @@ import { seccionDesdeUrl } from '../lib/articulos';
 import { rutaPublica } from '../lib/rutas';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './ArticulosImpresosPage.module.css';
+import { sitio } from '../data/sitio';
 
 /* Las páginas impresas salen de los artículos digitales que tienen su
    versión en papel (`impreso`), así cada una enlaza a su nota en la web. */
@@ -26,10 +27,10 @@ export default function ArticulosImpresosPage() {
   return (
     <div className={styles.page}>
       <EncabezadoPagina
-        eyebrow="Edición impresa · EL TIEMPO"
+        eyebrow={`Edición impresa · ${sitio.medio.nombre}`}
         titulo="Artículos"
         resaltado="impresos"
-        lead="Notas publicadas en la edición física de EL TIEMPO: el mismo trabajo de reportería llevado del papel a la web. Toca una página para leerla de cerca."
+        lead={`Notas publicadas en la edición física de ${sitio.medio.nombre}: el mismo trabajo de reportería llevado del papel a la web. Toca una página para leerla de cerca.`}
       />
 
       <ul className={styles.mesa}>
