@@ -1,0 +1,1 @@
+import{M as e,P as t}from"./usePerfil-Cnftm19B.js";var n=t(e(),1);function r(e){return(0,n.useSyncExternalStore)((0,n.useCallback)(t=>{let n=window.matchMedia(e);return n.addEventListener(`change`,t),()=>n.removeEventListener(`change`,t)},[e]),()=>window.matchMedia(e).matches,()=>!1)}var i=`(max-width: 899px)`;export{r as n,i as t};

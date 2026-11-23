@@ -7,7 +7,7 @@ diaria de ofertas de empleo.
 
 | Carpeta | Qué hay |
 |---|---|
-| `src/` | Código del sitio. Los datos (artículos, posts, perfiles) están en `src/data/`. |
+| `src/` | Código del sitio. Los datos están en `src/data/`: `sitio.ts` (nombre, contacto, medio, cuentas), `hoja-vida.ts` (experiencia, educación, referencias), `perfiles.ts`, artículos, posts y galería. Los componentes reutilizables, por carpeta en `src/components/` (índice en `index.ts`). |
 | `public/` | Imágenes y archivos que se sirven tal cual. |
 | `docs/` | Sitio compilado que publica GitHub Pages. Lo genera `npm run build`: no se edita a mano. |
 | `hv/` | Generador de las hojas de vida. Los textos se editan en `hv/datos.py`. |
@@ -15,11 +15,12 @@ diaria de ofertas de empleo.
 | `ofertas/` | Búsqueda de empleo: una carpeta por día (`ofertas/AAAA-MM-DD/`), más el historial, los contactos y las fuentes. |
 | `copys/` | Copys para Cuestión Pública y el prompt con que se redactan. |
 | `documentacion/` | Guía de despliegue de los perfiles e informe de auditoría. |
+| `.claude/` | Skills de Claude Code (diseño, animación, llm-council) y hooks de Impeccable. Impeccable y taste-skill se instalan/actualizan solas al abrir sesión (`.claude/scripts/actualizar-skills.sh`) y no van en git. |
 
 ## Comandos
 
 ```bash
-npm run dev       # sitio en local: http://localhost:5173/Portfolio_Personal/
+npm run dev       # sitio en local: http://localhost:5173/
 npm run build     # compila el sitio en docs/ (lo que se publica)
 npm run preview   # revisa el build como en producción
 ```
