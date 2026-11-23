@@ -34,13 +34,13 @@ Modelo y esfuerzo de cada agente (definidos en `.claude/workflows/buscar-ofertas
 
 | Agente | Modelo | Esfuerzo | Por qué |
 |---|---|---|---|
-| LinkedIn (empleos + publicaciones) | Sonnet | medium | Navegador con sesión; búsquedas repetitivas y lectura de fichas |
+| LinkedIn (empleos + publicaciones) | Sonnet | medium | Navegador con sesión; búsquedas repetitivas y lectura de fichas; incluye periódicos (El Tiempo, El Espectador primero) |
 | Instagram (hashtags) | Sonnet | medium | Límite estricto de llamadas; distinguir Colombia de otros países |
-| Facebook + X | Sonnet | medium | Fechas ofuscadas y correos dentro de imágenes |
+| Facebook + X | Sonnet | low | Fechas ofuscadas y correos dentro de imágenes; bajó a low el 17-nov (poco rendimiento) |
 | Portales de empleo | Sonnet | medium | Muchas fichas, fechas relativas, detectar estafas |
-| Webs oficiales de medios (prensa, TV y radio) | Haiku | medium | Lista fija de ~25 plataformas, pero hay que abrir fichas y separar empleos de contrataciones |
+| Webs oficiales de medios (periódicos, TV y radio) | Haiku | low | Lista fija de ~30 plataformas (prioridad El Tiempo en elempleo); abrir fichas y separar empleos de contrataciones |
 | ONG y organismos | Haiku | medium | URLs conocidas; juzgar idioma, modalidad y cierre |
-| Verificador | Sonnet | high | Confirma vigencia de las mejores ofertas |
+| Verificador | Sonnet | medium | Confirma vigencia de las mejores ofertas (casi siempre con una lectura) |
 | Consolidador | Opus | high | Duplicados, afinidad final y prioridades |
 | Archivos | Haiku | low | Escribir el JSON y correr el script |
 

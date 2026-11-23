@@ -17,6 +17,20 @@ Lista mantenida a partir de la búsqueda del 22-oct-2026. Si un agente encuentra
 | Infobae | https://www.linkedin.com/company/infobae/jobs/ | Solo LinkedIn |
 | Canal 1 | https://www.canal1.com.co/empleos/ | Es un portal general de Magneto, no del canal |
 
+## Periódicos (lista obligatoria: revisar cada día; prioridad El Tiempo y El Espectador)
+Investigado el 17-nov-2026 buscando en Google cómo publica cada periódico sus vacantes. Casi ninguno tiene página de empleo propia: publican en elempleo, en LinkedIn (empleos de la empresa y publicaciones de su gente con #TrabajoSíHay) y en X.
+
+| Periódico | Dónde publica sus vacantes | Notas |
+|---|---|---|
+| **El Tiempo** (Casa Editorial: El Tiempo, Portafolio, CityTV, ADN, Futbolred) | 1) **elempleo, página de la empresa**: https://www.elempleo.com/co/ofertas-empleo/el-tiempo-casa-editorial (la más activa: ahí salieron Redactor C, Redactor D, Periodista económico, Redactora digital). 2) Portal propio: https://trabajaconnosotros.eltiempo.com/eltiempo/ofertas-laborales. 3) LinkedIn empleos "Casa Editorial El Tiempo". | elempleo es dueño de El Tiempo: casi todo pasa por ahí. Abrir cada ficha para ver la fecha. Los "Aprendiz" no se reportan |
+| **El Espectador** (Comunican S.A.) | Sin página de empleo (elespectador.com/trabaje-con-nosotros da 404). Publica en **LinkedIn**: página https://www.linkedin.com/company/el-espectador/ (pestaña Empleos) y publicaciones de editores y talento humano con #TrabajoSíHay; y en **X** @elespectador ("¿Quieres trabajar con nosotros? Envíanos tu hoja de vida a…"). | Correos vistos en convocatorias viejas (no confirmados vigentes): cgonzalez@elespectador.com (X, 2017), smedina@elespectador.com (redes, ~2023). Buscar en LinkedIn publicaciones: "El Espectador" vacante, "elespectador.com" hoja de vida |
+| Semana | https://www.semana.com/trabaje-con-nosotros/ + gestionhumana@semana.com; LinkedIn empleos "Semana" | |
+| El Colombiano (Medellín, con cargos en Bogotá) | LinkedIn: https://co.linkedin.com/company/peri-dico-el-colombiano (publicaciones); Indeed: https://co.indeed.com/cmp/El-Colombiano | Publicó vacantes de periodista (Actualidad en Bogotá, Metro en Medellín) pidiendo HV a atraccion@elcolombiano.com.co (correo visto en LinkedIn, por confirmar) |
+| El Heraldo (Barranquilla) | Clasificados https://clasificados.elheraldo.co (empleos de todo tipo); LinkedIn y X @elheraldoco | Sin página de empleo propia |
+| Vanguardia (Bucaramanga, Galvis) | elempleo: https://www.elempleo.com/co/ofertas-empleo/publicaciones-galvisia-sas ; X @vanguardiacom | Ha publicado convocatorias para comunicadores en Santander |
+| El País (Cali), El Universal (Cartagena), La Patria (Manizales), La República, El Nuevo Siglo, Publimetro, Pulzo, Infobae | LinkedIn (empleos de la empresa) y X | larepublica.co/vacantes es una sección de noticias, no de empleo |
+| Regionales (revisar solo los lunes) | La Opinión (Cúcuta), El Nuevo Día (Ibagué), Diario del Huila, El Meridiano (Montería), Diario del Norte, El Informador (Santa Marta), Hoy Diario del Magdalena, Boyacá 7 Días, Extra, Q'hubo: buscar en LinkedIn publicaciones y en X "<periódico> vacante periodista" | |
+
 ## Televisión y radio (lista obligatoria: revisar cada día)
 Verificado el 22-oct-2026. Muchos medios comparten la plataforma de su grupo: abrirla una vez y buscar los cargos de cada medio.
 
@@ -53,7 +67,7 @@ Correos y canales para enviar la HV a estos medios (verificados el 22-oct-2026; 
 
 Cuentas de X verificadas de estos medios: RedMasNoticias, CABLENOTICIAS, WinSportsTV, TropiBogota, CanalTRO, Teleantioquia, TPNoticias_, CanalCapital, CanalTreceCO, RadNalCo. En X la palabra "convocatoria" trae ruido (convocatorias de fútbol, becas, cultura): para estos medios usar `vacante OR "hoja de vida" OR "trabaja con nosotros" OR "estamos contratando"`.
 
-Sin sección de empleo (revisar sus redes, no la web): El Espectador, La Silla Vacía, Vorágine, Mutante, Baudó, 070, Rutas del Conflicto, Verdad Abierta, Colombiacheck, Liga Contra el Silencio, Razón Pública, Pulzo, Publimetro, Las2orillas, El Nuevo Siglo, Noticias RCN, La FM, RCN Radio, Colprensa, El Colombiano, El País Cali, El Heraldo, El Universal, Vanguardia, La Patria.
+Sin sección de empleo (revisar sus redes, no la web; los periódicos ya están en la tabla de arriba): La Silla Vacía, Vorágine, Mutante, Baudó, 070, Rutas del Conflicto, Verdad Abierta, Colombiacheck, Liga Contra el Silencio, Razón Pública, Pulzo, Publimetro, Las2orillas, El Nuevo Siglo, Noticias RCN, La FM, RCN Radio, Colprensa, El Colombiano, El País Cali, El Heraldo, El Universal, Vanguardia, La Patria.
 Bloquean la lectura automática: Cambio / Los Danieles, Canal RCN, CityTV, EFE, AFP, Europa Press, Caracol Radio, W Radio, Kienyke.
 
 ## Portales de empleo
@@ -82,6 +96,12 @@ Bloquean la lectura automática: Cambio / Los Danieles, Canal RCN, CityTV, EFE, 
 | IJNet oportunidades | https://ijnet.org/es/oportunidades |
 | LatAm Journalism Review | https://latamjournalismreview.org/es/ |
 | Colombia Diversa, Transparencia por Colombia, MOE, Humanas, LIMPAL, PARES, El Veinte, Cinep | Revisar su web cada semana, no cada día |
+
+## Fuentes nuevas (agregadas el 17-nov-2026)
+- Instagram: https://www.instagram.com/trabajosihay1/ (vacantes de Bogotá con flyers) · https://www.instagram.com/camellosumerce/ (Boyacá).
+- Facebook: página "Red de Referidos Profesionales en Colombia" (vacantes con flyers; revisar sus posts recientes).
+- Correos ocultos con Cloudflare (los lee el agente de navegador): https://www.teveandina.gov.co/trabaja-con-nosotros/ · https://telecaribe.co/transparencia/convocatorias/convocatorias-2026 · https://www.telepacifico.com/convocatorias · https://oro.com.co/contacto/
+- Aldeas Infantiles (https://www.aldeasinfantiles.org.co): no se encontró su portal de vacantes (/trabaja-con-nosotros da 404); revisar a mano.
 
 ## Búsquedas en redes (términos)
 - LinkedIn Empleos: periodista, redactor, reportero, comunicador social, community manager, creador de contenido, social media, contenido digital, editor de video, comunicaciones, productor audiovisual, copywriter.

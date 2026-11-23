@@ -6,6 +6,7 @@ PROMPT PARA CLAUDE EN CHROME: BÚSQUEDA DE OFERTAS DE TRABAJO PARA LA HV DE LAUR
 
 - FECHA DE HOY: 22 de octubre de 2026 (si usas el comando /buscar-ofertas en Claude Code, la fecha se calcula sola)
 - VENTANA DE BÚSQUEDA: solo ofertas publicadas desde el 22 de septiembre de 2026 (máximo 1 mes de antigüedad).
+- Última actualización del prompt: 17-nov-2026 (periódicos con prioridad El Tiempo y El Espectador; X en tandas de máximo 10 cuentas).
 - Archivo de fuentes con todas las URLs verificadas: /Users/KEPINEDA/Downloads/Portfolio_Personal/ofertas/fuentes.md
 
 ---
@@ -78,6 +79,15 @@ Para CADA medio de la lista revisa estos 5 canales:
 5. Facebook, página del medio: publicaciones del último mes.
 Revisa también los perfiles de LinkedIn y X de directores, editores y jefes de redacción de esos medios: es común que publiquen "busco periodista para mi equipo" desde su cuenta personal.
 
+Periódicos — revisar TODOS LOS DÍAS, empezando por El Tiempo y El Espectador (cómo publica cada uno, investigado el 17-nov-2026; detalle y URLs en la tabla "Periódicos" de fuentes.md):
+- El Tiempo (Casa Editorial: El Tiempo, Portafolio, CityTV, ADN): sobre todo en su página de empresa en elempleo, https://www.elempleo.com/co/ofertas-empleo/el-tiempo-casa-editorial (ahí salen sus cargos de redactor y periodista; abre cada ficha para ver la fecha). También su portal https://trabajaconnosotros.eltiempo.com/eltiempo/ofertas-laborales y LinkedIn empleos "Casa Editorial El Tiempo".
+- El Espectador: no tiene página de empleo. Publica en LinkedIn (pestaña Empleos de https://www.linkedin.com/company/el-espectador/ y, sobre todo, publicaciones de sus editores y talento humano con #TrabajoSíHay) y en X @elespectador ("envíanos tu hoja de vida a…"). Busca en publicaciones de LinkedIn: "El Espectador" vacante, "elespectador.com" hoja de vida.
+- Semana: https://www.semana.com/trabaje-con-nosotros/ y LinkedIn.
+- El Colombiano: publicaciones de LinkedIn (ha buscado periodistas también para Bogotá; HV a atraccion@elcolombiano.com.co, por confirmar).
+- El Heraldo (clasificados.elheraldo.co), Vanguardia (elempleo, empresa Publicaciones Galvisia), El País, El Universal, La Patria, La República: LinkedIn y X.
+- Regionales, solo los lunes: La Opinión, El Nuevo Día, Diario del Huila, El Meridiano, El Informador, Hoy Diario del Magdalena, Boyacá 7 Días, Extra, Q'hubo.
+- En X, consulta las cuentas en tandas de máximo 10 (con más, X devuelve 0 resultados), empezando por la de periódicos.
+
 Lista de medios — Prioridad 1 (nacionales y con sede en Bogotá):
 - Prensa y digitales: El Tiempo, El Espectador, Semana, Cambio, La Silla Vacía, Vorágine, Mutante, Baudó Agencia Pública, 070, Rutas del Conflicto, Verdad Abierta, Colombiacheck, La Liga Contra el Silencio, Razón Pública, Los Danieles, Pulzo, Infobae Colombia, Publimetro, Kienyke, Las2orillas, El Nuevo Siglo.
 - Agencias: EFE, AFP, Europa Press, Colprensa.
@@ -85,7 +95,7 @@ Lista de medios — Prioridad 1 (nacionales y con sede en Bogotá):
 
 | Grupo | Medios | Plataforma de empleo / canal |
 |---|---|---|
-| Casa Editorial El Tiempo | El Tiempo, CityTV, Portafolio | https://trabajaconnosotros.eltiempo.com/eltiempo/ofertas-laborales |
+| Casa Editorial El Tiempo | El Tiempo, CityTV, Portafolio | https://www.elempleo.com/co/ofertas-empleo/el-tiempo-casa-editorial (principal) · https://trabajaconnosotros.eltiempo.com/eltiempo/ofertas-laborales |
 | Grupo Valorem (Caracol) | Caracol Televisión, Noticias Caracol, Blu Radio, La Kalle | Magneto: https://www.magneto365.com/co/empresas/caracol/empleos |
 | Cablenoticias (emite también Noticias Uno) | Cablenoticias | Sin plataforma pública de empleo; revisar LinkedIn, X (@CABLENOTICIAS) y cablenoticias.com |
 | Organización Ardila Lülle | Canal RCN, Noticias RCN, NTN24, RCN Radio, La FM, El Sol, La Mega, Radio Uno, Antena 2, Win Sports / Win Sports+ | Publica sobre todo en LinkedIn (empleos y publicaciones de la coordinación de selección de RCN TV); canalrcn.com bloquea la lectura automática. RCN Radio cerró su cadena básica en ago-2025. |
@@ -104,7 +114,7 @@ Lista de medios — Prioridad 1 (nacionales y con sede en Bogotá):
 
 Ojo: los canales públicos y regionales publican muchas "convocatorias" que son para contratar productoras, seguros o servicios, no empleos. Solo cuentan las de cargos o prestación de servicios personales.
 
-Lista de medios — Prioridad 2 (regionales, solo cargos remotos o híbridos): El Colombiano, El País (Cali), El Heraldo, El Universal, Vanguardia, La Patria. Los canales regionales de TV fuera de Bogotá también entran aquí: incluir sus vacantes solo si son remotas o híbridas.
+Lista de medios — Prioridad 2 (regionales, solo cargos remotos o híbridos; los periódicos se revisan igual cada día, ver arriba): El Colombiano, El País (Cali), El Heraldo, El Universal, Vanguardia, La Patria. Los canales regionales de TV fuera de Bogotá también entran aquí: incluir sus vacantes solo si son remotas o híbridas.
 
 B. REDES SOCIALES EN GENERAL (más allá de las cuentas de los medios)
 - LinkedIn, búsqueda de PUBLICACIONES (no solo empleos), filtro "Último mes": "buscamos periodista", "vacante periodista", "envía tu hoja de vida" periodista, "estamos contratando" redactor, "#vacante" community manager, "convocatoria" comunicador social Bogotá.
@@ -152,7 +162,7 @@ Mientras revisas medios, ONG y UTL, anota también a quién se le puede enviar l
 ### 6. MÉTODO DE TRABAJO
 
 1. Trabaja por fases y entrégame resultados parciales al terminar cada una para no perder información:
-   Fase 1: medios de Prioridad 1 — página oficial y redes (sección A).
+   Fase 1: periódicos (El Tiempo y El Espectador primero) y medios de Prioridad 1 — página oficial y redes (sección A).
    Fase 2: redes sociales en general (sección B).
    Fase 3: portales de empleo (sección C).
    Fase 4: medios de Prioridad 2, ONG y organismos (secciones A y D), y correos de contacto (sección 5).

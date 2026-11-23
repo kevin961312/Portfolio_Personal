@@ -25,15 +25,15 @@ const AGENTES = {
                   porque: 'Navegador con sesión: muchas búsquedas repetitivas y lectura de fichas; criterio moderado.' },
   instagram:    { nombre: 'Instagram (hashtags)', model: 'sonnet', effort: 'medium',
                   porque: 'Navegador con límite estricto de llamadas; hay que distinguir Colombia de otros países.' },
-  facebook_x:   { nombre: 'Facebook + X', model: 'sonnet', effort: 'medium',
+  facebook_x:   { nombre: 'Facebook + X', model: 'sonnet', effort: 'low',
                   porque: 'Navegador; fechas ofuscadas y correos dentro de imágenes (requiere leer capturas).' },
   portales:     { nombre: 'Portales de empleo', model: 'sonnet', effort: 'medium',
                   porque: 'Decenas de fichas, fechas relativas y detección de ventas disfrazadas o estafas.' },
-  medios_web:   { nombre: 'Webs oficiales de medios', model: 'haiku', effort: 'medium',
-                  porque: 'Lista fija de ~25 plataformas (prensa, TV y radio); mecánica, pero hay que abrir fichas de Magneto para ver la fecha y separar empleos de convocatorias de contratación.' },
+  medios_web:   { nombre: 'Webs oficiales de medios', model: 'haiku', effort: 'low',
+                  porque: 'Lista fija de ~30 plataformas (periódicos, TV y radio); mecánica, pero hay que abrir fichas de Magneto para ver la fecha y separar empleos de convocatorias de contratación.' },
   ong:          { nombre: 'ONG y organismos', model: 'haiku', effort: 'medium',
                   porque: 'URLs conocidas, pero hay que juzgar idioma, modalidad remota y fecha de cierre.' },
-  verificador:  { nombre: 'Verificador', model: 'sonnet', effort: 'high',
+  verificador:  { nombre: 'Verificador', model: 'sonnet', effort: 'medium',
                   porque: 'Confirma vigencia y fecha de las mejores ofertas; un error aquí llega directo al informe.' },
   consolidador: { nombre: 'Consolidador', model: 'opus', effort: 'high',
                   porque: 'Duplicados entre fuentes, afinidad final y prioridades: el paso de más criterio.' },
@@ -118,7 +118,7 @@ const TAREAS = {
 2. Filtra por título las relevantes (periodismo, redacción, comunicación, redes, contenido, audiovisual) y abre el detalle de las que no estén en el historial para confirmar fecha, modalidad, requisitos y salario.
 3. LinkedIn publicaciones: las 6 búsquedas de fuentes.md con datePosted past-week, más "RCN Televisión vacante" y "Noticias Caracol vacante". Ahí aparecen vacantes con correo para enviar la HV (medios, agencias, reclutadores).
 3b. LinkedIn publicaciones de UTL: "UTL comunicaciones", "unidad de trabajo legislativo comunicador", "vacante UTL" (datePosted past-week).
-4. LinkedIn por empresa (TV y radio): las búsquedas de la sección "LinkedIn por empresa" de la guía, una empresa por búsqueda. Si LinkedIn dice "No se han encontrado empleos", no reportes el relleno de "Empleos que podrían interesarte".`),
+4. LinkedIn por empresa (periódicos, TV y radio): las búsquedas de la sección "LinkedIn por empresa" de la guía, una empresa por búsqueda, empezando por los periódicos (El Tiempo y El Espectador primero) y sus búsquedas en publicaciones${LUNES ? '; hoy es lunes: incluye también los periódicos regionales' : ''}. Si LinkedIn dice "No se han encontrado empleos", no reportes el relleno de "Empleos que podrían interesarte".`),
   instagram: encargo(AGENTES.instagram.nombre, `${NAVEGADOR}
 1. Consultas: las 5 de Instagram de fuentes.md y las 5 de UTL (Unidad de Trabajo Legislativo del Congreso) de fuentes.md. Recoge los enlaces de los posts y calcula su fecha a partir del código (método de la guía, sin pedir nada a Instagram). Quédate solo con los publicados desde ${D}.
 2. Lectura: NO uses fetch a /api/v1/... (el modo automático lo bloquea). Abre cada post en tu pestaña (navigate a https://www.instagram.com/p/<código>/), lee el pie de foto con get_page_text y toma una captura (computer screenshot, con zoom si hace falta) para LEER LA IMAGEN: muchas vacantes son flyers propios con el cargo, los requisitos y el correo dentro de la imagen. Prioriza los posts de UTL y de #vacanteperiodista / #vacantecomunicador.
@@ -127,19 +127,20 @@ const TAREAS = {
   facebook_x: encargo(AGENTES.facebook_x.nombre, `${NAVEGADOR}
 1. Facebook: las 5 búsquedas de publicaciones de fuentes.md. Confirma la fecha de las ofertas relevantes con captura y zoom (muchas son reposts viejos) y lee los correos que estén dentro de las imágenes.
 1b. Facebook UTL: "vacante UTL comunicaciones", "unidad de trabajo legislativo comunicador". Si la vacante está en una imagen, léela con captura y zoom.
-2. X: la consulta general, la consulta Colombia, la consulta UTL y las tres tandas de cuentas de medios de la guía, todas con since:${D}.
+2. X: la consulta general, la consulta Colombia, la consulta UTL y las tandas de cuentas de medios de la guía (de máximo 10 cuentas, empezando por la tanda P de periódicos), todas con since:${D}. Si una tanda da 0, prueba una cuenta sola para confirmar que la consulta funciona.
 3. Páginas de empleo que solo cargan con navegador: https://www.teleantioquia.co/convocatorias (solo cuentan cargos o prestación de servicios personales, no contratación de productoras o seguros).
 4. Correos ocultos: para cada oferta o publicación de hoy cuyo correo salga como "[email protected]" (sobre todo notas de Las2orillas "¿Quiere trabajar en…?"), ábrela con el navegador y decodifícalo con el método de la guía. Reporta solo correos de talento humano, selección o redacción, en contactos y en el campo correo de la oferta.`),
   portales: encargo(AGENTES.portales.nombre, `${SOLO_WEB}
 Revisa los portales de fuentes.md: elempleo (abre cada ficha para ver la fecha), Magneto, Jooble (incluye lo que viene de Computrabajo), Talent.com (cuidado con los reposts de "Ofertasynegocios") e Indeed (listados con fromage=7). Términos: periodista, redactor, reportero, comunicador social, community manager, creador de contenido, social media, editor de video, productor audiovisual, copywriter, comunicaciones. Prioriza Bogotá.`),
   medios_web: encargo(AGENTES.medios_web.nombre, `${SOLO_WEB}
-Abre cada URL de las tablas "Televisión y radio" y "Webs oficiales de medios" de fuentes.md (en la de TV y radio, cada fila es obligatoria; varias comparten la plataforma de su grupo, ábrela una vez). Reporta solo vacantes de periodismo, redacción, presentación, producción de contenido, comunicación, redes o audiovisual que no estén en el historial.
+Primero la tabla "Periódicos" de fuentes.md: abre las URLs web de El Tiempo (sobre todo su página de empresa en elempleo, abriendo cada ficha para ver la fecha) y las de Semana, El Heraldo y Vanguardia. Las de LinkedIn y X las revisan los agentes de navegador: no las marques como bloqueadas. Busca además con WebSearch "El Espectador vacante periodista", "El Tiempo vacante periodista" y "El Colombiano vacante periodista" (solo resultados desde ${D}).
+Después abre cada URL de las tablas "Televisión y radio" y "Webs oficiales de medios" de fuentes.md (en la de TV y radio, cada fila es obligatoria; varias comparten la plataforma de su grupo, ábrela una vez). Reporta solo vacantes de periodismo, redacción, presentación, producción de contenido, comunicación, redes o audiovisual que no estén en el historial.
 - Magneto: el listado de empresa no muestra la fecha; abre cada ficha relevante para verla.
 - Canales públicos y regionales: muchas "convocatorias" son para contratar productoras, seguros o servicios; solo cuentan cargos o prestación de servicios personales.
 - Claro: solo cargos de noticias, contenido o comunicación (Red+ Noticias); ignora los comerciales.
 - Teleantioquia no carga sin navegador: márcala "requiere navegador" (la revisa el agente de Facebook + X).
 - Si una página muestra un correo como "[email protected]" (oculto), anota la URL en fuentes_nuevas con la nota "correo oculto" para que el agente de navegador lo lea.
-En cobertura pon una fila por cada medio de la tabla de TV y radio. Si encuentras un correo nuevo de editores o talento humano publicado para recibir hojas de vida, agrégalo a contactos. No busques más allá de esas tablas.`),
+En cobertura pon una fila por cada periódico de la tabla de periódicos y por cada medio de la tabla de TV y radio. Si encuentras un correo nuevo de editores o talento humano publicado para recibir hojas de vida, agrégalo a contactos. No busques más allá de esas tablas (y las tres búsquedas de periódicos).`),
   ong: encargo(AGENTES.ong.nombre, `${SOLO_WEB}
 Revisa las URLs de la tabla "ONG y organismos" de fuentes.md${LUNES ? ', incluida la última fila (hoy es lunes)' : ', sin la última fila (esa se revisa solo los lunes)'}. Busca cargos de comunicaciones, contenidos, prensa o periodismo: en Colombia o remotos. Marca en alertas si exigen inglés. Becas, fellowships, pasantías y convocatorias no laborales NO se reportan (Laura ya tiene título): solo anótalas en descartadas.`),
 }
