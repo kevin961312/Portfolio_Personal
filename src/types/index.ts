@@ -1,12 +1,3 @@
-export interface ArticuloImpreso {
-  id: string;
-  titulo: string;
-  publicacion: string;
-  fecha: string;
-  imagen: string;
-  descripcion?: string;
-}
-
 export interface ArticuloDigital {
   id: string;
   titulo: string;

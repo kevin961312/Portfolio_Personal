@@ -1,5 +1,5 @@
-import type { PerfilContenido, PerfilId } from '../types';
-import { PERFILES, PERFIL_POR_DEFECTO, esPerfilValido } from '../data/perfiles';
+import type { PerfilId } from '../types';
+import { PERFIL_POR_DEFECTO, esPerfilValido } from '../data/perfiles';
 
 /* ──────────────────────────────────────────────────────────────
    Store del perfil activo.
@@ -35,9 +35,6 @@ function perfilDesdeCodigo(codigo: string | null): PerfilId | null {
   return encontrado ?? null;
 }
 
-/** Clave de `sessionStorage` donde se persiste el perfil elegido. */
-const CLAVE_SESSION = 'portafolio:perfil-activo';
-
 /** Evento interno que notifica a los suscriptores. */
 const EVENTO_CAMBIO = 'portafolio:perfil-cambio';
 
@@ -57,32 +54,11 @@ export function leerPerfilDeUrl(search: string = enNavegador ? window.location.s
   return esPerfilValido(antiguo) ? antiguo : null;
 }
 
-/** Lee el perfil persistido en `sessionStorage`. Tolera almacenamiento bloqueado. */
-export function leerPerfilDeSession(): PerfilId | null {
-  if (!enNavegador) return null;
-  try {
-    const valor = window.sessionStorage.getItem(CLAVE_SESSION);
-    return esPerfilValido(valor) ? valor : null;
-  } catch {
-    // Modo privado o cookies bloqueadas: seguimos sin persistencia.
-    return null;
-  }
-}
-
-function guardarEnSession(id: PerfilId): void {
-  if (!enNavegador) return;
-  try {
-    window.sessionStorage.setItem(CLAVE_SESSION, id);
-  } catch {
-    /* sin persistencia disponible: no es un error fatal */
-  }
-}
-
 /**
  * Resuelve el perfil al abrir el sitio: el de la URL o, si no viene
- * (`https://lamartineris.site` a secas), siempre comunicadora. No se usa
- * sessionStorage aquí para que escribir el dominio sin parámetro nunca
- * abra el último perfil visto en esa pestaña.
+ * (`https://lamartineris.site` a secas), siempre `PERFIL_POR_DEFECTO`. No se
+ * recuerda el último perfil visto, para que el dominio sin parámetro abra
+ * siempre el mismo.
  */
 export function resolverPerfilInicial(): PerfilId {
   return leerPerfilDeUrl() ?? PERFIL_POR_DEFECTO;
@@ -94,10 +70,6 @@ let perfilActual: PerfilId = resolverPerfilInicial();
 
 export function getPerfilActivo(): PerfilId {
   return perfilActual;
-}
-
-export function getContenidoActivo(): PerfilContenido {
-  return PERFILES[perfilActual];
 }
 
 /* ── Construcción de URLs ───────────────────────────────────── */
@@ -144,15 +116,14 @@ interface OpcionesCambio {
 }
 
 /**
- * Cambia el perfil activo: actualiza el estado, la URL (sin recargar) y
- * `sessionStorage`, y avisa a los suscriptores.
+ * Cambia el perfil activo: actualiza el estado, la URL (sin recargar)
+ * y avisa a los suscriptores.
  */
 export function setPerfilActivo(id: PerfilId, { modo = 'push' }: OpcionesCambio = {}): void {
   if (!esPerfilValido(id)) return;
 
   const cambioDeValor = perfilActual !== id;
   perfilActual = id;
-  guardarEnSession(id);
 
   if (enNavegador) {
     const nuevaUrl = construirUrlConPerfil(id);

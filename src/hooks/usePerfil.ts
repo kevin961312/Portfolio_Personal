@@ -13,7 +13,7 @@ interface UsePerfil {
   perfilId: PerfilId;
   /** Contenido completo del perfil activo (textos, métricas, habilidades…). */
   perfil: PerfilContenido;
-  /** Cambia el perfil: actualiza estado, URL y sessionStorage sin recargar. */
+  /** Cambia el perfil: actualiza estado y URL sin recargar. */
   cambiarPerfil: (id: PerfilId) => void;
   /** Query string a añadir a los enlaces internos para conservar el perfil. */
   search: string;
