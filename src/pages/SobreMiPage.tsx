@@ -17,7 +17,7 @@ import { porLikes } from '../lib/posts';
 import { useReinicios } from '../hooks/useReinicios';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './SobreMiPage.module.css';
-import fotoLaura from '../assets/sobre-mi/foto-laura.jpeg';
+import fotoLaura from '../assets/sobre-mi/foto-laura.webp';
 import { sitio } from '../data/sitio';
 import { educacion, experiencias, proyectos, referencias } from '../data/hoja-vida';
 import type { Trabajo } from '../data/hoja-vida';

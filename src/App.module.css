@@ -7,3 +7,8 @@
 .main {
   flex: 1;
 }
+
+/* Mientras llega el JS de una página: reserva el alto para que el pie no salte. */
+.cargando {
+  min-height: 100vh;
+}

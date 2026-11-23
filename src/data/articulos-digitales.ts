@@ -7,8 +7,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/la-fiscalia-me-dijo-cuando-sepamos-de-su-hija-la-llamamos-el-sabado-se-cumplen-23-anos-y-nadie-nos-ha-dado-respuesta-margarita-restrepo-3502582',
     fecha: '2025-10-23',
-    impreso: '/images/Impreso/cuchas_impreso.jpeg',
-    imagen: '/images/articulos/Las_cuchas.jpg',
+    impreso: '/images/Impreso/cuchas_impreso.webp',
+    imagen: '/images/articulos/Las_cuchas.webp',
   },
   {
     id: '2',
@@ -16,8 +16,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/he-tumbado-este-muro-colombiana-que-cambio-norma-en-espana-que-discriminaba-a-investigadoras-migrantes-3507437',
     fecha: '2025-11-11',
-    impreso: '/images/Impreso/Espanola.jpeg',
-    imagen: '/images/articulos/He_tumbado_muro.jpeg',
+    impreso: '/images/Impreso/Espanola.webp',
+    imagen: '/images/articulos/He_tumbado_muro.webp',
   },
   {
     id: '3',
@@ -25,8 +25,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/investigacion/los-misterios-de-la-muerte-de-baby-demoni-3518744',
     fecha: '2025-12-22',
-    impreso: '/images/Impreso/Demoni_impreso.jpeg',
-    imagen: '/images/articulos/Demoni.jpeg',
+    impreso: '/images/Impreso/Demoni_impreso.webp',
+    imagen: '/images/articulos/Demoni.webp',
   },
   {
     id: '4',
@@ -34,7 +34,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/han-difundido-su-contenido-sexual-sin-consentimiento-ley-que-busca-castigar-la-violencia-digital-fue-aprobada-en-segundo-debate-3498470',
     fecha: '2025-10-09',
-    imagen: '/images/articulos/Ley.jpeg',
+    imagen: '/images/articulos/Ley.webp',
   },
   {
     id: '5',
@@ -42,7 +42,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/cultura/musica-y-libros/en-un-mar-de-gorras-rojas-limp-bizkit-volvio-a-bogota-con-homenaje-a-sam-rivers-en-el-festival-loserville-3514965',
     fecha: '2025-12-06',
-    imagen: '/images/articulos/Lincosito.jpeg',
+    imagen: '/images/articulos/Lincosito.webp',
   },
   {
     id: '6',
@@ -50,8 +50,8 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/politica/congreso/aprobada-en-segundo-debate-la-ley-jineth-bedoya-lima-que-obliga-la-capacitacion-de-los-funcionarios-del-pais-en-violencia-de-genero-3517066',
     fecha: '2025-12-15',
-    impreso: '/images/Impreso/Funcionarios.jpeg',
-    imagen: '/images/articulos/Ley_bedoya.jpeg',
+    impreso: '/images/Impreso/Funcionarios.webp',
+    imagen: '/images/articulos/Ley_bedoya.webp',
   },
   {
     id: '7',
@@ -59,7 +59,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/mujeres-iranies-del-mundo-se-movilizan-ante-la-crisis-de-su-pais-3523988',
     fecha: '2026-01-14',
-    imagen: '/images/articulos/Iran.jpeg',
+    imagen: '/images/articulos/Iran.webp',
   },
   {
     id: '8',
@@ -67,7 +67,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/bogota/casa-de-la-mujer-denuncia-robo-de-informacion-15-computadores-y-vandalismo-en-su-sede-3533124',
     fecha: '2026-02-17',
-    imagen: '/images/articulos/Casa_Mujer.jpeg',
+    imagen: '/images/articulos/Casa_Mujer.webp',
   },
   {
     id: '9',
@@ -75,7 +75,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/el-90-de-las-mujeres-gasta-el-doble-de-tiempo-que-los-hombres-en-trabajos-no-pagos-3504372',
     fecha: '2025-10-30',
-    imagen: '/images/articulos/Trabajadora.jpeg',
+    imagen: '/images/articulos/Trabajadora.webp',
   },
   {
     id: '10',
@@ -83,7 +83,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/la-poblacion-lgbtiq-tiene-nuevo-sistema-nacional-para-la-garantia-de-sus-derechos-3515457',
     fecha: '2025-12-09',
-    imagen: '/images/articulos/Lgtbiq.jpg',
+    imagen: '/images/articulos/Lgtbiq.webp',
   },
   {
     id: '11',
@@ -91,7 +91,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/justicia/como-se-debe-retratar-a-las-defensoras-de-dd-hh-en-medios-de-comunicacion-onu-mujeres-lanza-manual-3513463',
     fecha: '2025-12-04',
-    imagen: '/images/articulos/Narrar.jpg',
+    imagen: '/images/articulos/Narrar.webp',
   },
   {
     id: '12',
@@ -99,7 +99,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/bogota/perros-deambulantes-son-objeto-de-una-polemica-entre-el-politecnico-grancolombiano-y-defensores-de-animales-3479972',
     fecha: '2025-08-10',
-    imagen: '/images/articulos/Firulais.jpg',
+    imagen: '/images/articulos/Firulais.webp',
   },
   {
     id: '13',
@@ -107,7 +107,7 @@ export const articulosDigitales: ArticuloDigital[] = [
     publicacion: 'El Tiempo',
     url: 'https://www.eltiempo.com/cultura/arte-y-teatro/es-usted-feliz-la-pregunta-que-la-bienal-bog25-hace-en-su-inauguracion-con-flores-y-besos-3492723',
     fecha: '2025-09-21',
-    impreso: '/images/Impreso/Bog.jpeg',
-    imagen: '/images/articulos/Bog.jpg',
+    impreso: '/images/Impreso/Bog.webp',
+    imagen: '/images/articulos/Bog.webp',
   },
 ];
