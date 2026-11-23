@@ -26,3 +26,9 @@ dist-ssr
 # Python
 __pycache__/
 *.pyc
+
+# Skills externas: se instalan/actualizan solas con .claude/scripts/actualizar-skills.sh
+.claude/skills/impeccable/
+.claude/skills/taste-skill/
+.claude/agents/impeccable-*.md
+.claude/skills-actualizacion.log
