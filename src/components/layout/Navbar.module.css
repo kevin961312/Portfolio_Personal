@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(18, 8, 31, 0.72);
+  background: rgba(20, 14, 29, 0.72);
   backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid var(--color-lilac-border);
 }
@@ -127,7 +127,7 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(18, 8, 31, 0.96);
+    background: rgba(20, 14, 29, 0.96);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--color-lilac-border);
     padding: 0.75rem 1rem 1rem;

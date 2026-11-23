@@ -1,7 +1,7 @@
-[data-tema='cultura'] { --tema: #d8b4fe; }
-[data-tema='politica'] { --tema: #a78bfa; }
-[data-tema='cubrimiento'] { --tema: #a855f7; }
-[data-tema='genero'] { --tema: #e9d5ff; }
+[data-tema='cultura'] { --tema: var(--color-acento-texto); }
+[data-tema='politica'] { --tema: var(--color-lilac-mid); }
+[data-tema='cubrimiento'] { --tema: var(--color-purple-light); }
+[data-tema='genero'] { --tema: var(--color-titulo-acento); }
 
 .page {
   max-width: 1150px;
@@ -20,7 +20,7 @@
   gap: 0.6rem 1.2rem;
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(18, 8, 31, 0.78);
+  background: rgba(20, 14, 29, 0.78);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-lilac-border);
 }
@@ -49,7 +49,7 @@
 .chip:hover,
 .orden button:hover {
   color: #fff;
-  border-color: rgba(216, 180, 254, 0.4);
+  border-color: rgba(203, 184, 234, 0.4);
 }
 
 .chip[aria-pressed='true'] {
@@ -126,7 +126,7 @@
 }
 
 .orden button[aria-pressed='true'] {
-  background: rgba(192, 132, 252, 0.22);
+  background: rgba(168, 139, 212, 0.22);
   color: #fff;
 }
 
@@ -252,7 +252,7 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 3px solid rgba(216, 180, 254, 0.25);
+  border: 3px solid rgba(203, 184, 234, 0.25);
   border-top-color: var(--color-lilac-mid);
   animation: girar 0.8s linear infinite;
 }
@@ -301,7 +301,7 @@
     flex: 0 0 2.5rem;
     align-self: stretch;
     margin: -0.6rem -1rem -0.6rem -2.5rem;
-    background: linear-gradient(to right, rgba(18, 8, 31, 0), rgba(18, 8, 31, 0.95) 70%);
+    background: linear-gradient(to right, rgba(20, 14, 29, 0), rgba(20, 14, 29, 0.95) 70%);
     pointer-events: none;
   }
 

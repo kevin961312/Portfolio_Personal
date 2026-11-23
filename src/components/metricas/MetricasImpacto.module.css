@@ -45,8 +45,8 @@
 /* ── Tarjeta ──────────────────────────────────────────────── */
 
 .card {
-  --acento: #c084fc;
-  --acento-fondo: rgba(192, 132, 252, 0.14);
+  --acento: var(--color-lilac-mid);
+  --acento-fondo: rgba(168, 139, 212, 0.14);
 
   position: relative;
   display: flex;
@@ -71,28 +71,28 @@
 }
 
 .card:hover {
-  border-color: rgba(216, 180, 254, 0.4);
+  border-color: rgba(203, 184, 234, 0.4);
 }
 
 /* Acentos por categoría de métrica, todos en la gama lila. */
 .card[data-categoria='alcance'] {
-  --acento: #c084fc;
-  --acento-fondo: rgba(192, 132, 252, 0.16);
+  --acento: var(--color-lilac-mid);
+  --acento-fondo: rgba(168, 139, 212, 0.16);
 }
 
 .card[data-categoria='publicaciones'] {
-  --acento: #a855f7;
-  --acento-fondo: rgba(168, 85, 247, 0.16);
+  --acento: var(--color-purple-light);
+  --acento-fondo: rgba(148, 116, 201, 0.16);
 }
 
 .card[data-categoria='interacciones'] {
-  --acento: #d8b4fe;
-  --acento-fondo: rgba(216, 180, 254, 0.12);
+  --acento: var(--color-acento-texto);
+  --acento-fondo: rgba(203, 184, 234, 0.12);
 }
 
 .card[data-categoria='destacado'] {
-  --acento: #9333ea;
-  --acento-fondo: rgba(147, 51, 234, 0.18);
+  --acento: var(--color-purple-soft);
+  --acento-fondo: rgba(125, 85, 184, 0.18);
 }
 
 .cardIcon {

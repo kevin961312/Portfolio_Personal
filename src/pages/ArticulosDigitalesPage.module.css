@@ -13,7 +13,7 @@
   gap: 0.4rem;
   margin: 0 -1.5rem 1.5rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(18, 8, 31, 0.78);
+  background: rgba(20, 14, 29, 0.78);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-lilac-border);
 }
@@ -37,7 +37,7 @@
 
 .chip:hover {
   color: #fff;
-  border-color: rgba(216, 180, 254, 0.4);
+  border-color: rgba(203, 184, 234, 0.4);
 }
 
 .chip[aria-pressed='true'] {
@@ -116,7 +116,7 @@
 }
 
 .item:hover .frente {
-  border-color: rgba(216, 180, 254, 0.4);
+  border-color: rgba(203, 184, 234, 0.4);
   box-shadow: var(--sombra-elevada);
 }
 
@@ -154,7 +154,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(18, 8, 31, 0.85));
+  background: linear-gradient(180deg, transparent 45%, rgba(20, 14, 29, 0.85));
 }
 
 .seccion,
@@ -183,7 +183,7 @@
   top: 12px;
   right: 12px;
   background: rgba(255, 255, 255, 0.92);
-  color: #5b21b6;
+  color: var(--color-purple-mid);
 }
 
 .cuerpo {
@@ -246,12 +246,12 @@
 .boton {
   border: none;
   background: #fff;
-  color: #2d1b69;
+  color: var(--color-purple-deep);
 }
 
 .boton:hover {
-  color: #2d1b69;
-  background: #ede9fe;
+  color: var(--color-purple-deep);
+  background: var(--color-lilac-light);
 }
 
 .botonSecundario {
@@ -292,7 +292,7 @@
   translate: -50% 0;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  background: rgba(18, 8, 31, 0.8);
+  background: rgba(20, 14, 29, 0.8);
   color: #fff;
   font-size: 0.76rem;
   font-weight: 700;

@@ -46,7 +46,7 @@
   border-radius: 20px;
   overflow: hidden;
   background: var(--color-surface);
-  box-shadow: 0 0 0 1px rgba(216, 180, 254, 0.22), 0 40px 120px -30px var(--c1);
+  box-shadow: 0 0 0 1px rgba(203, 184, 234, 0.22), 0 40px 120px -30px var(--c1);
   animation: entrar 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
@@ -114,7 +114,7 @@
 .ayuda {
   padding: 0.6rem 0.8rem;
   border-radius: 12px;
-  background: rgba(192, 132, 252, 0.1);
+  background: rgba(168, 139, 212, 0.1);
   font-size: 0.8rem;
   color: var(--color-lilac-light);
 }
@@ -127,7 +127,7 @@
   min-height: 44px;
   padding: 0.6rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #7e22ce, #9d5cf0);
+  background: linear-gradient(135deg, var(--color-accion), var(--color-purple-light));
   color: #fff;
   font-size: 0.88rem;
   font-weight: 700;
@@ -169,7 +169,7 @@
 .cerrar:hover,
 .flecha:hover:not(:disabled),
 .navegacion button:hover:not(:disabled) {
-  background: rgba(126, 34, 206, 0.55);
+  background: rgba(109, 63, 163, 0.55);
 }
 
 .flecha:disabled,

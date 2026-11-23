@@ -73,7 +73,7 @@
   border-radius: 22px;
   overflow: hidden;
   background: #000;
-  box-shadow: 0 0 0 1px rgba(216, 180, 254, 0.25), 0 50px 120px -40px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 0 1px rgba(203, 184, 234, 0.25), 0 50px 120px -40px rgba(0, 0, 0, 0.95);
 }
 
 .pantalla iframe {
@@ -104,7 +104,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(18, 8, 31, 0.1), rgba(18, 8, 31, 0.55));
+  background: radial-gradient(circle at center, rgba(20, 14, 29, 0.1), rgba(20, 14, 29, 0.55));
 }
 
 .poster:hover img {
@@ -126,13 +126,13 @@
   border-radius: 50%;
   background: var(--color-accion);
   color: #fff;
-  box-shadow: 0 0 0 8px rgba(192, 132, 252, 0.12), var(--sombra-elevada);
+  box-shadow: 0 0 0 8px rgba(168, 139, 212, 0.12), var(--sombra-elevada);
   animation: latir 2.4s ease-in-out infinite;
 }
 
 @keyframes latir {
   50% {
-    box-shadow: 0 0 0 12px rgba(192, 132, 252, 0.1), var(--sombra-elevada);
+    box-shadow: 0 0 0 12px rgba(168, 139, 212, 0.1), var(--sombra-elevada);
   }
 }
 
