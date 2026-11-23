@@ -32,3 +32,4 @@ __pycache__/
 .claude/skills/taste-skill/
 .claude/agents/impeccable-*.md
 .claude/skills-actualizacion.log
+.impeccable/hook.cache.json
