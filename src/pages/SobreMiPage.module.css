@@ -441,7 +441,7 @@ a.contacto:hover {
   background: var(--color-surface-hover);
 }
 
-/* ── Habilidades: lista sobria, sin porcentajes ── */
+/* ── Habilidades: nombre, porcentaje discreto y una línea fina de nivel ── */
 .habilidades {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -451,30 +451,46 @@ a.contacto:hover {
 }
 
 .habilidad {
+  position: relative;
   display: flex;
   align-items: baseline;
-  gap: 0.6rem;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(203, 184, 234, 0.1);
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0 0.7rem;
   font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.35;
   color: var(--color-text);
 }
 
-.habilidad:last-child {
-  border-bottom: none;
+/* Riel y relleno de 2 px: el nivel se lee sin dominar la tarjeta. */
+.habilidad::before,
+.habilidad::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
 }
 
 .habilidad::before {
-  content: '';
-  flex-shrink: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  translate: 0 -0.1em;
+  right: 0;
+  background: rgba(203, 184, 234, 0.1);
+}
+
+.habilidad::after {
+  width: var(--nivel);
   background: var(--color-lilac-mid);
-  opacity: 0.8;
+  opacity: 0.55;
+}
+
+.habilidadNivel {
+  flex-shrink: 0;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── Educación y referencias ── */

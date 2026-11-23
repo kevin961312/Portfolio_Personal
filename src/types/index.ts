@@ -71,6 +71,12 @@ export interface Metrica {
   compacto?: boolean;
 }
 
+export interface Habilidad {
+  nombre: string;
+  /** 0–100: se muestra como un número pequeño y una línea fina. */
+  nivel: number;
+}
+
 export interface PerfilContenido {
   id: PerfilId;
   /** Etiqueta corta usada en el selector de perfil. */
@@ -82,8 +88,7 @@ export interface PerfilContenido {
   /** Párrafos del bloque «Sobre mí». */
   sobreMi: string[];
   metricas: Metrica[];
-  /** Habilidades en texto, sin porcentajes (un «85 %» no se puede verificar). */
-  habilidades: string[];
+  habilidades: Habilidad[];
   /** Bullets de resultados verificables. */
   destacados: string[];
   /**

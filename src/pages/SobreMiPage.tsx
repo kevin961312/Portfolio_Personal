@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import {
   IconChevronRight,
@@ -212,8 +213,13 @@ export default function SobreMiPage() {
             <h2 className={styles.seccionTitulo}>Habilidades</h2>
             <ul className={styles.habilidades}>
               {perfil.habilidades.map((h) => (
-                <li key={`${perfilId}-${h}`} className={styles.habilidad}>
-                  {h}
+                <li
+                  key={`${perfilId}-${h.nombre}`}
+                  className={styles.habilidad}
+                  style={{ '--nivel': `${h.nivel}%` } as CSSProperties}
+                >
+                  <span>{h.nombre}</span>
+                  <span className={styles.habilidadNivel}>{h.nivel}%</span>
                 </li>
               ))}
             </ul>
