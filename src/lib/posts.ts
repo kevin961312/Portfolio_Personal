@@ -1,18 +1,15 @@
 import type { PostInstagram } from '../types';
+import { CUENTAS } from '../data/sitio';
 
-/** Iniciales para el avatar de las portadas diseñadas. */
-export const INICIALES_CUENTA: Record<string, string> = {
-  eltiempo: 'ET',
-  cuestionp: 'CP',
-  lamartineris: 'LM',
-};
+/** Iniciales para el avatar de las portadas diseñadas (se editan en `src/data/sitio.ts`). */
+export const INICIALES_CUENTA: Record<string, string> = Object.fromEntries(
+  Object.entries(CUENTAS).map(([cuenta, c]) => [cuenta, c.iniciales]),
+);
 
 /** Nombre visible de cada cuenta. */
-export const NOMBRE_CUENTA: Record<string, string> = {
-  eltiempo: 'EL TIEMPO · No Es Hora de Callar',
-  cuestionp: 'Cuestión Pública',
-  lamartineris: 'Laura Martín',
-};
+export const NOMBRE_CUENTA: Record<string, string> = Object.fromEntries(
+  Object.entries(CUENTAS).map(([cuenta, c]) => [cuenta, c.nombre]),
+);
 
 export const tituloPost = (p: PostInstagram) =>
   p.titulo || (p.tipo === 'video' ? 'Reel para Instagram' : 'Carrusel para Instagram');

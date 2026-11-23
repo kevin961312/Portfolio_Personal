@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { articulosDigitales } from '../data/articulos-digitales';
-import EncabezadoPagina from '../components/EncabezadoPagina';
-import VisorImagen from '../components/VisorImagen';
-import type { ImagenVisor } from '../components/VisorImagen';
+import EncabezadoPagina from '../components/layout/EncabezadoPagina';
+import VisorImagen from '../components/visores/VisorImagen';
+import type { ImagenVisor } from '../components/visores/VisorImagen';
 import { IconExternalLink } from '../components/icons';
 import { seccionDesdeUrl } from '../lib/articulos';
 import { rutaPublica } from '../lib/rutas';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './ArticulosImpresosPage.module.css';
+import { sitio } from '../data/sitio';
 
 /* Las páginas impresas salen de los artículos digitales que tienen su
    versión en papel (`impreso`), así cada una enlaza a su nota en la web. */
@@ -26,10 +27,10 @@ export default function ArticulosImpresosPage() {
   return (
     <div className={styles.page}>
       <EncabezadoPagina
-        eyebrow="Edición impresa · EL TIEMPO"
+        eyebrow={`Edición impresa · ${sitio.medio.nombre}`}
         titulo="Artículos"
         resaltado="impresos"
-        lead="Notas publicadas en la edición física de EL TIEMPO: el mismo trabajo de reportería llevado del papel a la web. Toca una página para leerla de cerca."
+        lead={`Notas publicadas en la edición física de ${sitio.medio.nombre}: el mismo trabajo de reportería llevado del papel a la web. Toca una página para leerla de cerca.`}
       />
 
       <ul className={styles.mesa}>

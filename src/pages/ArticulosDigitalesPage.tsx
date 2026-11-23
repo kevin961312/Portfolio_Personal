@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { articulosDigitales } from '../data/articulos-digitales';
-import EncabezadoPagina from '../components/EncabezadoPagina';
-import VisorImagen from '../components/VisorImagen';
-import type { ImagenVisor } from '../components/VisorImagen';
+import EncabezadoPagina from '../components/layout/EncabezadoPagina';
+import VisorImagen from '../components/visores/VisorImagen';
+import type { ImagenVisor } from '../components/visores/VisorImagen';
 import { IconExternalLink, IconNewspaper } from '../components/icons';
 import { seccionDesdeUrl } from '../lib/articulos';
 import { rutaPublica } from '../lib/rutas';
 import { usePerfil } from '../hooks/usePerfil';
 import styles from './ArticulosDigitalesPage.module.css';
+import { sitio } from '../data/sitio';
 
 /* `fecha` es ISO, así que compararla como texto ya ordena bien. */
 const articulos = [...articulosDigitales]
@@ -46,10 +47,10 @@ export default function ArticulosDigitalesPage() {
   return (
     <div className={styles.page}>
       <EncabezadoPagina
-        eyebrow="Prensa · EL TIEMPO"
+        eyebrow={`Prensa · ${sitio.medio.nombre}`}
         titulo="Artículos"
         resaltado="digitales"
-        lead="Reportería e investigación publicadas en eltiempo.com: justicia, política, ciudad y cultura, con enfoque de género y derechos humanos."
+        lead={`Reportería e investigación publicadas en ${sitio.medio.dominio}: justicia, política, ciudad y cultura, con enfoque de género y derechos humanos.`}
       />
 
       <div className={styles.barra} role="group" aria-label="Filtrar artículos">
@@ -108,7 +109,7 @@ export default function ArticulosDigitalesPage() {
                           className={styles.boton}
                           tabIndex={volteado ? -1 : undefined}
                         >
-                          Leer en eltiempo.com <IconExternalLink size={13} />
+                          Leer en {sitio.medio.dominio} <IconExternalLink size={13} />
                         </a>
                         {a.impreso && (
                           <button
@@ -138,7 +139,7 @@ export default function ArticulosDigitalesPage() {
                         <span className={styles.ampliar}>Toca para leerla</span>
                       </button>
                       <div className={styles.dorsoPie}>
-                        <span className={styles.medio}>Edición impresa · EL TIEMPO</span>
+                        <span className={styles.medio}>Edición impresa · {sitio.medio.nombre}</span>
                         <button
                           type="button"
                           className={styles.botonSecundario}

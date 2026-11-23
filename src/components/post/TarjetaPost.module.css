@@ -9,7 +9,7 @@
 
 .tarjeta:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 0 1px rgba(216, 180, 254, 0.4), 0 28px 60px -28px var(--c1);
+  box-shadow: 0 0 0 1px rgba(203, 184, 234, 0.4), var(--sombra-elevada);
 }
 
 .sello {
@@ -22,7 +22,7 @@
   gap: 0.25rem;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #7e22ce, #a855f7);
+  background: var(--color-accion);
   color: #fff;
   font-size: 0.7rem;
   font-weight: 800;
@@ -54,7 +54,7 @@
   gap: 0.4rem;
   padding: 0.45rem 0.95rem;
   border-radius: 999px;
-  background: rgba(18, 8, 31, 0.85);
+  background: rgba(20, 14, 29, 0.85);
   color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
@@ -65,7 +65,7 @@
 
 .abrir:hover,
 .abrir:focus-visible {
-  background: linear-gradient(to top, rgba(18, 8, 31, 0.55), transparent 45%);
+  background: linear-gradient(to top, rgba(20, 14, 29, 0.55), transparent 45%);
 }
 
 .abrir:hover .abrirPista,

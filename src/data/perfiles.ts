@@ -51,10 +51,8 @@ const MESES_PUBLICANDO =
 
 const TOTAL_DIGITALES = articulosDigitales.length;
 
-/* `src/data/articulos-impresos.ts` todavía está vacío, así que estos dos
-   valores vienen declarados desde la HV en PDF. Cuando se carguen las piezas
-   impresas, reemplazar por `articulosImpresos.length`. */
-const TOTAL_IMPRESOS = 5;
+/* Las piezas impresas son los artículos digitales con escaneo (`impreso`). */
+const TOTAL_IMPRESOS = articulosDigitales.filter((a) => a.impreso).length;
 const TOTAL_REPORTAJES_TV = 1;
 const TOTAL_PRENSA = TOTAL_DIGITALES + TOTAL_IMPRESOS;
 const TOTAL_PIEZAS_PERIODISTICAS = TOTAL_PRENSA + TOTAL_REPORTAJES_TV;
@@ -127,7 +125,8 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       `${PIEZAS_SOBRE_10K} piezas superaron las 10.000 interacciones y ${PIEZAS_SOBRE_5K} superaron las 5.000, sobre ${MESES_PUBLICANDO} meses de publicación sostenida.`,
       'Adaptación de investigación periodística densa (leyes, casos judiciales, datos de género) a formatos nativos de Instagram sin perder rigor informativo.',
     ],
-    // Solo la evidencia de redes: las secciones de periodismo quedan ocultas.
+    // Hoy los tres perfiles exponen todas las secciones; para ocultar alguna,
+    // quitarla de esta lista (el menú y el acceso directo se ajustan solos).
     secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES, ...RUTAS_GALERIA],
     cargos: {
       'Cuestión Pública': 'Community Manager · Creadora de contenido digital',
@@ -198,7 +197,6 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       'Aprobación en segundo debate de la Ley Jineth Bedoya Lima y de la ley contra la violencia digital.',
       'Perros deambulantes en el Politécnico Grancolombiano, regreso de Limp Bizkit al festival Loserville e inauguración de la Bienal de Arte BOG25.',
     ],
-    // Solo la evidencia periodística: la parrilla de Instagram queda oculta.
     secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES, ...RUTAS_GALERIA],
     cargos: {
       'Cuestión Pública': 'Periodista · Contenido investigativo para audiencias digitales',
@@ -270,7 +268,6 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
       'Televisión: producción, pietaje y pasos en cámara para programa televisivo, y un reportaje audiovisual publicado en Canal CityTV.',
       `Redes sociales: ${TOTAL_REELS} Reels y ${TOTAL_CARRUSELES} carruseles sostenidos durante ${MESES_PUBLICANDO} meses de publicación continua.`,
     ],
-    // Perfil transmedia: es el único que muestra el portafolio completo.
     secciones: [RUTA_SOBRE_MI, RUTA_TOP, ...RUTAS_PERIODISMO, ...RUTAS_REDES, ...RUTAS_GALERIA],
     cargos: {
       'Cuestión Pública': 'Estratega de contenidos digitales',
@@ -283,13 +280,6 @@ export const PERFILES: Record<PerfilId, PerfilContenido> = {
     tituloDocumento: 'Laura Hernández · Comunicadora Social',
   },
 };
-
-/** Orden en que se pintan las pestañas del selector de perfil. */
-export const ORDEN_PERFILES: PerfilId[] = [
-  'comunicadora',
-  'periodista',
-  'community-manager',
-];
 
 /** Type guard: ¿este string es un `PerfilId` válido? */
 export function esPerfilValido(valor: string | null | undefined): valor is PerfilId {

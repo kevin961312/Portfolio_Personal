@@ -9,6 +9,7 @@ import { NOMBRE_CUENTA } from '../../lib/posts';
 import { useCerca } from '../../hooks/useCerca';
 import { useEstadoEmbed } from '../../hooks/useEstadoEmbed';
 import styles from './LineaTiempo.module.css';
+import { CUENTA_PERSONAL } from '../../data/sitio';
 
 interface Props {
   /** Álbumes en el orden de la línea (del más reciente al más antiguo). */
@@ -108,7 +109,7 @@ export default function LineaTiempo({ albumes, onProyectar, cargarEmbeds = true 
   return (
     <div
       className={styles.linea}
-      data-cuenta={albumActivo?.cuenta ?? 'lamartineris'}
+      data-cuenta={albumActivo?.cuenta ?? CUENTA_PERSONAL}
       style={{ '--progreso': progreso } as CSSProperties}
     >
       <div className={styles.fondo} aria-hidden="true">

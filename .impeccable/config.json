@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "docs/index.html"
+        ],
+        "createdAt": "2026-11-23T15:36:01.362Z",
+        "reason": "user decided (sesión anterior, guardado en memoria paleta-morado-lila): 'los colores deben ser tonos de morado y lilas'"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-23T15:49:57.374Z",
+        "reason": "Recomendación del consejo (llm-council) aprobada por la usuaria ('realizar todos los cambios'): títulos en Newsreader, Inter solo para interfaz y datos"
+      }
+    ]
+  }
+}

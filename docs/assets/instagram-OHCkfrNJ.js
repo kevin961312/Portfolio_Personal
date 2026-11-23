@@ -1,0 +1,1 @@
+var e=`instagram-embed-script`;function t(){if(document.getElementById(e))window.instgrm&&window.instgrm.Embeds.process();else{let t=document.createElement(`script`);t.id=e,t.src=`https://www.instagram.com/embed.js`,t.async=!0,document.body.appendChild(t)}}function n(e){return e.split(`?`)[0].replace(/\/$/,``)+`/`}export{t as n,n as t};
