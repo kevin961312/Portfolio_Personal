@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { formatearMetrica } from '../lib/formato';
-import { useContadorAnimado } from '../hooks/useContadorAnimado';
+import { formatearMetrica } from '../../lib/formato';
+import { useContadorAnimado } from '../../hooks/useContadorAnimado';
 import styles from './EncabezadoPagina.module.css';
 
 export interface DatoEncabezado {

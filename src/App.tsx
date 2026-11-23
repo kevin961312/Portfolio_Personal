@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import SobreMiPage from './pages/SobreMiPage';
 import ArticulosImpresosPage from './pages/ArticulosImpresosPage';
 import ArticulosDigitalesPage from './pages/ArticulosDigitalesPage';

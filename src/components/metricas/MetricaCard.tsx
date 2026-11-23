@@ -1,7 +1,7 @@
-import type { Metrica } from '../types';
-import { formatearMetrica } from '../lib/formato';
-import { useContadorAnimado } from '../hooks/useContadorAnimado';
-import { IconEye, IconNewspaper, IconHeart, IconSparkle } from './icons';
+import type { Metrica } from '../../types';
+import { formatearMetrica } from '../../lib/formato';
+import { useContadorAnimado } from '../../hooks/useContadorAnimado';
+import { IconEye, IconNewspaper, IconHeart, IconSparkle } from '../icons';
 import styles from './MetricasImpacto.module.css';
 
 const ICONOS = {

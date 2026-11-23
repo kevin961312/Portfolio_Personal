@@ -10,7 +10,7 @@ import {
   IconPhone,
   IconPlay,
 } from '../components/icons';
-import MetricasImpacto from '../components/MetricasImpacto';
+import MetricasImpacto from '../components/metricas/MetricasImpacto';
 import TarjetaPost from '../components/post/TarjetaPost';
 import { postsInstagram } from '../data/posts-instagram';
 import { porLikes } from '../lib/posts';

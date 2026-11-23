@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { articulosDigitales } from '../data/articulos-digitales';
-import EncabezadoPagina from '../components/EncabezadoPagina';
-import VisorImagen from '../components/VisorImagen';
-import type { ImagenVisor } from '../components/VisorImagen';
+import EncabezadoPagina from '../components/layout/EncabezadoPagina';
+import VisorImagen from '../components/visores/VisorImagen';
+import type { ImagenVisor } from '../components/visores/VisorImagen';
 import { IconExternalLink, IconNewspaper } from '../components/icons';
 import { seccionDesdeUrl } from '../lib/articulos';
 import { rutaPublica } from '../lib/rutas';

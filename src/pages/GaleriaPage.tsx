@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import EncabezadoPagina from '../components/EncabezadoPagina';
+import EncabezadoPagina from '../components/layout/EncabezadoPagina';
 import LineaTiempo from '../components/galeria/LineaTiempo';
 import ProyeccionAlbumes from '../components/galeria/ProyeccionAlbumes';
 import { IconBook, IconPlay } from '../components/icons';

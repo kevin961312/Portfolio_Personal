@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
-import { IconClose, IconExternalLink } from './icons';
+import { IconClose, IconExternalLink } from '../icons';
 import styles from './VisorImagen.module.css';
-import { sitio } from '../data/sitio';
+import { sitio } from '../../data/sitio';
 
 export interface ImagenVisor {
   src: string;

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import EncabezadoPagina from '../components/EncabezadoPagina';
+import EncabezadoPagina from '../components/layout/EncabezadoPagina';
 import VisorLibro from '../components/galeria/VisorLibro';
 import { IconCarousel } from '../components/icons';
 import { libroIra } from '../data/galeria';

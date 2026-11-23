@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { IconMicrophone, IconMenu, IconClose } from './icons';
-import { usePerfil } from '../hooks/usePerfil';
+import { IconMicrophone, IconMenu, IconClose } from '../icons';
+import { usePerfil } from '../../hooks/usePerfil';
 import styles from './Navbar.module.css';
-import { sitio } from '../data/sitio';
+import { sitio } from '../../data/sitio';
 
 const navItems = [
   { path: '/', label: 'Sobre mí' },

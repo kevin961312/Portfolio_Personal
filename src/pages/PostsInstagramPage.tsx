@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { postsInstagram } from '../data/posts-instagram';
-import EncabezadoPagina from '../components/EncabezadoPagina';
+import EncabezadoPagina from '../components/layout/EncabezadoPagina';
 import TarjetaPost from '../components/post/TarjetaPost';
 import VisorPost from '../components/post/VisorPost';
 import { IconExternalLink, IconHeart } from '../components/icons';

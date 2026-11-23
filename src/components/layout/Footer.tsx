@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import { sitio } from '../data/sitio';
+import { sitio } from '../../data/sitio';
 
 export default function Footer() {
   return (

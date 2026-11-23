@@ -1,4 +1,4 @@
-import type { Metrica } from '../types';
+import type { Metrica } from '../../types';
 import MetricaCard from './MetricaCard';
 import styles from './MetricasImpacto.module.css';
 
